@@ -1,0 +1,53 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+
+		<f:comment>
+				Baut eine Gruppe DIVs auf, um Hintergrundbilder responsive je Breakpoint auszuspielen.
+				Da der Default ist, dass es nur ein Hintergrundbild {item.media} gibt ... kann man sich meistens komplizierte Betrachtungen sparen -> "BackgroundImage/BreakpointSmallOnly"
+
+				Beispielhafte Benutzung:
+				Es wird kein Hintergrundbild gerendert, sondern es liegt für jeden Breakpoint ein DIV absolut positioniert hinter dem DIV, welches das Hintergrundbild haben sollte.
+
+				page.includeJSFooter {
+						fileA = EXT:project/Resources/Public/JavaScript/picturefill.js
+						fileB = EXT:project/Resources/Public/JavaScript/lazysizes.min.js
+						fileC = EXT:project/Resources/Public/JavaScript/ls.unveilhooks.min.js
+				}
+
+				<f:render partial="BackgroundImage/BreakpointSwitch" arguments="{item: _all, pathToImage:'fileadmin/', divClass:'o-xxx__background', imgWidth:'800'}"/>
+
+				o-xxx__background {
+                position: absolute;
+                z-index: -1;
+                min-height: 100%;
+                min-width: 100%;
+                background-size: cover;
+                background-position-x: 50%;
+                background-position-y: 50%;
+            }
+		</f:comment>
+
+		<f:if condition="{item.media}">
+				<f:then>
+						<f:if condition="{item.media_medium}">
+								<f:then>
+										<f:render partial="BackgroundImage/BreakpointMultiple" arguments="{_all}"/>
+								</f:then>
+								<f:else>
+										<f:if condition="{item.media_large}">
+												<f:then>
+														<f:render partial="BackgroundImage/BreakpointMultiple" arguments="{_all}"/>
+												</f:then>
+												<f:else>
+														<f:render partial="BackgroundImage/BreakpointSmallOnly" arguments="{_all}"/>
+												</f:else>
+										</f:if>
+								</f:else>
+						</f:if>
+				</f:then>
+				<f:else>
+						<f:render partial="BackgroundImage/BreakpointMultiple" arguments="{_all}"/>
+				</f:else>
+		</f:if>
+
+</html>

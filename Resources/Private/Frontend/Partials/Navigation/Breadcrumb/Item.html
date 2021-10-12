@@ -1,0 +1,18 @@
+<f:if condition="{item.current}">
+		<f:then>
+				<li id="mbc-{item.data.uid}" class="o-breadcrumb__li is-current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<span itemprop="item">
+								<span class="o-breadcrumb__title is-current-item" itemprop="name"><f:format.raw>{item.title}</f:format.raw></span>
+						</span>
+						<meta itemprop="position" content="{cycle}" />
+				</li>
+		</f:then>
+		<f:else if="{item.active}">
+				<li id="mbc-{item.data.uid}" class="o-breadcrumb__li is-active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemprop="item" href="{item.link}">
+								<span class="o-breadcrumb__title is-active-item" itemprop="name"><f:format.raw>{item.title}</f:format.raw></span>
+						</a>
+						<meta itemprop="position" content="{cycle}" />
+				</li>
+		</f:else>
+</f:if>

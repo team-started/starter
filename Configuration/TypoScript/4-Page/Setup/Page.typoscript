@@ -1,0 +1,51 @@
+page = PAGE
+page {
+  typeNum = 0
+
+  headerData {
+    10 =< lib.starterTitleTag
+    50 =< lib.starterGoogleAnalytics
+  }
+
+  meta {
+    viewport = {$starter.meta.viewport}
+    copyright = {$starter.meta.copyright}
+
+    keywords {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:keywords
+      override {
+        field = keywords
+      }
+    }
+
+    description {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:description
+      override {
+        field = description
+      }
+    }
+
+    abstract {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:abstract
+      override {
+        field = abstract
+      }
+    }
+
+    author {
+      data = DB:pages:{$starter.pid.defaultMetaPageUid}:author
+      override {
+        field = author
+      }
+    }
+
+    google-site-verification = {$starter.tracking.google.siteVerification}
+    strucr-confirm = {$starter.tracking.strucrConfirm}
+    format-detection = telephone=no
+    apple-mobile-web-app-capable = {$starter.meta.apple-mobile-web-app-capable}
+  }
+
+  bodyTagCObject < lib.starterBodyTag
+
+  10 =< lib.starterTemplateLayout
+}

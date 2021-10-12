@@ -1,0 +1,12 @@
+##
+# Gets the Root id
+#
+# <f:link.page pageUid="{f:cObject(typoscriptObjectPath: 'lib.rootpid')}" id="logo">&#160;</f:link.page>
+##
+
+lib {
+  rootpid = TEXT
+  rootpid {
+    data = leveluid : 0
+  }
+}

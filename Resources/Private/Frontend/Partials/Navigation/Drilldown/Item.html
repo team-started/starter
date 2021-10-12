@@ -1,0 +1,23 @@
+<f:if condition="{item.current}">
+		<f:then>
+				<li id="dd-{item.data.uid}" class="o-drilldown__li is-current {f:if(condition:item.children, then:'has-submenu')}">
+						<f:render partial="Navigation/Drilldown/Image" arguments="{item:item}"/>
+						<span class="o-drilldown__title is-current-item"><f:format.raw>{item.title}</f:format.raw></span>
+						<f:render partial="Navigation/Drilldown/Arrow" arguments="{item:item}"/>
+				</li>
+		</f:then>
+		<f:else if="{item.active}">
+				<li id="dd-{item.data.uid}" class="o-drilldown__li is-active {f:if(condition:item.children, then:'has-submenu')}">
+						<f:render partial="Navigation/Drilldown/Image" arguments="{item:item}"/>
+						<f:render partial="Navigation/Drilldown/Link" arguments="{item:item, status:'is-active-item'}"/>
+						<f:render partial="Navigation/Drilldown/Arrow" arguments="{item:item}"/>
+				</li>
+		</f:else>
+		<f:else>
+				<li id="dd-{item.data.uid}" class="o-drilldown__li is-normal {f:if(condition:item.children, then:'has-submenu')}">
+						<f:render partial="Navigation/Drilldown/Image" arguments="{item:item}"/>
+						<f:render partial="Navigation/Drilldown/Link" arguments="{item:item, status:'is-normal-item'}"/>
+						<f:render partial="Navigation/Drilldown/Arrow" arguments="{item:item}"/>
+				</li>
+		</f:else>
+</f:if>

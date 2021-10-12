@@ -1,0 +1,49 @@
+##
+# Read the used backend layout of current page and set use the correct HTML template by name.
+#
+# Used internal in "/Configuration/Main/4-Page/Setup/Page.typoscript"
+##
+lib.starterTemplateLayout = FLUIDTEMPLATE
+lib.starterTemplateLayout {
+  templateName = TEXT
+  templateName {
+    data = levelfield:-2,backend_layout_next_level,slide
+    override.field = backend_layout
+
+    stdWrap {
+      replacement {
+        # replace the value for be-layouts, they defined by PageTSConfig
+        10 {
+          search = pagets__
+          replace =
+        }
+
+        # replace the value for be-layouts, they defined by FileProvider
+        20 < .10
+        20.search = file__
+      }
+
+      ifEmpty = SimpleWithoutFooter
+    }
+  }
+
+  layoutRootPaths {
+    5 = EXT:starter/Resources/Private/Frontend/Layouts/
+    10 = {$starter.paths.pathToPrivate}Frontend/Layouts/
+  }
+
+  partialRootPaths {
+    5 = EXT:starter/Resources/Private/Frontend/Partials/
+    10 = {$starter.paths.pathToPrivate}Frontend/Partials/
+  }
+
+  templateRootPaths {
+    5 = EXT:starter/Resources/Private/Frontend/Templates/
+    10 = {$starter.paths.pathToPrivate}Frontend/Templates/
+  }
+
+  settings {
+    defaultHomePageUid = {$starter.pid.defaultHomePageUid}
+    logoFile = {$starter.branch.images.logo}
+  }
+}

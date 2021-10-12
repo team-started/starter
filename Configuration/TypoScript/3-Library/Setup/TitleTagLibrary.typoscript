@@ -1,0 +1,11 @@
+##
+# Adds title tag.
+#
+# Used internal in "/Configuration/Main/4-Page/Setup/Page.typoscript"
+##
+
+lib.starterTitleTag = TEXT
+lib.starterTitleTag {
+  field = tx_metaseo_pagetitle // subtitle // title
+  dataWrap = <title> | </title>
+}

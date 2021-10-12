@@ -1,0 +1,34 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+	<f:render partial="Header" arguments="{menuMain: menuMain}"/>
+
+	<f:render partial="Navigation/Breadcrumb" arguments="{menuBreadcrumb: menuBreadcrumb}"/>
+
+
+	<main class="c-site__main">
+
+		<f:comment>
+			## Rendert einen vererbten Seitenheader
+		</f:comment>
+		<f:cObject typoscriptObjectPath="lib.starterDynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '1'}"/>
+
+		<f:comment>
+			## Rendert den Seiteninhalt
+		</f:comment>
+		<f:render section="SiteContent"/>
+
+	</main>
+
+	<footer class="o-site-footer">
+
+		<f:comment>
+			## Rendert einen dynamischen Footer, welcher im Backend gepflegt und vererbt wird
+		</f:comment>
+		<f:cObject typoscriptObjectPath="lib.starterDynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '2'}" />
+
+	</footer>
+
+	<f:render partial="Additional" arguments="{menuDrilldown: menuDrilldown}"/>
+
+</html>

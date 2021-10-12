@@ -1,0 +1,11 @@
+<f:if condition="{item.data.target}">
+		<f:then>
+				<a class="o-drilldown__link" href="{item.link}" target="{item.data.target}"><span class="o-drilldown__title {status}"><f:format.raw>{item.title}</f:format.raw></span></a>
+		</f:then>
+		<f:else if="{item.target}">
+				<a class="o-drilldown__link" href="{item.link}" target="{item.target}"><span class="o-drilldown__title {status}"><f:format.raw>{item.title}</f:format.raw></span></a>
+		</f:else>
+		<f:else>
+				<a class="o-drilldown__link" href="{item.link}"><span class="o-drilldown__title {status}"><f:format.raw>{item.title}</f:format.raw></span></a>
+		</f:else>
+</f:if>

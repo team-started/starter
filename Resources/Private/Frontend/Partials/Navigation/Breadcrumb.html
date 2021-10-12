@@ -1,0 +1,15 @@
+<div class="show-for-medium">
+		<div class="grid-container">
+				<div class="grid-x grid-margin-x">
+						<div class="cell">
+								<nav>
+										<ul class="o-breadcrumb no-bullet" itemscope itemtype="http://schema.org/BreadcrumbList">
+												<f:for each="{menuBreadcrumb}" as="item" iteration="index">
+														<f:render partial="Navigation/Breadcrumb/Item" arguments="{item:item, cycle:index.cycle}"/>
+												</f:for>
+										</ul>
+								</nav>
+						</div>
+				</div>
+		</div>
+</div>

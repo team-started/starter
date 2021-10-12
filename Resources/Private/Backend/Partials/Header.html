@@ -1,0 +1,12 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+
+	<strong>
+		<f:translate key="LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.{row.CType}"/>
+	</strong><br>
+
+	<f:if condition="{processedRow.header}">
+		<strong>{processedRow.header}</strong>
+	</f:if>
+
+</html>

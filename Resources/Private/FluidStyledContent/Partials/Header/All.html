@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+
+<f:if condition="{data.tx_starter_overline} || {data.header} || {data.subheader} || {data.date}">
+	<header class="o-header">
+
+		<f:if condition="{data.tx_starter_overline}">
+			<f:render partial="Header/Overline" arguments="{
+						overline: data.tx_starter_overline
+						}" />
+		</f:if>
+
+		<f:if condition="{data.header} && {data.header_layout} != 100">
+			<f:render partial="Header/Header" arguments="{
+						header: data.header,
+						layout: data.header_layout,
+						align: data.header_position,
+						link: data.header_link,
+						class: data.tx_starter_headerclass,
+						fontsize: data.tx_starter_headerfontsize,
+						color: data.tx_starter_headercolor
+						}" />
+		</f:if>
+
+		<f:if condition="{data.subheader}">
+			<f:render partial="Header/SubHeader" arguments="{
+						subheader: data.subheader
+						}" />
+		</f:if>
+
+		<f:if condition="{data.date}">
+			<f:render partial="Header/Date" arguments="{
+						date: data.date
+						}" />
+		</f:if>
+
+	</header>
+</f:if>
+
+</html>

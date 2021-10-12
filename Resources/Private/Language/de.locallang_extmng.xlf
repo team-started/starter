@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-06-16T08:53:40Z"
+		product-name="starter">
+		<header/>
+		<body>
+
+			<trans-unit id="category.paths">
+				<target>Datei- und Verzeichnispfade</target>
+			</trans-unit>
+			<trans-unit id="category.paths.pathToPrivate">
+				<target>Pfad zum Private-Verzeichnis für Layouts, Partials und Templates</target>
+			</trans-unit>
+			<trans-unit id="category.paths.pathToPublic">
+				<target>Pfad zum Public-Verzeichnis für Bilder, Css, etc.</target>
+			</trans-unit>
+			<trans-unit id="category.branch">
+				<target>Kundeneinstellungen</target>
+			</trans-unit>
+			<trans-unit id="category.branch.title">
+				<target>Name des Kunden</target>
+			</trans-unit>
+			<trans-unit id="category.branch.images.favicon">
+				<target>Pfad inkl. Dateiname des Favicon</target>
+			</trans-unit>
+			<trans-unit id="category.branch.images.logo">
+				<target>Pfad inkl. Dateiname des Logo</target>
+			</trans-unit>
+			<trans-unit id="category.branch.images.touch-icon">
+				<target>Pfad inkl. Dateiname des touch icon</target>
+			</trans-unit>
+			<trans-unit id="category.branch.images.touch-icon-swipe">
+				<target>Pfad inkl. Dateiname des touch icon swipe</target>
+			</trans-unit>
+			<trans-unit id="category.typo3">
+				<target>TYPO3 Einstellungen (global)</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.compressJs">
+				<target>Komprimierung von JavaScript Dateien aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.concatenateJs">
+				<target>Zusammenfassen von JavaScript Dateien aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.moveJsHeaderToFooter">
+				<target>JavaScript Code vom Header in den Footer verschieben</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.compressCss">
+				<target>Komprimierung von CSS Dateien aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.concatenateCss">
+				<target>Zusammenfassen von CSS Dateien aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.no_cache">
+				<target>TYPO3 Caching aktivieren/deaktivieren. Dies deaktiviert den Caching Mechanismus von TYPO3. Die sollte nur auf Entwicklungssystemen genutzt werden.</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.adminPanel">
+				<target>Admin panel aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.debug">
+				<target>TypoScript Debug global aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.contentObjectExceptionHandler">
+				<target>TYPO3 content object exception handler aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.index_enable">
+				<target>Core Extension indexed_search aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.index_externals">
+				<target>Indizierung von externen Resourcen aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.index_metatags">
+				<target>Indizierung der MetaTags aktivieren/deaktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.typo3.headerComment">
+				<target>Header Comment setzen</target>
+			</trans-unit>
+			<trans-unit id="category.tracking">
+				<target>Tracking Einstellungen (global)</target>
+			</trans-unit>
+			<trans-unit id="category.tracking.strucrConfirm">
+				<target>Hash für structr-confirm</target>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.trackingid">
+				<target>Google tracking ID. Ist diese gesetzt, wird automatisch ein Tracking Code in die Webseite eingebunden.</target>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.anonymizeip">
+				<target>IP Adresse anonymisieren</target>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.displayfeature">
+				<target>Remarketingfunktion DisplayFeatures nutzen</target>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.siteVerification">
+				<target>Google Site Verification</target>
+			</trans-unit>
+			<trans-unit id="category.meta">
+				<target>MetaTag Einstellungen (global)</target>
+			</trans-unit>
+			<trans-unit id="category.meta.viewport">
+				<target>ViewPort Einstellung für Responsive Webseiten</target>
+			</trans-unit>
+			<trans-unit id="category.meta.apple">
+				<target>Apple FullScreen Modus aktivieren</target>
+			</trans-unit>
+			<trans-unit id="category.meta.compatible">
+				<target>Web Browser Kompatibilitäts-Modus</target>
+			</trans-unit>
+			<trans-unit id="category.meta.google">
+				<target>Google Chrome Übersetzung nutzen. Wird dieser Wert auf "translate" gesetzt, bietet der Google Chrome Browser automatisch eine Übersetzung der Seite an.</target>
+			</trans-unit>
+			<trans-unit id="category.meta.copyright">
+				<target>Copyright</target>
+			</trans-unit>
+			<trans-unit id="category.pid">
+				<target>Konfiguration von Seiten-Uid's</target>
+			</trans-unit>
+			<trans-unit id="category.pid.defaultMetaPageUid">
+				<target>UID welche per default die Meta-Daten enhält</target>
+			</trans-unit>
+			<trans-unit id="category.pid.defaultHomePageUid">
+				<target>UID der Startseite</target>
+			</trans-unit>
+			<trans-unit id="category.pid.xmlSitemapRootUid">
+				<target>UID der Root-Seite für die Sitemapgenerierung</target>
+			</trans-unit>
+			<trans-unit id="category.pid.footerMenuPageUid">
+				<target>UID des Sys-Ordner für das Footer-Menü</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

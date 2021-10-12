@@ -1,0 +1,128 @@
+#customsubcategory=paths=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.paths
+#customsubcategory=branch=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.branch
+#customsubcategory=typo3=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3
+#customsubcategory=tracking=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.tracking
+#customsubcategory=meta=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta
+#customsubcategory=pid=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid
+
+starter {
+  paths {
+    # cat=starter: basic/paths/104; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.paths.pathToPrivate
+    pathToPrivate = EXT:starter/Resources/Private/
+
+    # cat=starter: basic/paths/105; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.paths.pathToPublic
+    pathToPublic = EXT:starter/Resources/Public/
+  }
+
+  branch {
+    # cat=starter: basic/branch/201; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.branch.title
+    title =
+
+    images {
+      # cat=starter: basic/branch/220; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.branch.images.favicon
+      favicon = {$starter.paths.pathToPublic}Images/branch-app-icon.png
+
+      # cat=starter: basic/branch/221; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.branch.images.logo
+      logo = {$starter.paths.pathToPublic}Images/Logo.png
+
+      # cat=starter: basic/branch/222; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.branch.images.touch-icon
+      touch-icon = {$starter.branch.images.favicon}
+
+      # cat=starter: basic/branch/223; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.branch.images.touch-icon-swipe
+      touch-icon-wide = {$starter.branch.images.favicon}
+    }
+  }
+
+  config {
+    # cat=starter: typo3/typo3/300; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.compressJs
+    compressJs = 1
+
+    # cat=starter: typo3/typo3/301; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.concatenateJs
+    concatenateJs = 1
+
+    # cat=starter: typo3/typo3/302; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.moveJsHeaderToFooter
+    moveJsFromHeaderToFooter = 1
+
+    # cat=starter: typo3/typo3/303; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.compressCss
+    compressCss = 1
+
+    # cat=starter: typo3/typo3/304; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.concatenateCss
+    concatenateCss = 1
+
+    # cat=starter: typo3/typo3/306; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.no_cache
+    no_cache = 0
+
+    # cat=starter: typo3/typo3/307; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.adminPanel
+    adminPanel = 0
+
+    # cat=starter: typo3/typo3/308; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.debug
+    debug = 0
+
+    # cat=starter: typo3/typo3/309; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.contentObjectExceptionHandler
+    contentObjectExceptionHandler = 0
+
+    # cat=starter: typo3/typo3/310; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.index_enable
+    index_enable = 1
+
+    # cat=starter: typo3/typo3/311; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.index_externals
+    index_externals = 0
+
+    # cat=starter: typo3/typo3/312; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.index_metatags
+    index_metatags = 1
+
+    # cat=starter: typo3/typo3/313; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.typo3.headerComment
+    headerComment = TYPO3 by StarterTeam (https://starter.team)
+  }
+
+  tracking {
+    # cat=starter: seo/google/400; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.tracking.strucrConfirm
+    strucrConfirm =
+
+    google {
+      tagManagerID =
+
+      # cat=starter: seo/google/401; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.tracking.google.trackingid
+      trackingID =
+
+      # cat=starter: seo/google/402; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.tracking.google.anonymizeip
+      anonymizeIp = 1
+
+      # cat=starter: seo/google/403; type=boolean; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.tracking.google.displayfeature
+      displayfeatures = 1
+
+      # cat=starter: seo/google/404; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.tracking.google.siteVerification
+      siteVerification =
+    }
+  }
+
+  meta {
+    # cat=starter: seo/meta/500; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.viewport
+    viewport = width=device-width, initial-scale=1, user-scalable=no
+
+    # cat=starter: seo/meta/503; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.apple
+    apple-mobile-web-app-capable = no
+
+    # cat=starter: seo/meta/504; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.compatible
+    compatible = IE=edge,chrome=1
+
+    # cat=starter: seo/meta/505; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.google
+    google = notranslate
+
+    # cat=starter: seo/meta/506; type=string; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.meta.copyright
+    copyright = {$starter.branch.title}
+  }
+
+  pid {
+    # cat=starter: advanced/meta/700; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.defaultMetaPageUid
+    defaultMetaPageUid = 1
+
+    # cat=starter: advanced/meta/701; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.defaultHomePageUid
+    defaultHomePageUid = 1
+
+    # cat=starter: advanced/meta/702; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.xmlSitemapRootUid
+    xmlSitemapRootUid = 1
+
+    # cat=starter: advanced/meta/703; type=int+; label=LLL:EXT:starter/Resources/Private/Language/locallang_extmng.xlf:category.pid.footerMenuPageUid
+    footerMenuPageUid =
+  }
+}

@@ -1,0 +1,79 @@
+config {
+  htmlTag_setParams = none
+
+  htmlTag_stdWrap {
+    setContentToCurrent = 1
+
+    cObject = COA
+    cObject {
+      temp = TEXT
+      temp {
+        addParams.class = no-js
+        append = TEXT
+        append.char = 10
+        current = 1
+      }
+
+      # IE10
+      50 < .temp
+      50 {
+        addParams {
+          class = no-js ie10
+        }
+        wrap = <!--[if IE 10 ]>|<![endif]-->
+      }
+
+      # Kein IE oder größer IE9
+      60 < .temp
+      60 {
+        wrap = <!--[if (gt IE 9)|!(IE)]><!--> # <!--<![endif]-->
+        wrap {
+          splitChar = #
+        }
+      }
+    }
+  }
+
+  admPanel = {$starter.config.adminPanel}
+  debug = {$starter.config.debug}
+  contentObjectExceptionHandler = {$starter.config.contentObjectExceptionHandler}
+
+  // Cache settings
+  no_cache = {$starter.config.no_cache}
+  cache_period = 43200
+  sendCacheHeaders = 1
+
+  // targets for links
+  intTarget = _top
+  extTarget = _blank
+  fileTarget = _blank
+
+  // SEO
+  noPageTitle = 2
+
+  // Indexed Search
+  index_enable = {$starter.config.index_enable}
+  index_externals = {$starter.config.index_externals}
+  index_metatags = {$starter.config.index_metatags}
+
+  // Code cleaning
+  disablePrefixComment = 1
+
+  // Move default CSS and JS to external file
+  removeDefaultJS = external
+  inlineStyle2TempFile = 1
+
+  // Code optimazation
+  compressJs = {$starter.config.compressJs}
+  compressCss = {$starter.config.compressCss}
+  concatenateJs = {$starter.config.concatenateJs}
+  cconcatenateCss = {$starter.config.concatenateCss}
+  moveJsFromHeaderToFooter = {$starter.config.moveJsFromHeaderToFooter}
+
+  // Protect mail addresses from spamming
+  spamProtectEmailAddresses = 2
+  spamProtectEmailAddresses_atSubst = @
+
+  // Comment in the <head> tag
+  headerComment = {$starter.config.headerComment}
+}

@@ -1,0 +1,12 @@
+
+//---> System
+@import 'EXT:starter/Configuration/TypoScript/1-System/Setup/'
+
+//---> Extension
+@import 'EXT:starter/Configuration/TypoScript/2-Extension/Setup/'
+
+//---> Library
+@import 'EXT:starter/Configuration/TypoScript/3-Library/Setup/'
+
+//---> Page
+@import 'EXT:starter/Configuration/TypoScript/4-Page/Setup/'

@@ -1,0 +1,19 @@
+##
+# get the logo and wrap around an link to homepage
+# fluid usage: <f:cObject typoscriptObjectPath="lib.logo" />
+##
+lib.starterLogo = COA
+lib.starterLogo {
+  10 = IMAGE
+  10 {
+    file = {$starter.branch.images.logo}
+    params = class="logo"
+    altText.dataWrap = {$starter.branch.title}
+  }
+
+  stdWrap {
+    typolink {
+      parameter = {$starter.pid.defaultHomePageUid}
+    }
+  }
+}

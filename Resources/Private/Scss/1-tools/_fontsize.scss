@@ -1,0 +1,9 @@
+//****************************************************************************************
+//
+// Zieht die Schriftgröße aus den Settings und wandelt diese in REM um.
+//
+//****************************************************************************************
+
+@mixin starter-fontsize($size) {
+  font-size: rem-calc(map-get($fontsizes, $size));
+}

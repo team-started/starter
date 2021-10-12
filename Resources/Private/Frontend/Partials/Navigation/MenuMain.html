@@ -1,0 +1,7 @@
+<nav class="o-menuMain__nav">
+		<ul class="o-menuMain o-menuMain__ul o-menuMain__ul--root no-bullet">
+				<f:for each="{menuMain}" as="item">
+						<f:render partial="Navigation/MenuMain/Item" arguments="{item: item, pageheader: pageheader}"/>
+				</f:for>
+		</ul>
+</nav>

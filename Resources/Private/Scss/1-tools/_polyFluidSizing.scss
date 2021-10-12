@@ -1,0 +1,15 @@
+//******************************************************************************************
+// https://github.com/Jakobud/poly-fluid-sizing
+//
+// Abstände und Schriftgrößen, abhängig von Fensterbreite und skalieren stufenlos.
+// Die Größen richten sich nicht nach den Breakpoints, sondern werden im Mixin definiert.
+// Es sind beliebig viele Größen möglich.
+// Im Grunde für jede CSS Eigenschaft nutzbar, die mit "px" umgehen kann.
+//
+// h1 {
+//   @include poly-fluid-sizing('font-size', (320px:18px, 768px:26px, 1024px:38px, 1440px:46px));
+//   @include poly-fluid-sizing('margin-bottom', (320px:18px, 1440px:46px));
+// }
+//******************************************************************************************
+
+@import "~poly-fluid-sizing/poly-fluid-sizing";

@@ -1,0 +1,103 @@
+##
+# Add touch icons for Apple, Android and Windows. The icon could be defined via ConstantEditor in the branch-section
+#
+# Used internal in "/Configuration/Main/4-Page/Setup/Page.typoscript"
+##
+lib.starterTouchIcon = COA
+lib.starterTouchIcon {
+  // Apple touch icons
+  10 = IMG_RESOURCE
+  10 {
+    file = {$starter.branch.images.touch-icon}
+    file {
+      width = 57c
+      height = 57c
+    }
+    stdWrap.dataWrap = <link rel="apple-touch-icon" sizes="{TSFE:lastImgResourceInfo|0}x{TSFE:lastImgResourceInfo|1}" href="|">
+  }
+
+  11 < .10
+  11.file {
+    width = 72c
+    height = 72c
+  }
+
+  12 < .10
+  12.file {
+    width = 76c
+    height = 76c
+  }
+
+  13 < .10
+  13.file {
+    width = 114c
+    height = 114c
+  }
+
+  14 < .10
+  14.file {
+    width = 120c
+    height = 120c
+  }
+
+  15 < .10
+  15.file {
+    width = 144c
+    height = 144c
+  }
+
+  16 < .10
+  16.file {
+    width = 152c
+    height = 152c
+  }
+
+  17 < .10
+  17.file {
+    width = 180c
+    height = 180c
+  }
+
+  // Android icons
+  20 < .10
+  20 {
+    file {
+      width = 196c
+      height = 196c
+    }
+    stdWrap.dataWrap = <link rel="shortcut icon" type="image/png" sizes="{TSFE:lastImgResourceInfo|0}x{TSFE:lastImgResourceInfo|1}" href="|">
+  }
+
+  // Microsoft Application icons
+  30 < .10
+  30 {
+    file {
+      width = 70c
+      height = 70c
+    }
+    stdWrap.dataWrap = <meta name="msapplication-square{TSFE:lastImgResourceInfo|0}x{TSFE:lastImgResourceInfo|1}logo" content="|"/>
+  }
+
+  31 < .30
+  31 {
+    file {
+      width = 150c
+      height = 150c
+    }
+  }
+
+  32 < .30
+  32 {
+    file = {$starter.branch.images.touch-icon-wide}
+    file {
+      width = 310c
+      height = 150c
+    }
+  }
+
+  33 < .30
+  33.file {
+    width = 310c
+    height = 310c
+  }
+}

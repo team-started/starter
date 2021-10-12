@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-06-16T09:46:40Z"
+		product-name="starter">
+		<header/>
+		<body>
+
+<!-- tab label -->
+			<trans-unit id="tab.dummy">
+				<source>Dummy</source>
+			</trans-unit>
+
+<!-- label pages -->
+			<trans-unit id="backend_layout.simple_with_footer.title">
+				<source>Simple with footer</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.simple_without_footer.title">
+				<source>Simple without footer</source>
+			</trans-unit>
+
+			<trans-unit id="backend_layout.row.header_inherited">
+				<source>Content header (inherited)</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.row.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="backend_layout.row.content_footer_inherited">
+				<source>Page footer (inherited)</source>
+			</trans-unit>
+
+			<trans-unit id="pages.tx_starter_nav_media">
+				<source>Navigation image</source>
+			</trans-unit>
+
+<!-- label sys_file_reference -->
+			<trans-unit id="sys_file_reference.tx_starter_class">
+				<source>Class</source>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show_small">
+				<source>Show on small</source>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show_medium">
+				<source>Show on medium</source>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show_large">
+				<source>Show on large</source>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
+				<source>Show</source>
+			</trans-unit>
+
+<!-- tt_content labels -->
+			<trans-unit id="palette.carousel.links">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="palette.textoptions">
+				<source>Text-Options</source>
+			</trans-unit>
+			<trans-unit id="palette.appearancePosition">
+				<source>Positioning</source>
+			</trans-unit>
+			<trans-unit id="palette.appearanceColor">
+				<source>Coloring</source>
+			</trans-unit>
+			<trans-unit id="palette.cta">
+				<source>Call-to-Action</source>
+			</trans-unit>
+
+            <trans-unit id="tt_content.label.center">
+                <source>center</source>
+            </trans-unit>
+            <trans-unit id="tt_content.label.left">
+                <source>left</source>
+            </trans-unit>
+            <trans-unit id="tt_content.label.right">
+                <source>right</source>
+            </trans-unit>
+
+			<trans-unit id="tt_content.label.primary">
+				<source>primary</source>
+			</trans-unit>
+			<trans-unit id="tt_content.label.secondary">
+				<source>secondary</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_gridcontainer">
+				<source>Options for max. width</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_gridcontainer.I.1">
+				<source>fluid</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_gridcontainer.I.2">
+				<source>full</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_width">
+				<source>Limit width</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_celink">
+				<source>Link around all</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_backgroundcolor">
+				<source>Background color</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_bordercolor">
+				<source>Border color</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headercolor">
+				<source>Header color</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_textcolor">
+				<source>Text color</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.header_layout.I.1">
+				<source>Level 1</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.2">
+				<source>Level 2</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.3">
+				<source>Level 3</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.4">
+				<source>Level 4</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.5">
+				<source>Level 5</source>
+			</trans-unit>
+			<trans-unit id="tt_content.header_layout.I.6">
+				<source>Level 6</source>
+			</trans-unit>
+            <trans-unit id="tt_content.header_layout.I.99">
+                <source>Visible in FE, but no header tag</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.100">
+                <source>Hidden in FE</source>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout">
+                <source>Level (SEO)</source>
+            </trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_headerclass">
+				<source>Header class</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_textclass">
+				<source>Text class</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.0">
+				<source>text size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.1">
+				<source>h1 size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.2">
+				<source>h2 size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.3">
+				<source>h3 size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.4">
+				<source>h4 size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.5">
+				<source>h5 size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.6">
+				<source>h6 size</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize">
+				<source>Header Fontsize</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_overline">
+				<source>Overline</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_overlaytext">
+				<source>Overlay text</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_celink_text_formlabel">
+				<source>Button text</source>
+			</trans-unit>
+
+            <trans-unit id="tt_content.subheader.label">
+                <source>Subline</source>
+            </trans-unit>
+
+			<trans-unit id="tt_content.colPos.nestedContentColPos">
+				<source>Nested Element</source>
+			</trans-unit>
+
+			<trans-unit id="starter.asset_medium_references">
+				<source>Media element Breakpoint Medium</source>
+			</trans-unit>
+			<trans-unit id="starter.asset_large_references">
+				<source>Media element Breakpoint Large</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.imagecols">
+				<source>Image side by side (Small)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.imagecols_medium">
+				<source>Image side by side (Medium)</source>
+			</trans-unit>
+			<trans-unit id="tt_content.imagecols_large">
+				<source>Image side by side (Large)</source>
+			</trans-unit>
+			<trans-unit id="media_size_small">
+				<source>small</source>
+			</trans-unit>
+			<trans-unit id="media_size_medium">
+				<source>medium</source>
+			</trans-unit>
+			<trans-unit id="media_size_large">
+				<source>large</source>
+			</trans-unit>
+			<trans-unit id="media_size.default">
+				<source>default: 100%</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_ctalink_text_formlabel">
+				<source>Link text</source>
+			</trans-unit>
+
+<!-- New CTypes -->
+			<trans-unit id="CType.I.starter_carousel">
+				<source>Carousel</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_carousel.description">
+				<source>An image and content with animation support</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_accordion">
+				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_accordion.description">
+				<source>An image and content accordion with animation support</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_tab">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_tab.description">
+				<source>An image and content tab with animation support</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_textmedia">
+				<source>Text &amp; Media</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_textmedia.description">
+				<source>Any number of media wrapped right around a regular text element.</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_media">
+				<source>Media only</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_media.description">
+				<source>Any number of media elements.</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_gallery">
+				<source>Image gallery</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_gallery.description">
+				<source>A picture gallery with any number of pictures.</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_stop">
+				<source>Stop recursive inheritance</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_stop.description">
+				<source>Stop inheriting from previous content.</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_teaser">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_teaser.description">
+				<source>Teaser element</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_column_grid">
+				<source>Grid column</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_column_grid.description">
+				<source>Element to split content into multiple columns</source>
+			</trans-unit>
+
+<!-- CE carousel -->
+			<trans-unit id="tx_starter_carousel.type.I.0">
+				<source>Text/Media</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_carousel.type.I.1">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_carousel.link_formlabel">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_carousel.link_text_formlabel">
+				<source>Button label</source>
+			</trans-unit>
+			<trans-unit id="carousel_element_formlabel">
+				<source>Carousel items</source>
+			</trans-unit>
+
+<!-- CE accordion -->
+			<trans-unit id="tx_starter_accordion.type.I.0">
+				<source>Text/Media</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_accordion.type.I.1">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="accordion_element_formlabel">
+				<source>Accordion items</source>
+			</trans-unit>
+
+<!-- CE teaser -->
+			<trans-unit id="tx_starter_teaser.celink_formlabel">
+				<source>Button link</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_teaser.celink_text_formlabel">
+				<source>Button label</source>
+			</trans-unit>
+
+			<!-- CE tab -->
+			<trans-unit id="tx_starter_tab.type.I.0">
+				<source>Text/Media</source>
+			</trans-unit>
+			<trans-unit id="tx_starter_tab.type.I.1">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="tab_element_formlabel">
+				<source>Tab items</source>
+			</trans-unit>
+
+<!-- CE content column -->
+			<trans-unit id="starter_column_grid.tx_starter_column_element">
+				<source>Content elements</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

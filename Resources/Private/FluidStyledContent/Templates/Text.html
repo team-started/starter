@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:comment>
+    # partial="General/Bodytext" ->  EXT:starter/Resources/Private/Starter/Partials/General/Bodytext.html
+</f:comment>
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+    <f:render partial="General/Bodytext" arguments="{bodytext:data.bodytext, textclass:data.tx_starter_textclass, textcolor:data.tx_starter_textcolor}"/>
+</f:section>
+
+</html>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-02-11T08:53:40Z"
+		product-name="mf_starter">
+		<header/>
+		<body>
+
+			<trans-unit id="category.paths">
+				<source>File and directory paths</source>
+			</trans-unit>
+			<trans-unit id="category.paths.pathToPrivate">
+				<source>Path to private directory for layouts, partials and templates</source>
+			</trans-unit>
+			<trans-unit id="category.paths.pathToPublic">
+				<source>Path to Public directory for images, css</source>
+			</trans-unit>
+			<trans-unit id="category.branch">
+				<source>Customer configuration</source>
+			</trans-unit>
+			<trans-unit id="category.branch.title">
+				<source>Name of customer</source>
+			</trans-unit>
+			<trans-unit id="category.branch.images.favicon">
+				<source>Path and file name of favicon</source>
+			</trans-unit>
+			<trans-unit id="category.branch.images.logo">
+				<source>Path and file name of logo</source>
+			</trans-unit>
+			<trans-unit id="category.branch.images.touch-icon">
+				<source>Path and file name of touch icon</source>
+			</trans-unit>
+			<trans-unit id="category.branch.images.touch-icon-swipe">
+				<source>Path and file name of touch icon swipe</source>
+			</trans-unit>
+			<trans-unit id="category.typo3">
+				<source>TYPO3 settings (global)</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.compressJs">
+				<source>Enable or disable the compression of JavaScript files</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.concatenateJs">
+				<source>Enable or disable the concatenation of JavaScript files</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.moveJsHeaderToFooter">
+				<source>Enable or disable from JS files to footer</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.compressCss">
+				<source>Enable or disable the compression of CSS files</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.concatenateCss">
+				<source>Enable or disable the concatenation of CSS files</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.no_cache">
+				<source>Enable or disable TYPO3 caching.This disables the caching mechanism of TYPO3. This should only be used on development systems.</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.adminPanel">
+				<source>Enable or disable the admin panel</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.debug">
+				<source>Enable or disable TYPO3 debug mode</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.contentObjectExceptionHandler">
+				<source>Enable or disable TYPO3 content object exception handler</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.index_enable">
+				<source>Enable or disable indexed_search</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.index_externals">
+				<source>Enable or disable the indexing of externals</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.index_metatags">
+				<source>Enable or disable the indexing of metatags</source>
+			</trans-unit>
+			<trans-unit id="category.typo3.headerComment">
+				<source>Header Comment</source>
+			</trans-unit>
+			<trans-unit id="category.tracking">
+				<source>Tracking configuration (global)</source>
+			</trans-unit>
+			<trans-unit id="category.tracking.strucrConfirm">
+				<source>Hash for structr-confirm</source>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.trackingid">
+				<source>Google tracking ID. If this is set, a tracking code is automatically integrated into the website.</source>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.anonymizeip">
+				<source>Anonymize the IP adress</source>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.displayfeature">
+				<source>Enable or disable the google "displayfeature"</source>
+			</trans-unit>
+			<trans-unit id="category.tracking.google.siteVerification">
+				<source>Google Site Verification</source>
+			</trans-unit>
+			<trans-unit id="category.meta">
+				<source>MetaTag configuration (global)</source>
+			</trans-unit>
+			<trans-unit id="category.meta.viewport">
+				<source>ViewPort Setting for Responsive Websites</source>
+			</trans-unit>
+			<trans-unit id="category.meta.apple">
+				<source>Enable or disable the ppple FullScreen</source>
+			</trans-unit>
+			<trans-unit id="category.meta.compatible">
+				<source>Web Browser compatibility mode</source>
+			</trans-unit>
+			<trans-unit id="category.meta.google">
+				<source>Use Google Chrome translation. If this value is set to "translate," the Google Chrome browser automatically provides a translation of the page.</source>
+			</trans-unit>
+			<trans-unit id="category.meta.copyright">
+				<source>Copyright</source>
+			</trans-unit>
+			<trans-unit id="category.pid">
+				<source>Configuration of page uid</source>
+			</trans-unit>
+			<trans-unit id="category.pid.defaultMetaPageUid">
+				<source>UID which by default contains the metadata</source>
+			</trans-unit>
+			<trans-unit id="category.pid.defaultHomePageUid">
+				<source>UID of startpage</source>
+			</trans-unit>
+			<trans-unit id="category.pid.xmlSitemapRootUid">
+				<source>UID of root page for sitemap generation</source>
+			</trans-unit>
+			<trans-unit id="category.pid.footerMenuPageUid">
+				<source>UID of sys-folder for Footer-Menu</source>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

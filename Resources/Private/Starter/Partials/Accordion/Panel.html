@@ -1,0 +1,20 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<dd class="o-accordion__panel badger-accordion__panel js-badger-accordion-panel" itemprop="description">
+	<div class="o-accordion__panel-inner js-badger-accordion-panel-inner" style="display: none">
+		<f:if condition="{item.mediaFiles.assets}">
+			<f:then>
+				<f:for each="{item.mediaFiles.assets}" as="assetData">
+					<f:render partial="Media/Type" arguments="{file: assetData}"/>
+				</f:for>
+			</f:then>
+
+			<f:else>
+				<f:render partial="General/Bodytext" arguments="{bodytext: item.data.bodytext}"/>
+			</f:else>
+		</f:if>
+	</div>
+</dd>
+
+</html>

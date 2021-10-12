@@ -1,0 +1,25 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:if condition="{layout} != 99">
+	<f:then>
+		<h{layout} class="o-header--h{layout} {align} {class} {fontsize} {color}">
+			<f:render section="HeaderTitle" arguments="{link: link, header: header}"/>
+		</h{layout}>
+	</f:then>
+	<f:else>
+		<div class="o-header__title o-header--h{layout} {align} {class} {fontsize} {color}">
+			<f:render section="HeaderTitle" arguments="{link: link, header: header}"/>
+		</div>
+	</f:else>
+</f:if>
+
+<f:section name="HeaderTitle">
+	<f:link.typolink class="o-header__link" parameter="{link}">
+		<span class="o-header__title">
+			<f:format.raw>{header}</f:format.raw>
+		</span>
+	</f:link.typolink>
+</f:section>
+
+</html>

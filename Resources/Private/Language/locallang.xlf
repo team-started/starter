@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-06-16T09:46:40Z" product-name="starter">
+		<header/>
+		<body>
+
+			<trans-unit id="header-date-format">
+				<source>%B %e, %Y</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,22 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+
+<f:variable name="swiperItemClass" value="swiper__item-textmedia"/>
+<f:if condition="{item.data.type} == 1">
+	<f:variable name="swiperItemClass" value="swiper__item-text"/>
+</f:if>
+
+<div id="swiper{item.data.uid}" class="swiper-slide {swiperItemClass} {item.data.layout}">
+	<f:link.page pageUid="{item.data.link}" class="o-carousel__link">
+		<f:switch expression="{item.data.type}">
+			<f:case value="1">
+				<f:render partial="Carousel/Types/Text" arguments="{_all}"/>
+			</f:case>
+			<f:defaultCase>
+				<f:render partial="Carousel/Types/TextMedia" arguments="{_all}"/>
+			</f:defaultCase>
+		</f:switch>
+	</f:link.page>
+</div>
+
+</html>

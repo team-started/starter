@@ -1,0 +1,17 @@
+mod.web_layout {
+  tt_content.preview {
+    starter {
+      templateRootPaths {
+        0 = EXT:starter/Resources/Private/Backend/Templates/
+      }
+
+      partialRootPaths {
+        0 = EXT:starter/Resources/Private/Backend/Partials/
+      }
+
+      layoutRootPaths {
+        0 = EXT:starter/Resources/Private/Backend/Layouts/
+      }
+    }
+  }
+}

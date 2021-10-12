@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-10-08T09:46:40Z"
+		product-name="starter">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_starter_celink.description">
+				<source>This link is placed around the entire elements. Links, e.g. of text elements or images are thus ineffective.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

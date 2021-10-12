@@ -1,0 +1,17 @@
+<f:if condition="{item.current}">
+		<f:then>
+				<span id="mm3-{item.data.uid}" class="o-menuFooter__item is-current {f:if(condition:item.children, then:'has-submenu')}">
+						<span class="o-menuFooter__link is-current-item"><f:format.raw>{item.title}</f:format.raw></span>
+				</span>
+		</f:then>
+		<f:else if="{item.active}">
+				<span id="mm3-{item.data.uid}" class="o-menuFooter__item is-active {f:if(condition:item.children, then:'has-submenu')}">
+						<f:render partial="Navigation/MenuFooter/Link" arguments="{item:item, status:'is-active-item'}"/>
+				</span>
+		</f:else>
+		<f:else>
+				<span id="mm3-{item.data.uid}" class="o-menuFooter__item is-normal {f:if(condition:item.children, then:'has-submenu')}">
+						<f:render partial="Navigation/MenuFooter/Link" arguments="{item:item, status:'is-normal-item'}"/>
+				</span>
+		</f:else>
+</f:if>

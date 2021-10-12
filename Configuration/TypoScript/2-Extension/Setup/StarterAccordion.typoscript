@@ -1,0 +1,56 @@
+
+tt_content.starter_accordion =< lib.contentElement
+tt_content.starter_accordion {
+  templateName = StarterAccordion
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_starter_accordion_element
+      where {
+        data = field:uid
+        wrap = tt_content_accordion=|
+      }
+      orderBy = sorting
+      as = accordionContent
+
+      dataProcessing {
+        10 = StarterTeam\Starter\DataProcessing\ImageProcessor
+        10 {
+          as = mediaFiles
+
+          fieldNames = assets
+          table = tx_starter_accordion_element
+
+          imageConfig {
+            default {
+              maxW = 640
+              maxH = 213
+              cropVariant = smartphone
+            }
+
+            variants {
+              5 {
+                config {
+                  maxW = 800
+                  maxH = 533
+                  cropVariant = tablet
+                  mediaQuery = (max-width: 439px)
+                }
+              }
+
+              10 {
+                config {
+                  maxW = 1200
+                  maxH = 800
+                  cropVariant = desktop
+                  mediaQuery = (min-width: 1400px)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

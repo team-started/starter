@@ -1,0 +1,25 @@
+<div class="o-drilldown show-for-small-only">
+		<nav>
+
+				<div class="o-drilldown__header u-background-color-transparent">
+						<div id="o-drilldown__back" class="o-drilldown__button o-drilldown__back" data-target=""><i class="fa fa-chevron-left"></i></div>
+						<div id="o-drilldown__current-title" class="text-center"></div>
+						<div id="o-drilldown__close" class="o-drilldown__button o-drilldown__close" data-target=""><i class="fa fa-times"></i></div>
+				</div>
+
+				<div id="drilldown-list-{menuDrilldown.0.data.pid}" class="o-drilldown__menu o-drilldown__menu--root is-active" data-name="">
+						<ul class="o-drilldown__ul no-bullet">
+								<f:for each="{menuDrilldown}" as="rootItem">
+										<f:render partial="Navigation/Drilldown/Item" arguments="{item: rootItem}"/>
+								</f:for>
+						</ul>
+				</div>
+
+				<f:for each="{menuDrilldown}" as="rootItem">
+						<f:if condition="{rootItem.children}">
+								<f:render partial="Navigation/Drilldown/SubMenu" arguments="{subMenu: rootItem.children, ppid:menuDrilldown.0.data.pid, ptitle:rootItem.title}"/>
+						</f:if>
+				</f:for>
+
+		</nav>
+</div>

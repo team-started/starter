@@ -1,0 +1,159 @@
+TCEFORM {
+  pages {
+    backend_layout {
+      disableNoMatchingValueElement = 1
+      removeItems = -1
+    }
+
+    backend_layout_next_level {
+      disableNoMatchingValueElement = 1
+      removeItems = -1
+    }
+  }
+
+  tt_content {
+
+    //---> disable unused default TYPO3 fields
+    imagewidth.disabled = 1
+    imageheight.disabled = 1
+    imageborder.disabled = 1
+    sectionIndex.disabled = 1
+    linkToTop.disabled = 1
+    frame_class.disabled = 1
+
+    tx_starter_celink.disabled = 1
+
+    //---> workaround because of https://forge.typo3.org/issues/80427
+    space_before_class {
+      altLabels.. = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
+    }
+    space_after_class {
+      altLabels.. = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
+    }
+
+    imageorient {
+      removeItems = 1,2,9,10
+    }
+
+    //---> remove TYPO3 defaults
+    layout {
+      removeItems = 0,1,2,3
+    }
+
+    //---> remove TYPO3 defaults
+    frame_class {
+      removeItems = default,ruler-before,ruler-after,indent,indent-left,indent-right,none
+    }
+
+    //---> refactor TYPO3 defaults
+    space_before_class {
+      removeItems = extra-small,small,medium,large,extra-large
+      addItems {
+        u-gap-top--none = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.none
+        u-gap-top--small = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.small
+        u-gap-top--medium = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.medium
+        u-gap-top--large = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.large
+        u-gap-top--xlarge = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.xlarge
+      }
+    }
+    //---> refactor TYPO3 defaults
+    space_after_class {
+      removeItems = extra-small,small,medium,large,extra-large
+      addItems {
+        u-gap-bottom--none = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.none
+        u-gap-bottom--small = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.small
+        u-gap-bottom--medium = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.medium
+        u-gap-bottom--large = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.large
+        u-gap-bottom--xlarge = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.xlarge
+      }
+    }
+
+    //---> Header fields
+    header_layout {
+      label = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout
+      altLabels {
+        0 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
+        1 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.1
+        2 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.2
+        3 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.3
+        4 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.4
+        5 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.5
+        100 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.100
+      }
+      addItems {
+        6 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.6
+        99 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.99
+      }
+    }
+    header_position {
+      removeItems = center,right,left
+      addItems {
+        o-header--align-center = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.center
+        o-header--align-right = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.right
+        o-header--align-left = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.left
+      }
+    }
+    subheader {
+      label = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.subheader.label
+    }
+
+    tx_starter_assets_medium.disabled = 1
+    tx_starter_assets_large.disabled = 1
+
+    //---> deactivate field tx_starter_celink for ctypes
+    tx_starter_celink {
+      types {
+        starter_accordion.disabled = 1
+        starter_carousel.disabled = 1
+        starter_media.disabled = 1
+        starter_gallery.disabled = 1
+        starter_stop.disabled = 1
+      }
+    }
+
+    //---> deactivate field tx_starter_overline for ctypes
+    tx_starter_overline {
+      types {
+        starter_accordion.disabled = 1
+        starter_carousel.disabled = 1
+        starter_stop.disabled = 1
+      }
+    }
+
+    //---> deactivate field tx_starter_textclass for ctypes
+    tx_starter_textclass {
+      types {
+        starter_accordion.disabled = 1
+        starter_carousel.disabled = 1
+        starter_media.disabled = 1
+        starter_stop.disabled = 1
+      }
+    }
+
+    //---> deactivate field tx_starter_textcolor for ctypes
+    tx_starter_textcolor {
+      types {
+        starter_accordion.disabled = 1
+        starter_carousel.disabled = 1
+        starter_media.disabled = 1
+        starter_gallery.disabled = 1
+        starter_stop.disabled = 1
+      }
+    }
+  }
+
+  tx_starter_carousel_element {
+    assets_medium.disabled = 1
+    assets_large.disabled = 1
+  }
+
+  tx_starter_accordion_element {
+    assets_medium.disabled = 1
+    assets_large.disabled = 1
+  }
+
+  tx_starter_tab_element {
+    assets_medium.disabled = 1
+    assets_large.disabled = 1
+  }
+}

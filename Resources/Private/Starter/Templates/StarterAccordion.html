@@ -1,0 +1,23 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+	<div class="o-accordion">
+
+		<dl class="js-badger-accordion">
+			<f:for each="{accordionContent}" as="item">
+
+				<div class="o-accordion__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<f:render partial="Accordion/Header" arguments="{item: item}"/>
+					<f:render partial="Accordion/Panel" arguments="{item: item}"/>
+				</div>
+
+			</f:for>
+		</dl>
+
+	</div>
+</f:section>
+
+</html>

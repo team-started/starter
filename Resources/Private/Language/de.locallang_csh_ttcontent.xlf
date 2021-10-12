@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-10-08T09:46:40Z"
+		product-name="starter">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_starter_celink.description">
+				<target>Dieser Link wird um das gesamte Elemente gelegt. Verlinkungen z.B. von Textelemente oder Bildern sind somit wirkungslos.</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

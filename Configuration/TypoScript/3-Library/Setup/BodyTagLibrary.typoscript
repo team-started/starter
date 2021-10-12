@@ -1,0 +1,32 @@
+##
+# Wrap an CSS id with prefix "page" and the current page uid. Also add an class with prefix "language" and the
+# language uid.
+#
+# Used internal in "/Configuration/Main/4-Page/Setup/Page.typoscript"
+##
+lib.starterBodyTag = COA
+lib.starterBodyTag {
+  stdWrap.dataWrap = <body id="page{field:uid}" class ="|">
+
+  10 = TEXT
+  10 {
+    dataWrap = L-{TSFE:sys_language_uid}
+    if.isPositive.dataWrap = {TSFE:sys_language_uid}
+    noTrimWrap = || |
+  }
+
+  20 = TEXT
+  20 {
+    data = levelfield:-1,backend_layout_next_level,slide
+    override.field = backend_layout
+    noTrimWrap = || |
+  }
+
+  30 = TEXT
+  30 {
+    field = layout
+    if.isPositive.field = layout
+    wrap = layout-|
+    noTrimWrap = || |
+  }
+}

@@ -1,0 +1,21 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<dd class="o-tab__panel badger-tab__panel js-badger-tab-panel" itemprop="description">
+	<div class="o-tab__panel-inner js-badger-tab-panel-inner" style="display: none">
+		<f:if condition="{item.mediaFiles.assets}">
+			<f:then>
+				<f:for each="{item.mediaFiles.assets}" as="assetData">
+					<f:render partial="Media/Type" arguments="{file: assetData}"/>
+				</f:for>
+			</f:then>
+
+			<f:else>
+				<f:render partial="General/Bodytext" arguments="{bodytext: item.data.bodytext}"/>
+			</f:else>
+
+		</f:if>
+	</div>
+</dd>
+
+</html>

@@ -1,0 +1,39 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:if
+	condition="({item.data.overline} || {item.data.header}) || {item.data.subheader} || {item.data.bodytext} || {item.data.link_text}">
+
+	<div class="o-carousel__body">
+
+		<f:if condition="{item.data.overline}">
+			<div class="o-carousel__overline">
+				<f:format.raw>{item.data.tx_starter_overline}</f:format.raw>
+			</div>
+		</f:if>
+
+		<f:if condition="{item.data.header}">
+			<div class="o-carousel__headline">
+				<f:format.raw>{item.data.header}</f:format.raw>
+			</div>
+		</f:if>
+
+		<f:if condition="{item.data.subheader}">
+			<div class="o-carousel__subline">
+				<f:format.raw>{item.data.subheader}</f:format.raw>
+			</div>
+		</f:if>
+
+		<f:render partial="General/Bodytext" arguments="{bodytext: item.data.bodytext}"/>
+
+		<f:if condition="{item.data.link} && {item.data.link_text}">
+			<f:link.typolink parameter="{item.data.link}">
+				<span class="button">{item.data.link_text}</span>
+			</f:link.typolink>
+		</f:if>
+
+	</div>
+
+</f:if>
+
+</html>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-06-16T09:46:40Z"
+		product-name="starter">
+		<header/>
+		<body>
+
+<!-- tab label -->
+			<trans-unit id="tab.dummy">
+				<target>Dummy</target>
+			</trans-unit>
+
+<!-- label pages -->
+			<trans-unit id="backend_layout.simple_with_footer.title">
+				<target>Simple mit Footer</target>
+			</trans-unit>
+			<trans-unit id="backend_layout.simple_without_footer.title">
+				<target>Simple ohne Footer</target>
+			</trans-unit>
+
+			<trans-unit id="backend_layout.row.header_inherited">
+				<target>Inhalt Header (vererbt)</target>
+			</trans-unit>
+			<trans-unit id="backend_layout.row.content">
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="backend_layout.row.content_footer_inherited">
+				<target>Seitenabschluss - Footer (vererbt)</target>
+			</trans-unit>
+
+			<trans-unit id="pages.tx_starter_nav_media">
+				<target>Bild für Navigation</target>
+			</trans-unit>
+
+<!-- label sys_file_reference -->
+			<trans-unit id="sys_file_reference.tx_starter_class">
+				<target>Klasse</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show_small">
+				<source>Show on small</source>
+				<target>Zeige auf Smartphone</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show_medium">
+				<source>Show on medium</source>
+				<target>Zeige auf Tablet</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show_large">
+				<source>Show on large</source>
+				<target>Zeige auf Desktop</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
+				<source>Show</source>
+				<target>Anzeigen</target>
+			</trans-unit>
+
+<!-- label tt_content -->
+			<trans-unit id="palette.carousel.links">
+				<target>Verlinkung</target>
+			</trans-unit>
+			<trans-unit id="palette.textoptions">
+				<target>Text-Optionen</target>
+			</trans-unit>
+			<trans-unit id="palette.appearancePosition">
+				<target>Positionierung</target>
+			</trans-unit>
+			<trans-unit id="palette.appearanceColor">
+				<target>Farbgebung</target>
+			</trans-unit>
+			<trans-unit id="palette.cta">
+				<source>Call-to-Action</source>
+				<target>Interaktionslinks (CTA)</target>
+			</trans-unit>
+
+            <trans-unit id="tt_content.label.center">
+                <target>zentiert</target>
+            </trans-unit>
+            <trans-unit id="tt_content.label.left">
+                <target>links</target>
+            </trans-unit>
+            <trans-unit id="tt_content.label.right">
+                <target>rechts</target>
+            </trans-unit>
+
+			<trans-unit id="tt_content.label.none">
+				<target>kein Abstand</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.label.primary">
+				<target>primäre Farbe</target>
+			</trans-unit>
+			<trans-unit id="tt_content.label.secondary">
+				<target>sekundäre Farbe</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_orientationdetection.I.1">
+				<target>Querformat</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_orientationdetection.I.2">
+				<target>Hochformat</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_orientationdetection">
+				<target>zeige für Ausrichtung</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_height.I.1">
+				<target>25% Browserfenster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_height.I.2">
+				<target>33% Browserfenster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_height.I.3">
+				<target>50% Browserfenster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_height.I.4">
+				<target>66% Browserfenster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_height.I.5">
+				<target>75% Browserfenster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_height.I.6">
+				<target>100% Browserfenster</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_height">
+				<target>Höhe</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_width">
+				<target>Breite begrenzen auf</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_celink">
+				<target>Link um das gesamte Element</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_backgroundcolor">
+				<target>Hintergrund Farbe</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_bordercolor">
+				<target>Rahmen Farbe</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_headercolor">
+				<target>Überschrift Farbe</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_textcolor">
+				<target>Text Farbe</target>
+			</trans-unit>
+
+            <trans-unit id="tt_content.header_layout.I.1">
+                <target>Level 1</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.2">
+                <target>Level 2</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.3">
+                <target>Level 3</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.4">
+                <target>Level 4</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.5">
+                <target>Level 5</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.6">
+                <target>Level 6</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.99">
+                <target>Sichtbar im Frontend, aber kein Header</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout.I.100">
+                <target>Unsichtbar im Frontend</target>
+            </trans-unit>
+            <trans-unit id="tt_content.header_layout">
+                <target>Level (SEO)</target>
+            </trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_headerclass">
+				<target>Überschrift Layout</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_textclass">
+				<target>Text Layout</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.0">
+				<target>wie Text</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.1">
+				<target>wie Level 1</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.2">
+				<target>wie Level 2</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.3">
+				<target>wie Level 3</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.4">
+				<target>wie Level 4</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.5">
+				<target>wie Level 5</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize.I.6">
+				<target>wie Level 6</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_headerfontsize">
+				<target>Überschrift Schriftgröße</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_starter_overline">
+				<target>Overline</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_overlaytext">
+				<target>Overlay text</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_celink_text_formlabel">
+				<target>Button text</target>
+			</trans-unit>
+
+            <trans-unit id="tt_content.subheader.label">
+                <target>Subline</target>
+            </trans-unit>
+
+			<trans-unit id="tt_content.colPos.nestedContentColPos">
+				<target>Verschachteltes Element</target>
+			</trans-unit>
+
+			<trans-unit id="starter.asset_medium_references">
+				<target>alternative Medien für medium</target>
+			</trans-unit>
+			<trans-unit id="starter.asset_large_references">
+				<target>alternative Medien für large</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.imagecols">
+				<target>Bilder nebeneinander (Small)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.imagecols_medium">
+				<target>Bilder nebeneinander (Medium)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.imagecols_large">
+				<target>Bilder nebeneinander (Large)</target>
+			</trans-unit>
+			<trans-unit id="media_size_small">
+				<target>small</target>
+			</trans-unit>
+			<trans-unit id="media_size_medium">
+				<target>medium</target>
+			</trans-unit>
+			<trans-unit id="media_size_large">
+				<target>large</target>
+			</trans-unit>
+			<trans-unit id="media_size.default">
+				<target>Standard: volle Breite</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_ctalink_text_formlabel">
+				<source>Link text</source>
+				<target>Linktext</target>
+			</trans-unit>
+
+<!-- New CTypes -->
+			<trans-unit id="CType.I.starter_carousel">
+				<target>Carousel</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_carousel.description">
+				<target>Ein Bild- und Inhaltskarussell mit Animationsunterstützung</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_accordion">
+				<target>Accordion</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_accordion.description">
+				<target>Ein Bild- und Inhaltsaccordion mit Animationsunterstützung</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_tab">
+				<target>Tab</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_tab.description">
+				<target>Ein Bild- und Inhalts-Tab mit Animationsunterstützung</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_textmedia">
+				<target>Text &amp; Media</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_textmedia.description">
+				<target>Eine beliebige Anzahl von Medien mit umfließendem Text.</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_media">
+				<target>Nur Medien</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_media.description">
+				<target>Eine beliebige Anzahl von Medien.</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_gallery">
+				<target>Bildergalerie</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_gallery.description">
+				<target>Eine Bildergalerie mit beliebiger Anzahl an Bildern.</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_stop">
+				<target>Stoppe rekursive Vererbung</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_stop.description">
+				<target>Beenden der Vererbung von vorherigen Inhalten.</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_teaser">
+				<target>Teaser</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_teaser.description">
+				<target>Teaser element</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_column_grid">
+				<target>Grid column</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_column_grid.description">
+				<target>Ein Inhaltselement mit welchen Inhalte in mehrere Spalten aufgeteilt werden</target>
+			</trans-unit>
+
+<!-- CE carousel -->
+			<trans-unit id="tx_starter_carousel.type.I.0">
+				<target>Text/Media</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_carousel.type.I.1">
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_carousel.link_formlabel">
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_carousel.link_text_formlabel">
+				<target>Buttontext</target>
+			</trans-unit>
+			<trans-unit id="carousel_element_formlabel">
+				<target>Carousel items</target>
+			</trans-unit>
+
+<!-- CE accordion -->
+			<trans-unit id="tx_starter_accordion.type.I.0">
+				<target>Text/Media</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_accordion.type.I.1">
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="accordion_element_formlabel">
+				<target>Accordion element</target>
+			</trans-unit>
+
+<!-- CE teaser -->
+			<trans-unit id="tx_starter_teaser.celink_formlabel">
+				<target>Button link</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_teaser.celink_text_formlabel">
+				<target>Button text</target>
+			</trans-unit>
+
+			<!-- CE tab -->
+			<trans-unit id="tx_starter_tab.type.I.0">
+				<target>Text/Media</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_tab.type.I.1">
+				<target>Text</target>
+			</trans-unit>
+			<trans-unit id="tab_element_formlabel">
+				<target>Tab element</target>
+			</trans-unit>
+
+<!-- CE content column -->
+			<trans-unit id="starter_column_grid.tx_starter_column_element">
+				<target>Inhaltselement</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

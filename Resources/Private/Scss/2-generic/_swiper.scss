@@ -1,0 +1,17 @@
+//********************************************************************************
+//
+// Swiper / Carousel, siehe https://idangero.us/swiper/
+//
+// In dieser Konfiguration ist nur der Core, Navigation (prev / next) und Pagination (Punkte) enthalten.
+// Werden andere Komponenten benötigt, müssen diese hier eingebunden werden.
+// Dafür muss auch das Template StarterCarousel.html entsprechend geändert werden.
+//
+//********************************************************************************
+
+$starterSwiperThemeColor: gray !default;
+$themeColor: $starterSwiperThemeColor;
+
+@import "~swiper/swiper";
+
+@import "~swiper/components/navigation/navigation";
+@import "~swiper/components/pagination/pagination";

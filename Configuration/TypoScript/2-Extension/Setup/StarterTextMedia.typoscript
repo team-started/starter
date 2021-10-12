@@ -1,0 +1,43 @@
+
+tt_content.starter_textmedia =< lib.contentElement
+tt_content.starter_textmedia {
+  templateName = StarterTextMedia
+
+  dataProcessing {
+    10 = StarterTeam\Starter\DataProcessing\ImageProcessor
+    10 {
+      as = mediaFiles
+
+      fieldNames = assets,media_medium,media_large
+      table = tt_content
+
+      imageConfig {
+        default {
+          maxW = 640
+          maxH = 213
+          cropVariant = smartphone
+        }
+
+        variants {
+          5 {
+            config {
+              maxW = 800
+              maxH = 533
+              cropVariant = tablet
+              mediaQuery = (max-width: 439px)
+            }
+          }
+
+          10 {
+            config {
+              maxW = 1200
+              maxH = 800
+              cropVariant = desktop
+              mediaQuery = (min-width: 1400px)
+            }
+          }
+        }
+      }
+    }
+  }
+}

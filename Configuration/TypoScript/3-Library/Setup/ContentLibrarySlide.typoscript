@@ -1,0 +1,10 @@
+##
+# get content from the tt_content table with slide to parent page
+# fluid usage: <f:cObject typoscriptObjectPath="lib.starterDynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '0'}" />
+##
+lib.starterDynamicContentSlide =< lib.starterDynamicContent
+lib.starterDynamicContentSlide {
+  20 {
+    slide = -1
+  }
+}

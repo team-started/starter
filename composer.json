@@ -1,0 +1,34 @@
+{
+    "name": "starterteam/starter",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Marc Fell",
+            "email": "marc@fell.hamburg"
+        },
+        {
+            "name": "Christian Wolfram",
+            "email": "c.wolfram@chriwo.de"
+        }
+    ],
+    "support": {
+        "issues": "https://gitlab.com/starterteam/team/starter/-/issues"
+    },
+    "require": {
+        "php": "^7.4",
+        "typo3/cms-core": "^10.4",
+        "ichhabrecht/content-defender": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StarterTeam\\Starter\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "starter"
+        }
+    }
+}

@@ -1,0 +1,5 @@
+
+tt_content.starter_stop =< lib.contentElement
+tt_content.starter_stop {
+  templateName = StarterStop
+}

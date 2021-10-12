@@ -1,0 +1,41 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+
+		<f:comment>
+				Wenn es für jeden Breakpoint ein Hintergrundbild geben könnte.
+		</f:comment>
+
+		<f:if condition="{item.media}">
+				<f:if condition="{item.media_medium}">
+						<f:then>
+								<div class="{divClass} lazyload" data-bg="<f:uri.image src='{pathToImage}{item.media.0.originalFile.identifier}' width='{imgWidth}' />"></div>
+						</f:then>
+						<f:else>
+								<f:if condition="{item.media_large}">
+										<f:then>
+												<div class="{divClass} lazyload" data-bg="<f:uri.image src='{pathToImage}{item.media.0.originalFile.identifier}' width='{imgWidth}' />"></div>
+										</f:then>
+										<f:else>
+												<div class="{divClass} lazyload" data-bg="<f:uri.image src='{pathToImage}{item.media.0.originalFile.identifier}' width='{imgWidth}' />"></div>
+										</f:else>
+								</f:if>
+						</f:else>
+				</f:if>
+		</f:if>
+
+		<f:if condition="{item.media_medium}">
+				<f:if condition="{item.media_large}">
+						<f:then>
+								<div class="{divClass} lazyload" data-bg="<f:uri.image src='{pathToImage}{item.media_medium.0.originalFile.identifier}' width='{imgWidth}' />"></div>
+						</f:then>
+						<f:else>
+								<div class="{divClass} lazyload" data-bg="<f:uri.image src='{pathToImage}{item.media_medium.0.originalFile.identifier}' width='{imgWidth}' />"></div>
+						</f:else>
+				</f:if>
+		</f:if>
+
+		<f:if condition="{item.media_large}">
+				<div class="{divClass} lazyload" data-bg="<f:uri.image src='{pathToImage}{item.media_large.0.originalFile.identifier}' width='{imgWidth}' />"></div>
+		</f:if>
+
+</html>

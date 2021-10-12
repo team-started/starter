@@ -1,0 +1,25 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+	<div class="swiper-container">
+
+		<div class="swiper-wrapper">
+			<f:for each="{carouselContent}" as="item" iteration="iterator">
+				<f:render partial="Carousel/Item" arguments="{item: item, slideIndex: iterator.index}"/>
+			</f:for>
+		</div>
+
+		<div class="swiper-pagination"></div>
+
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+
+	</div>
+
+</f:section>
+
+</html>

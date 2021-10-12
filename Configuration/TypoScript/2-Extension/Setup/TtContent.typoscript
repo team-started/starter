@@ -1,0 +1,25 @@
+lib.contentElement {
+  templateRootPaths {
+    # override fluid_styled_content templates
+    10 = EXT:starter/Resources/Private/FluidStyledContent/Templates/
+
+    # content element rendering of starter ctypes
+    15 = EXT:starter/Resources/Private/Starter/Templates/
+  }
+
+  partialRootPaths {
+    # override fluid_styled_content partials
+    10 = EXT:starter/Resources/Private/FluidStyledContent/Partials/
+
+    # content element rendering of starter ctypes
+    15 = EXT:starter/Resources/Private/Starter/Partials/
+  }
+
+  layoutRootPaths {
+    # override fluid_styled_content layouts
+    10 = EXT:starter/Resources/Private/FluidStyledContent/Layouts/
+
+    # content element rendering of starter ctypes
+    15 = EXT:starter/Resources/Private/Starter/Layouts/
+  }
+}

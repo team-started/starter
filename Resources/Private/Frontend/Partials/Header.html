@@ -1,0 +1,17 @@
+<header>
+	<div class="o-site-header__wrapper">
+		<div class="grid-container o-site-header o-site-header--small show-for-small-only">
+			<button class="hamburger hamburger--spring" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+			<img class="o-site-header__logo o-site-header__logo--small" src="{f:uri.image(src: settings.logoFile)}" alt="" />
+		</div>
+		<div class="grid-container o-site-header o-site-header--large show-for-medium">
+			<img class="o-site-header__logo o-site-header__logo--large" src="{f:uri.image(src: settings.logoFile)}" alt="" />
+			<f:render partial="Navigation/MenuMain" arguments="{menuMain: menuMain}"/>
+		</div>
+	</div>
+	<div class="o-site-header__spacer"></div>
+</header>

@@ -1,0 +1,69 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:spaceless>
+
+	<f:if condition="{data.colPos} < 50">
+		<f:then>
+			<div
+				class="grid-container {data.tx_starter_gridcontainer} {data.tx_starter_width} {data.tx_starter_showbyscreensize} {data.tx_starter_hidebyscreensize}	{data.tx_starter_orientationdetection}">
+				<div class="grid-x grid-margin-x {data.tx_starter_flexhalign}">
+
+					<div id="c{data.uid}"
+						 class="cell ctype-{data.CType}	{data.tx_starter_cellss} {data.tx_starter_cellsm} {data.tx_starter_cellsl} {data.tx_starter_gridautosizings} {data.tx_starter_gridautosizingm} {data.tx_starter_gridautosizingl} {data.tx_starter_showbyscreensize}	{data.tx_starter_hidebyscreensize} {data.tx_starter_orientationdetection} {data.tx_starter_gridoffsets} {data.tx_starter_gridoffsetm} {data.tx_starter_gridoffsetl} {data.tx_starter_flexorderings}	{data.tx_starter_flexorderingm}	{data.tx_starter_flexorderingl}	{data.tx_starter_flexvalignself} {data.frame_class}	{data.layout} {data.tx_starter_textclass} {data.tx_starter_textcolor} {data.space_before_class}	{data.space_after_class} {data.tx_starter_backgroundcolor}">
+
+						<f:render section="Before" optional="true">
+							<f:render partial="DropIn/Before/All" arguments="{_all}"/>
+						</f:render>
+
+						<f:render section="Header" optional="true">
+							<f:render partial="Header/All" arguments="{_all}"/>
+						</f:render>
+
+						<f:render section="Main" optional="true"/>
+
+						<f:render section="Footer" optional="true">
+							<f:render partial="Footer/All" arguments="{_all}"/>
+						</f:render>
+
+						<f:render section="After" optional="true">
+							<f:render partial="DropIn/After/All" arguments="{_all}"/>
+						</f:render>
+
+					</div>
+
+				</div>
+			</div>
+		</f:then>
+
+		<f:else>
+
+			<div id="c{data.uid}"
+				 class="cell ctype-{data.CType}	{data.tx_starter_cellss} {data.tx_starter_cellsm} {data.tx_starter_cellsl} {data.tx_starter_gridautosizings} {data.tx_starter_gridautosizingm} {data.tx_starter_gridautosizingl} {data.tx_starter_showbyscreensize}	{data.tx_starter_hidebyscreensize} {data.tx_starter_orientationdetection} {data.tx_starter_gridoffsets} {data.tx_starter_gridoffsetm} {data.tx_starter_gridoffsetl} {data.tx_starter_flexorderings}	{data.tx_starter_flexorderingm}	{data.tx_starter_flexorderingl}	{data.tx_starter_flexvalignself} {data.frame_class}	{data.layout} {data.tx_starter_textclass} {data.tx_starter_textcolor} {data.space_before_class}	{data.space_after_class} {data.tx_starter_backgroundcolor}">
+
+				<f:render section="Before" optional="true">
+					<f:render partial="DropIn/Before/All" arguments="{_all}"/>
+				</f:render>
+
+				<f:render section="Header" optional="true">
+					<f:render partial="Header/All" arguments="{_all}"/>
+				</f:render>
+
+				<f:render section="Main" optional="true"/>
+
+				<f:render section="Footer" optional="true">
+					<f:render partial="Footer/All" arguments="{_all}"/>
+				</f:render>
+
+				<f:render section="After" optional="true">
+					<f:render partial="DropIn/After/All" arguments="{_all}"/>
+				</f:render>
+
+			</div>
+
+		</f:else>
+	</f:if>
+
+</f:spaceless>
+
+</html>

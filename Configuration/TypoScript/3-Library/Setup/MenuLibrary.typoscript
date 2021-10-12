@@ -1,0 +1,39 @@
+lib.menuLibrary {
+
+  // Standard MenuMain (mit Dropdown für die 2. Ebene)
+  menuMain = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  menuMain {
+    as = menuMain
+    levels = 2
+    expandAll = 1
+  }
+
+  // Mobile Navi (Drilldown)
+  menuDrilldown = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  menuDrilldown {
+    as = menuDrilldown
+    levels = 3
+    expandAll = 1
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = media
+      }
+    }
+  }
+
+  menuLanguage = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+  menuLanguage {
+    languages = auto
+    as = menuLanguage
+  }
+
+  // Breadcumb
+  menuBreadcrumb = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  menuBreadcrumb {
+    as = menuBreadcrumb
+    special = rootline
+    special.range = 0|-1
+    includeNotInMenu = 1
+  }
+}

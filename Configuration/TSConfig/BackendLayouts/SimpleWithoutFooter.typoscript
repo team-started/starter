@@ -1,0 +1,31 @@
+mod.web_layout.BackendLayouts {
+  SimpleWithoutFooter {
+    title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:backend_layout.simple_without_footer.title
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                name = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:backend_layout.row.header_inherited
+                colPos = 1
+                maxitems = 1
+              }
+            }
+          }
+
+          2 {
+            columns {
+              1 {
+                name = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:backend_layout.row.content
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

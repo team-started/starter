@@ -1,0 +1,101 @@
+mod.wizards.newContentElement.wizardItems {
+  common {
+    elements {
+
+      starter_textmedia {
+        iconIdentifier = starter-ctype-starter_textmedia
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_textmedia
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_textmedia.description
+        tt_content_defValues {
+          CType = starter_textmedia
+        }
+      }
+
+      starter_media {
+        iconIdentifier = starter-ctype-starter_media
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_media
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_media.description
+        tt_content_defValues {
+          CType = starter_media
+        }
+      }
+
+      starter_teaser {
+        iconIdentifier = starter-ctype-starter_teaser
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_teaser
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_teaser.description
+        tt_content_defValues {
+          CType = starter_teaser
+        }
+      }
+
+      starter_carousel {
+        iconIdentifier = starter-ctype-starter_carousel
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_carousel
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_carousel.description
+        tt_content_defValues {
+          CType = starter_carousel
+        }
+      }
+
+      starter_accordion {
+        iconIdentifier = starter-ctype-starter_accordion
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_accordion
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_accordion.description
+        tt_content_defValues {
+          CType = starter_accordion
+        }
+      }
+
+      starter_tab {
+        iconIdentifier = starter-ctype-starter_tab
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_tab
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_tab.description
+        tt_content_defValues {
+          CType = starter_tab
+        }
+      }
+
+      starter_gallery {
+        iconIdentifier = starter-ctype-starter_gallery
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_gallery
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_gallery.description
+        tt_content_defValues {
+          CType = starter_gallery
+        }
+      }
+
+      starter_column_grid {
+        iconIdentifier = starter-ctype-starter_column_grid
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_column_grid
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_column_grid.description
+        tt_content_defValues {
+          CType = starter_column_grid
+        }
+      }
+    }
+
+    show = header, text, starter_teaser, starter_textmedia, starter_carousel, starter_accordion, starter_tab, starter_media, starter_gallery, starter_column_grid
+  }
+
+  special {
+    elements {
+
+      starter_stop {
+        iconIdentifier = starter-ctype-starter_stop
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_stop
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_stop.description
+        tt_content_defValues {
+          CType = starter_stop
+        }
+      }
+
+      bullets < mod.wizards.newContentElement.wizardItems.common.elements.bullets
+      table < mod.wizards.newContentElement.wizardItems.common.elements.table
+      uploads < mod.wizards.newContentElement.wizardItems.common.elements.uploads
+      html < mod.wizards.newContentElement.wizardItems.special.elements.html
+    }
+
+    show = starter_stop, shortcut, bullets, table, uploads, html
+  }
+}

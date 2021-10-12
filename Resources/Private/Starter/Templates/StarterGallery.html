@@ -1,0 +1,20 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+	<div class="o-gallery">
+		<div class="">
+			<f:for each="{mediaFiles.assets}" as="assetData">
+				<div class="">
+					<f:render partial="Media/Type" arguments="{file: assetData}"/>
+				</div>
+			</f:for>
+		</div>
+	</div>
+
+</f:section>
+
+</html>

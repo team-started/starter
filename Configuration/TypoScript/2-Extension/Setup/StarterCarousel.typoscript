@@ -1,0 +1,56 @@
+
+tt_content.starter_carousel =< lib.contentElement
+tt_content.starter_carousel {
+  templateName = StarterCarousel
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    10 {
+      table = tx_starter_carousel_element
+      where {
+        data = field:uid
+        wrap = tt_content_carousel=|
+      }
+      orderBy = sorting
+      as = carouselContent
+
+      dataProcessing {
+        10 = StarterTeam\Starter\DataProcessing\ImageProcessor
+        10 {
+          as = mediaFiles
+
+          fieldNames = assets
+          table = tx_starter_carousel_element
+
+          imageConfig {
+            default {
+              maxW = 640
+              maxH = 213
+              cropVariant = smartphone
+            }
+
+            variants {
+              5 {
+                config {
+                  maxW = 800
+                  maxH = 533
+                  cropVariant = tablet
+                  mediaQuery = (max-width: 439px)
+                }
+              }
+
+              10 {
+                config {
+                  maxW = 1200
+                  maxH = 800
+                  cropVariant = desktop
+                  mediaQuery = (min-width: 1400px)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

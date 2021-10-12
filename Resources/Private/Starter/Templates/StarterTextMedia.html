@@ -1,0 +1,39 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+	<div class="{mediaFiles.wrapper.outerWrapperClasses}">
+		<f:if condition="{mediaFiles.wrapper.y} != 'below'">
+			<div class="{mediaFiles.wrapper.imageWrapperClasses}">
+				<f:for each="{mediaFiles.assets}" as="image">
+					<f:render partial="Media/Type" arguments="{file: image}"/>
+				</f:for>
+			</div>
+		</f:if>
+
+		<f:if condition="{data.bodytext}">
+			<div class="{mediaFiles.wrapper.textWrapperClasses}">
+				<f:render
+					partial="General/Bodytext"
+					arguments="{
+						bodytext: data.bodytext,
+						textclass: data.tx_starter_textclass,
+						textcolor: data.tx_starter_textcolor}"
+				/>
+			</div>
+		</f:if>
+
+		<f:if condition="{mediaFiles.wrapper.y} == 'below'">
+			<div class="{mediaFiles.wrapper.imageWrapperClasses}">
+				<f:for each="{mediaFiles.assets}" as="image">
+					<f:render partial="Media/Type" arguments="{file: image}"/>
+				</f:for>
+			</div>
+		</f:if>
+	</div>
+</f:section>
+
+</html>
