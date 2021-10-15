@@ -1,6 +1,6 @@
 <?php
 
-$EM_CONF[$_EXTKEY] = [
+$EM_CONF['starter'] = [
     'title' => 'Starter',
     'description' => '',
     'category' => 'plugin',
