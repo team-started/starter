@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Utility;
 
 /**

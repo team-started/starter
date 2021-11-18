@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 return (function () {
@@ -68,7 +69,7 @@ return (function () {
                     'assets' => [
                         'config' => [
                             'eval' => 'required',
-                            'minitems' => 1
+                            'minitems' => 1,
                         ],
                     ],
                 ],
@@ -92,7 +93,7 @@ return (function () {
 
         'palettes' => [
             'tab_start' => [
-                'showitem' => 'type, layout'
+                'showitem' => 'type, layout',
             ],
             'tab_element_header' => [
                 'showitem' => '
@@ -104,7 +105,7 @@ return (function () {
             'starterMediaAdjustments' => [
                 'showitem' => '
                     media_size_small, media_size_medium, media_size_large
-                '
+                ',
             ],
             'gallerySettings' => [
                 'showitem' => '
@@ -115,7 +116,7 @@ return (function () {
             'tab_media' => [
                 'showitem' => '
                     assets, --linebreak--, assets_medium, --linebreak--, assets_large
-                '
+                ',
             ],
             'hidden' => [
                 'showitem' => '
@@ -148,7 +149,7 @@ return (function () {
                         [
                             0 => '',
                             1 => '',
-                        ]
+                        ],
                     ],
                 ],
             ],
@@ -263,7 +264,7 @@ return (function () {
                     ],
                     'size' => 1,
                     'maxitems' => 1,
-                ]
+                ],
             ],
             'layout' => [
                 'exclude' => true,
@@ -274,11 +275,11 @@ return (function () {
                     'items' => [
                         [
                             'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            ''
+                            '',
                         ],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'header' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -323,57 +324,57 @@ return (function () {
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
                             0,
-                            'content-beside-text-img-above-center'
+                            'content-beside-text-img-above-center',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.1',
                             1,
-                            'content-beside-text-img-above-right'
+                            'content-beside-text-img-above-right',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.2',
                             2,
-                            'content-beside-text-img-above-left'
+                            'content-beside-text-img-above-left',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
                             8,
-                            'content-beside-text-img-below-center'
+                            'content-beside-text-img-below-center',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.4',
                             9,
-                            'content-beside-text-img-below-right'
+                            'content-beside-text-img-below-right',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.5',
                             10,
-                            'content-beside-text-img-below-left'
+                            'content-beside-text-img-below-left',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.6',
                             17,
-                            'content-inside-text-img-right'
+                            'content-inside-text-img-right',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.7',
                             18,
-                            'content-inside-text-img-left'
+                            'content-inside-text-img-left',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.8',
-                            '--div--'
+                            '--div--',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
                             25,
-                            'content-beside-text-img-right'
+                            'content-beside-text-img-right',
                         ],
                         [
                             'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
                             26,
-                            'content-beside-text-img-left'
-                        ]
+                            'content-beside-text-img-left',
+                        ],
                     ],
                     'default' => 26,
                     'fieldWizard' => [
@@ -381,7 +382,7 @@ return (function () {
                             'disabled' => false,
                         ],
                     ],
-                ]
+                ],
             ],
             'image_zoom' => [
                 'exclude' => true,
@@ -390,10 +391,10 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
-                        ]
-                    ]
-                ]
+                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled',
+                        ],
+                    ],
+                ],
             ],
             'imagecols' => [
                 'exclude' => true,
@@ -409,10 +410,10 @@ return (function () {
                         ['5', 5],
                         ['6', 6],
                         ['7', 7],
-                        ['8', 8]
+                        ['8', 8],
                     ],
-                    'default' => 1
-                ]
+                    'default' => 1,
+                ],
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
@@ -427,9 +428,9 @@ return (function () {
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                    ]
-                                ]
+                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    ],
+                                ],
                             ],
                             'types' => [
                                 '0' => [
@@ -446,7 +447,7 @@ return (function () {
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -466,9 +467,9 @@ return (function () {
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                    ]
-                                ]
+                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    ],
+                                ],
                             ],
                             'types' => [
                                 '0' => [
@@ -485,7 +486,7 @@ return (function () {
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -505,9 +506,9 @@ return (function () {
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                    ]
-                                ]
+                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    ],
+                                ],
                             ],
                             'types' => [
                                 '0' => [
@@ -524,7 +525,7 @@ return (function () {
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -553,8 +554,8 @@ return (function () {
                         [$translateFile . 'media_size.10', 'small-10'],
                         [$translateFile . 'media_size.11', 'small-11'],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'media_size_medium' => [
                 'exclude' => true,
@@ -578,8 +579,8 @@ return (function () {
                         [$translateFile . 'media_size.10', 'medium-10'],
                         [$translateFile . 'media_size.11', 'medium-11'],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'media_size_large' => [
                 'exclude' => true,
@@ -603,8 +604,8 @@ return (function () {
                         [$translateFile . 'media_size.10', 'large-10'],
                         [$translateFile . 'media_size.11', 'large-11'],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
         ],
     ];

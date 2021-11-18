@@ -19,48 +19,48 @@ class ConfigurationUtility
         'starter_carousel' => [
             'typeIconClass' => 'content-carousel',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-carousel.svg',
-            'previewTemplate' => 'Carousel'
+            'previewTemplate' => 'Carousel',
         ],
         'starter_accordion' => [
             'typeIconClass' => 'content-accordion',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-accordion.svg',
-            'previewTemplate' => 'Accordion'
+            'previewTemplate' => 'Accordion',
         ],
         'starter_tab' => [
             'typeIconClass' => 'content-tab',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-tab.svg',
-            'previewTemplate' => 'Tab'
+            'previewTemplate' => 'Tab',
         ],
         'starter_textmedia' => [
             'typeIconClass' => 'mimetypes-x-content-text-media',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/mimetypes/mimetypes-x-content-text-media.svg',
-            'previewTemplate' => 'TextMedia'
+            'previewTemplate' => 'TextMedia',
         ],
         'starter_media' => [
             'typeIconClass' => 'mimetypes-media-video',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/mimetypes/mimetypes-media-video.svg',
-            'previewTemplate' => 'Media'
+            'previewTemplate' => 'Media',
         ],
         'starter_gallery' => [
             'typeIconClass' => 'content-image',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-image.svg',
-            'previewTemplate' => 'Gallery'
+            'previewTemplate' => 'Gallery',
         ],
         'starter_stop' => [
             'typeIconClass' => 'starter-ctype-starter_stop',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/apps/apps-pagetree-drag-place-denied.svg',
-            'previewTemplate' => 'Stop'
+            'previewTemplate' => 'Stop',
         ],
         'starter_teaser' => [
             'typeIconClass' => 'starter-ctype-starter_teaser',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text-teaser.svg',
-            'previewTemplate' => 'Teaser'
+            'previewTemplate' => 'Teaser',
         ],
         'starter_column_grid' => [
             'typeIconClass' => 'starter-ctype-starter_column_grid',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text-columns.svg',
-            'previewTemplate' => 'ColumnGrid'
-        ]
+            'previewTemplate' => 'ColumnGrid',
+        ],
     ];
 
     /**
@@ -70,33 +70,31 @@ class ConfigurationUtility
      */
     public static $contentElementTables = [
         'tx_starter_carousel_element_image' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-image.svg'
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-image.svg',
         ],
         'tx_starter_carousel_element_text' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text.svg'
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text.svg',
         ],
         'tx_starter_accordion_element_image' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-textpic.svg'
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-textpic.svg',
         ],
         'tx_starter_accordion_element_text' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text.svg'
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text.svg',
         ],
         'tx_starter_tab_element_image' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-textpic.svg'
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-textpic.svg',
         ],
         'tx_starter_tab_element_text' => [
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text.svg'
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text.svg',
         ],
     ];
 
     /**
-     *
      * @param string $table
      * @param string $cType
      * @param string $field
      * @param array $customerSettingOverride
      * @param array $removeSettings
-     * @return void
      */
     public static function overrideCropSettings(
         string $table,
@@ -147,7 +145,6 @@ class ConfigurationUtility
     }
 
     /**
-     *
      * @param array $customSettingOverride
      * @param array $removeSettings
      * @return array
@@ -161,19 +158,19 @@ class ConfigurationUtility
                 'allowedAspectRatios' => [
                     'square' => [
                         'title' => 'Quadrat (1 : 1)',
-                        'value' => 1.0
+                        'value' => 1.0,
                     ],
 
                     'portrait' => [
                         'title' => 'Portrait (2 : 3)',
-                        'value' => 0.6666666667
+                        'value' => 0.6666666667,
                     ],
 
                     'portrait2' => [
                         'title' => 'Portrait (3 : 4)',
-                        'value' => 0.75
-                    ]
-                ]
+                        'value' => 0.75,
+                    ],
+                ],
             ],
             'tablet' => [
                 'title' => 'Default Tablet',
@@ -181,32 +178,32 @@ class ConfigurationUtility
                 'allowedAspectRatios' => [
                     'square' => [
                         'title' => 'Quadrat (1 : 1)',
-                        'value' => 1.0
+                        'value' => 1.0,
                     ],
 
                     'portrait' => [
                         'title' => 'Portrait (2 : 3)',
-                        'value' => 0.6666666667
+                        'value' => 0.6666666667,
                     ],
 
                     'portrait2' => [
                         'title' => 'Portrait (3 : 4)',
-                        'value' => 0.75
+                        'value' => 0.75,
                     ],
 
                     'quer' => [
                         'title' => 'Querformat 2 (3 : 2)',
-                        'value' => 1.5
+                        'value' => 1.5,
                     ],
 
                     'quer2' => [
                         'title' => 'Querformat (4 : 3)',
-                        'value' => 1.3333333333
+                        'value' => 1.3333333333,
                     ],
 
                     'wide' => [
                         'title' => 'Wide Screen (16 : 9)',
-                        'value' => 1.7777777778
+                        'value' => 1.7777777778,
                     ],
                 ],
             ],
@@ -216,47 +213,47 @@ class ConfigurationUtility
                 'allowedAspectRatios' => [
                     'NaN' => [
                         'title' => 'Free',
-                        'value' => 0.0
+                        'value' => 0.0,
                     ],
                     'cinema' => [
                         'title' => 'Kino (2.35 : 1)',
-                        'value' => 2.35
+                        'value' => 2.35,
                     ],
                     'square' => [
                         'title' => 'Quadrat (1 : 1)',
-                        'value' => 1.0
+                        'value' => 1.0,
                     ],
 
                     'portrait' => [
                         'title' => 'Portrait (2 : 3)',
-                        'value' => 0.6666666667
+                        'value' => 0.6666666667,
                     ],
 
                     'portrait2' => [
                         'title' => 'Portrait (3 : 4)',
-                        'value' => 0.75
+                        'value' => 0.75,
                     ],
 
                     'quer' => [
                         'title' => 'Querformat 2 (3 : 2)',
-                        'value' => 1.5
+                        'value' => 1.5,
                     ],
 
                     'quer2' => [
                         'title' => 'Querformat (4 : 3)',
-                        'value' => 1.3333333333
+                        'value' => 1.3333333333,
                     ],
 
                     'wide' => [
                         'title' => 'Wide Screen (16 : 9)',
-                        'value' => 1.7777777778
+                        'value' => 1.7777777778,
                     ],
 
                     'ultrawide' => [
                         'title' => 'Ultrawide Screen (32 : 9)',
-                        'value' => 3.55555556
+                        'value' => 3.55555556,
                     ],
-                ]
+                ],
             ],
         ];
 
@@ -279,12 +276,12 @@ class ConfigurationUtility
     }
 
     public static $contentGridElementsColPos = [
-        'tx_starter_column_element' => 1705
+        'tx_starter_column_element' => 1705,
     ];
 
     /**
      * @param array $formDataResult
-     * @return null|array
+     * @return array|null
      */
     public static function getInlineElementSettings(array $formDataResult): ?array
     {
@@ -295,7 +292,7 @@ class ConfigurationUtility
         $inlineContentSettings = array_filter(
             $formDataResult['pageTsConfig']['tx_starter.']['inlineContentElementSettings.'],
             function ($itemSettings) use ($currentColPos) {
-                return ((int)$itemSettings['colPos'] === $currentColPos ? true : false);
+                return (int)$itemSettings['colPos'] === $currentColPos ? true : false;
             }
         );
         $inlineContentSettings = array_shift($inlineContentSettings);

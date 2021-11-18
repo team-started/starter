@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\DataProcessing;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;
@@ -14,7 +15,6 @@ class ColumnGridDataProcessor implements DataProcessorInterface
      * @var ContentObjectRenderer
      */
     protected $contentObjectRender;
-
 
     public function process(
         ContentObjectRenderer $contentObjectRenderer,
@@ -47,7 +47,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
             'tt_content',
             [
                 'where' => sprintf($tableField . ' = %s', $processedData['uid']),
-                'sorting' => 'sorting'
+                'sorting' => 'sorting',
             ]
         );
     }
@@ -56,7 +56,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
     {
         $translatedColumnGridItem = [
             'data' => $data,
-            'renderedHtml' => $this->renderColumnsGridContent($data)
+            'renderedHtml' => $this->renderColumnsGridContent($data),
         ];
 
         return $translatedColumnGridItem;
@@ -73,8 +73,8 @@ class ColumnGridDataProcessor implements DataProcessorInterface
                 'select.' => [
                     'uidInList' => $data['uid'],
                     'where' =>
-                        '{#colPos}=' . ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element']
-                ]
+                        '{#colPos}=' . ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
+                ],
             ]
         );
 

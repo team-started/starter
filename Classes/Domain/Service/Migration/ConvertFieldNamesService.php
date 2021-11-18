@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Domain\Service\Migration;
 
 use StarterTeam\Starter\Utility\ObjectUtility;
@@ -41,8 +42,8 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
             'media_size_medium',
             'media_size_large',
             'imagecols_medium',
-            'imagecols_large'
-        ]
+            'imagecols_large',
+        ],
     ];
 
     /**
@@ -56,8 +57,8 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
             'tx_starter_media_size_medium',
             'tx_starter_media_size_large',
             'tx_starter_imagecols_medium',
-            'tx_starter_imagecols_large'
-        ]
+            'tx_starter_imagecols_large',
+        ],
     ];
 
     /**
@@ -78,16 +79,14 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         return $this->oldFieldsPrepared();
     }
 
-
     public function getPrerequisites(): array
     {
         return [
-            DatabaseUpdatedPrerequisite::class
+            DatabaseUpdatedPrerequisite::class,
         ];
     }
 
     /**
-     *
      * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
@@ -186,7 +185,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     *
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function migrateSysFileReference()
@@ -211,7 +209,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      * @param string $table
      * @param string $oldFieldName
      * @param string $newFieldName
-     * @return void
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function copyFieldData(string $table, string $oldFieldName, string $newFieldName)
@@ -229,7 +226,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      *
      * @param string $table
      * @param string $oldFieldName
-     * @return void
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function alterTable(string $table, string $oldFieldName)

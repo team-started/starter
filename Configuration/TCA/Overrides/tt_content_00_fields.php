@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') or die();
 
 (function () {
@@ -23,8 +24,8 @@ defined('TYPO3_MODE') or die();
                             ],
                         ],
                     ],
-                    'softref' => 'typolink'
-                ]
+                    'softref' => 'typolink',
+                ],
             ],
             'tx_starter_celink_text' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -50,7 +51,7 @@ defined('TYPO3_MODE') or die();
                             'options' => [
                                 'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
                                 'blindLinkOptions' => 'folder, spec, telephone',
-                                'blindLinkFields' => 'class, params, target'
+                                'blindLinkFields' => 'class, params, target',
                             ],
                         ],
                     ],
@@ -78,7 +79,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_bordercolor' => [
                 'exclude' => true,
@@ -91,7 +92,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_headercolor' => [
                 'exclude' => true,
@@ -104,7 +105,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_textcolor' => [
                 'exclude' => true,
@@ -117,7 +118,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_headerclass' => [
                 'exclude' => true,
@@ -130,7 +131,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_textclass' => [
                 'exclude' => true,
@@ -143,7 +144,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_headerfontsize' => [
                 'exclude' => true,
@@ -163,7 +164,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_overline' => [
                 'exclude' => true,
@@ -171,7 +172,7 @@ defined('TYPO3_MODE') or die();
                 'config' => [
                     'type' => 'input',
                     'size' => 80,
-                    'max' => 80
+                    'max' => 80,
                 ],
             ],
             'tx_starter_overlay_text' => [
@@ -183,7 +184,7 @@ defined('TYPO3_MODE') or die();
                     'cols' => '80',
                     'rows' => '15',
                     'softref' => 'typolink_tag,images,email[subst],url',
-                ]
+                ],
             ],
             'tx_starter_width' => [
                 'exclude' => true,
@@ -196,7 +197,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_height' => [
                 'exclude' => true,
@@ -215,7 +216,7 @@ defined('TYPO3_MODE') or die();
                     ],
                     'maxitems' => 1,
                 ],
-                'default' => ''
+                'default' => '',
             ],
             'tx_starter_assets_medium' => [
                 'label' => $translationFile . ':starter.asset_medium_references',
@@ -241,7 +242,7 @@ defined('TYPO3_MODE') or die();
                                     'showitem' => '
                                     --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                     --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -272,7 +273,7 @@ defined('TYPO3_MODE') or die();
                                     'showitem' => '
                                     --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                     --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -288,8 +289,8 @@ defined('TYPO3_MODE') or die();
                     'items' => [
                         [$translationFile . ':media_size.default', ''],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'tx_starter_media_size_medium' => [
                 'exclude' => true,
@@ -300,8 +301,8 @@ defined('TYPO3_MODE') or die();
                     'items' => [
                         [$translationFile . ':tt_content.label.inheritfromsmallerdisplay', ''],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'tx_starter_media_size_large' => [
                 'exclude' => true,
@@ -312,8 +313,8 @@ defined('TYPO3_MODE') or die();
                     'items' => [
                         [$translationFile . ':tt_content.label.inheritfromsmallerdisplay', ''],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'tx_starter_imagecols_medium' => $GLOBALS['TCA']['tt_content']['columns']['imagecols'],
             'tx_starter_imagecols_large' => $GLOBALS['TCA']['tt_content']['columns']['imagecols'],

@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Utility;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;

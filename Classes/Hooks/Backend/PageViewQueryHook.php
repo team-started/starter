@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Hooks\Backend;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;
@@ -19,8 +20,6 @@ class PageViewQueryHook
      * @param array $additionalConstraints
      * @param string[] $fieldList
      * @param QueryBuilder $queryBuilder
-     *
-     * @return void
      */
     public function modifyQuery(
         $parameters,
@@ -37,7 +36,7 @@ class PageViewQueryHook
                 $queryBuilder->expr()->notIn(
                     'colPos',
                     [
-                        ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element']
+                        ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
                     ]
                 )
             );

@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 // add content element type icons
@@ -9,7 +10,7 @@ defined('TYPO3_MODE') || die();
             [
                 'ctrl' => [
                     'typeicon_classes' => [
-                        $ceId => $properties['typeIconClass']
+                        $ceId => $properties['typeIconClass'],
                     ],
                 ],
             ]
@@ -28,7 +29,7 @@ defined('TYPO3_MODE') || die();
                 'starterMedia' => [
                     'showitem' => '
                         assets, --linebreak--, tx_starter_assets_medium, --linebreak--, tx_starter_assets_large
-                    '
+                    ',
                 ],
                 'starterMediaAdjustments' => [
                     'showitem' => '
@@ -37,26 +38,26 @@ defined('TYPO3_MODE') || die();
                         imagecols;LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.imagecols,
                         tx_starter_imagecols_medium;LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.imagecols_medium,
                         tx_starter_imagecols_large;LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.imagecols_large
-                    '
+                    ',
                 ],
                 'starterMediaGallerySettings' => [
                     'showitem' => '
                         imageorient;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient_formlabel
-                    '
+                    ',
                 ],
                 'starterGallerySettings' => [
                     'showitem' => '
                         imagecols;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imagecols_formlabel
-                    '
+                    ',
                 ],
                 'starterTextOptionPalette' => [
-                    'showitem' => 'tx_starter_textclass, tx_starter_textcolor'
+                    'showitem' => 'tx_starter_textclass, tx_starter_textcolor',
                 ],
                 'starterCta' => [
-                    'showitem' => 'tx_starter_ctalink, tx_starter_ctalink_text'
+                    'showitem' => 'tx_starter_ctalink, tx_starter_ctalink_text',
                 ],
                 'starterAppearanceColor' => [
-                    'showitem' => 'tx_starter_backgroundcolor, tx_starter_bordercolor'
+                    'showitem' => 'tx_starter_backgroundcolor, tx_starter_bordercolor',
                 ],
                 'starterCeTeaserGeneral' => [
                     'showitem' => '
@@ -74,7 +75,7 @@ defined('TYPO3_MODE') || die();
                         header_layout;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout_formlabel,
                         tx_starter_headerclass,
                         tx_starter_headerfontsize
-                    '
+                    ',
                 ],
             ],
         ]

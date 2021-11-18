@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 (function () {
@@ -15,12 +16,12 @@ defined('TYPO3_MODE') || die();
         );
     }
 
-    if (TYPO3_MODE == "BE") {
-        $GLOBALS['TBE_STYLES']['skins']['starter'] = array (
+    if (TYPO3_MODE == 'BE') {
+        $GLOBALS['TBE_STYLES']['skins']['starter'] = [
             'name' => 'starter',
-            'stylesheetDirectories' => array(
-                'css' => 'EXT:starter/Resources/Public/Backend/Css/'
-            )
-        );
+            'stylesheetDirectories' => [
+                'css' => 'EXT:starter/Resources/Public/Backend/Css/',
+            ],
+        ];
     }
 })();

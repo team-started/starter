@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Hooks\PageLayoutView;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;
@@ -34,12 +35,12 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
     {
         $this->view = $view ?: GeneralUtility::makeInstance(StandaloneView::class);
 
-        # add content element for preview renderer
+        // add content element for preview renderer
         foreach (ConfigurationUtility::$contentElements as $cType => $properties) {
             $this->supportedContentTypes = array_merge_recursive(
                 $this->supportedContentTypes,
                 [
-                    $cType => $properties['previewTemplate']
+                    $cType => $properties['previewTemplate'],
                 ]
             );
         }
@@ -54,7 +55,6 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
      * @param string $headerContent : The content of the item header
      * @param string $itemContent : The content of the item itself
      * @param array $row : The current data row for this item
-     * @return void
      * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
@@ -102,7 +102,6 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
     /**
      * @param array $pageTsConfig
      * @param string $contentType
-     * @return void
      */
     protected function configureView(array $pageTsConfig, $contentType)
     {
@@ -115,7 +114,6 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
     }
 
     /**
-     *
      * @param array $row
      * @param array $processedRow
      * @return array
@@ -125,14 +123,13 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
         $viewVariables = [
             'row' => $row,
             'processedRow' => $processedRow,
-            'previewColumns' => $this->getInlineRelationColumns($processedRow['tx_starter_column_element'])
+            'previewColumns' => $this->getInlineRelationColumns($processedRow['tx_starter_column_element']),
         ];
 
         return $viewVariables;
     }
 
     /**
-     *
      * @param array $databaseRow
      * @param array $processedTcaColumns
      * @return array

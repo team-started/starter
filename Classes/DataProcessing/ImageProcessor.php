@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\DataProcessing;
 
 use StarterTeam\Starter\Service\ImageProcessingService;

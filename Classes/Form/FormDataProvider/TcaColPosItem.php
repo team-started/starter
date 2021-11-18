@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Form\FormDataProvider;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;
@@ -26,7 +27,7 @@ class TcaColPosItem implements FormDataProviderInterface
             [
                 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.colPos.nestedContentColPos',
                 $result['databaseRow']['colPos'],
-            ]
+            ],
         ];
         unset($result['processedTca']['columns']['colPos']['config']['itemsProcFunc']);
 

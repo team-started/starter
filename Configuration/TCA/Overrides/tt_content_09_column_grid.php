@@ -1,7 +1,8 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
-(function (){
+(function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
@@ -35,16 +36,16 @@ defined('TYPO3_MODE') || die();
                         'columns' => [
                             'CType' => [
                                 'config' => [
-                                    'default' => 'text'
-                                ]
+                                    'default' => 'text',
+                                ],
                             ],
                             'colPos' => [
                                 'config' => [
                                     'default' => \StarterTeam\Starter\Utility\ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
-                                ]
+                                ],
                             ],
-                        ]
-                    ]
+                        ],
+                    ],
                 ],
             ],
         ]
@@ -69,7 +70,7 @@ defined('TYPO3_MODE') || die();
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+        ',
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(

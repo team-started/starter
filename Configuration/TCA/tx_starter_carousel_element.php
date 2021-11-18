@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 return (function () {
@@ -87,7 +88,7 @@ return (function () {
 
         'palettes' => [
             'carousel_start' => [
-                'showitem' => 'type, layout'
+                'showitem' => 'type, layout',
             ],
             'carousel_element_header' => [
                 'showitem' => '
@@ -106,7 +107,7 @@ return (function () {
             'carousel_media' => [
                 'showitem' => '
                     assets, --linebreak--, assets_medium, --linebreak--, assets_large
-                '
+                ',
             ],
             'hidden' => [
                 'showitem' => '
@@ -139,7 +140,7 @@ return (function () {
                         [
                             0 => '',
                             1 => '',
-                        ]
+                        ],
                     ],
                 ],
             ],
@@ -240,7 +241,7 @@ return (function () {
                     ],
                     'size' => 1,
                     'maxitems' => 1,
-                ]
+                ],
             ],
             'layout' => [
                 'exclude' => true,
@@ -251,11 +252,11 @@ return (function () {
                     'items' => [
                         [
                             'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            ''
+                            '',
                         ],
                     ],
-                    'default' => ''
-                ]
+                    'default' => '',
+                ],
             ],
             'header' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -304,9 +305,9 @@ return (function () {
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                    ]
-                                ]
+                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    ],
+                                ],
                             ],
                             'types' => [
                                 '0' => [
@@ -323,7 +324,7 @@ return (function () {
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -343,9 +344,9 @@ return (function () {
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                    ]
-                                ]
+                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    ],
+                                ],
                             ],
                             'types' => [
                                 '0' => [
@@ -362,7 +363,7 @@ return (function () {
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],
@@ -382,9 +383,9 @@ return (function () {
                             'columns' => [
                                 'crop' => [
                                     'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                    ]
-                                ]
+                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    ],
+                                ],
                             ],
                             'types' => [
                                 '0' => [
@@ -401,7 +402,7 @@ return (function () {
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ],

@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 (function () {
@@ -32,9 +33,9 @@ defined('TYPO3_MODE') || die();
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                ]
-                            ]
+                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                ],
+                            ],
                         ],
                         'types' => [
                             '0' => [
@@ -46,18 +47,18 @@ defined('TYPO3_MODE') || die();
                                 'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
-                            ]
+                            ],
                         ],
-                    ]
-                ]
+                    ],
+                ],
             ],
             'tx_starter_celink_text' => [
-                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tx_starter_teaser.celink_text_formlabel'
+                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tx_starter_teaser.celink_text_formlabel',
             ],
             'tx_starter_celink' => [
-                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tx_starter_teaser.celink_formlabel'
-            ]
-        ]
+                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tx_starter_teaser.celink_formlabel',
+            ],
+        ],
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(

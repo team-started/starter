@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 (function () {
@@ -10,7 +11,6 @@ defined('TYPO3_MODE') || die();
         );
     }
 })();
-
 
 (function () {
     $table = 'pages';
@@ -25,7 +25,7 @@ defined('TYPO3_MODE') || die();
                     'tx_starter_nav_media',
                     [
                         'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference'
+                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',
                         ],
                         'maxitems' => 1,
                         'overrideChildTca' => [
@@ -39,12 +39,12 @@ defined('TYPO3_MODE') || die();
                                     'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
-                                ]
+                                ],
                             ],
                         ],
                     ]
-                )
-            ]
+                ),
+            ],
         ]
     );
 

@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') or die();
 
 (function () {
@@ -17,8 +18,8 @@ defined('TYPO3_MODE') or die();
                 ],
                 'starterShowAssetPalette' => [
                     'showitem' => 'tx_starter_show_small, tx_starter_show_medium, tx_starter_show_large',
-                ]
-            ]
+                ],
+            ],
         ]
     );
 
@@ -32,8 +33,8 @@ defined('TYPO3_MODE') or die();
                     'renderType' => 'selectSingle',
                     'items' => [
                         ['', ''],
-                    ]
-                ]
+                    ],
+                ],
             ],
             'tx_starter_show_small' => [
                 'label' => $translateFile . 'sys_file_reference.tx_starter_show_small',
@@ -44,7 +45,7 @@ defined('TYPO3_MODE') or die();
                         [
                             0 => '',
                             1 => '',
-                            'invertStateDisplay' => true
+                            'invertStateDisplay' => true,
                         ],
                     ],
                 ],
@@ -58,7 +59,7 @@ defined('TYPO3_MODE') or die();
                         [
                             0 => '',
                             1 => '',
-                            'invertStateDisplay' => true
+                            'invertStateDisplay' => true,
                         ],
                     ],
                 ],
@@ -72,7 +73,7 @@ defined('TYPO3_MODE') or die();
                         [
                             0 => '',
                             1 => '',
-                            'invertStateDisplay' => true
+                            'invertStateDisplay' => true,
                         ],
                     ],
                 ],

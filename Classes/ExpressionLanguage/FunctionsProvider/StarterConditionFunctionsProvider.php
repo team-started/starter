@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\ExpressionLanguage\FunctionsProvider;
 
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
@@ -11,13 +12,12 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 class StarterConditionFunctionsProvider implements ExpressionFunctionProviderInterface
 {
     /**
-     *
      * @return ExpressionFunction[] An array of Function instances
      */
     public function getFunctions()
     {
         return [
-            $this->getExtensionLoadedFunction()
+            $this->getExtensionLoadedFunction(),
         ];
     }
 

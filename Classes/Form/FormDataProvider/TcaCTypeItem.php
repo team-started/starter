@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter\Form\FormDataProvider;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;

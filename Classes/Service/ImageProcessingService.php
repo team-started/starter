@@ -19,10 +19,10 @@ class ImageProcessingService
                 'as' => 'media',
                 'references.' => [
                     'fieldName' => 'assets',
-                    'table' => 'tt_content'
-                ]
-            ]
-        ]
+                    'table' => 'tt_content',
+                ],
+            ],
+        ],
     ];
 
     /**
@@ -70,7 +70,6 @@ class ImageProcessingService
     }
 
     /**
-     *
      * @param array $processedData
      * @param array $processorConfiguration
      * @param array $processedRecordVariables
@@ -122,11 +121,11 @@ class ImageProcessingService
         $assetOptions = [
             'uri' => [
                 'default' => $this->addAbsRefPrefix($defaultImageResource[3]),
-                'retina2x' => $this->addAbsRefPrefix($retinaImageResource)
+                'retina2x' => $this->addAbsRefPrefix($retinaImageResource),
             ],
             'width' => $defaultImageResource[0],
             'height' => $defaultImageResource[1],
-            'ratio' => $defaultImageResource[0] / $defaultImageResource[1]
+            'ratio' => $defaultImageResource[0] / $defaultImageResource[1],
         ];
 
         self::clearAssetOptions($assetOptions, $conf);
@@ -135,7 +134,6 @@ class ImageProcessingService
     }
 
     /**
-     *
      * @param \TYPO3\CMS\Core\Resource\FileInterface $image
      * @param array $configuration
      * @return string
@@ -159,10 +157,8 @@ class ImageProcessingService
     }
 
     /**
-     *
      * @param array $asset
      * @param array $conf
-     * @return void
      */
     protected function clearAssetOptions(array &$asset, array $conf = [])
     {
@@ -194,11 +190,11 @@ class ImageProcessingService
                 preg_match($splitRegexp, $defaultValue, $matches);
                 list($_, $value, $cropMode, $cropOffsetDirection, $cropOffsetValue) = $matches;
 
-                $newValue = 2 * ((int) $value);
+                $newValue = 2 * ((int)$value);
 
-                if ((int) $cropOffsetValue > 0) {
+                if ((int)$cropOffsetValue > 0) {
                     $newCropOffsetDirection = $cropOffsetDirection;
-                    $newCropOffsetValue = 2 * (int) $cropOffsetValue;
+                    $newCropOffsetValue = 2 * (int)$cropOffsetValue;
                 } else {
                     $newCropOffsetDirection = '';
                     $newCropOffsetValue = '';
@@ -225,7 +221,7 @@ class ImageProcessingService
             'link' => 'link',
             'alternative' => 'alternative',
             'type' => 'type',
-            'fileType' => 'extension'
+            'fileType' => 'extension',
         ];
 
         $metaData = [];

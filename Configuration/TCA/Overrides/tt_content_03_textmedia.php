@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die();
 
 (function () {
@@ -37,28 +38,28 @@ defined('TYPO3_MODE') || die();
                 'config' => [
                     'eval' => 'required',
                     'enableRichtext' => true,
-                    'richtextConfiguration' => 'default'
-                ]
+                    'richtextConfiguration' => 'default',
+                ],
             ],
             'imageorient' => [
                 'config' => [
-                    'default' => 26
-                ]
+                    'default' => 26,
+                ],
             ],
             'imagecols' => [
                 'config' => [
-                    'default' => 1
-                ]
+                    'default' => 1,
+                ],
             ],
             'tx_starter_imagecols_medium' => [
                 'config' => [
-                    'default' => 1
-                ]
+                    'default' => 1,
+                ],
             ],
             'tx_starter_imagecols_large' => [
                 'config' => [
-                    'default' => 1
-                ]
+                    'default' => 1,
+                ],
             ],
             'assets' => [
                 'config' => [
@@ -68,9 +69,9 @@ defined('TYPO3_MODE') || die();
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                ]
-                            ]
+                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                ],
+                            ],
                         ],
                         'types' => [
                             '0' => [
@@ -90,10 +91,10 @@ defined('TYPO3_MODE') || die();
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;starterShowAssetPalette,
                                         --palette--;;filePalette',
-                            ]
+                            ],
                         ],
-                    ]
-                ]
+                    ],
+                ],
             ],
             'tx_starter_assets_medium' => [
                 'config' => [
@@ -101,9 +102,9 @@ defined('TYPO3_MODE') || die();
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                ]
-                            ]
+                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                ],
+                            ],
                         ],
                         'types' => [
                             '0' => [
@@ -120,10 +121,10 @@ defined('TYPO3_MODE') || die();
                                 'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                            ]
+                            ],
                         ],
-                    ]
-                ]
+                    ],
+                ],
             ],
             'tx_starter_assets_large' => [
                 'config' => [
@@ -131,9 +132,9 @@ defined('TYPO3_MODE') || die();
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings()
-                                ]
-                            ]
+                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                ],
+                            ],
                         ],
                         'types' => [
                             '0' => [
@@ -150,12 +151,12 @@ defined('TYPO3_MODE') || die();
                                 'showitem' => '
                                         --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                            ]
+                            ],
                         ],
-                    ]
-                ]
-            ]
-        ]
+                    ],
+                ],
+            ],
+        ],
     ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(

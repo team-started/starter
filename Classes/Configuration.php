@@ -1,4 +1,5 @@
 <?php
+
 namespace StarterTeam\Starter;
 
 /**
@@ -8,7 +9,7 @@ class Configuration
 {
     const DEFAULT_BACKEND_LAYOUTS = [
         'SimpleWithFooter',
-        'SimpleWithoutFooter'
+        'SimpleWithoutFooter',
     ];
     /**
      * Return the default defined backend layouts
