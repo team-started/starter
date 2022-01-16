@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\Starter\Hooks\PageLayoutView;
 
 use StarterTeam\Starter\Utility\ConfigurationUtility;

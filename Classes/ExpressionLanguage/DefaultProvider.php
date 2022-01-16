@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\Starter\ExpressionLanguage;
 
 use StarterTeam\Starter\ExpressionLanguage\FunctionsProvider\StarterConditionFunctionsProvider;

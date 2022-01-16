@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\Starter\Domain\Service\Migration;
 
 use StarterTeam\Starter\Utility\ObjectUtility;

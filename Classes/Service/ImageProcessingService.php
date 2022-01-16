@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace StarterTeam\Starter\Service;
 
 use TYPO3\CMS\Core\Resource\FileInterface;
