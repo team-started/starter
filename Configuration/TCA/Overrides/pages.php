@@ -6,8 +6,8 @@ defined('TYPO3_MODE') || die();
     foreach (\StarterTeam\Starter\Configuration::getDefaultBackendLayouts() as $backendLayout) {
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
             'starter',
-            'Configuration/TSConfig/BackendLayouts/' . (string)$backendLayout . '.typoscript',
-            'Backend-Layout ' . (string)$backendLayout
+            'Configuration/TSConfig/BackendLayouts/' . $backendLayout . '.typoscript',
+            'Backend-Layout ' . $backendLayout
         );
     }
 })();

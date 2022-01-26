@@ -21,12 +21,12 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
     /**
      * @var array
      */
-    protected $supportedContentTypes = [];
+    protected array $supportedContentTypes = [];
 
     /**
      * @var StandaloneView
      */
-    protected $view;
+    protected StandaloneView $view;
 
     /**
      * TtContentRecordInformation constructor.
@@ -101,11 +101,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
         $drawItem = false;
     }
 
-    /**
-     * @param array $pageTsConfig
-     * @param string $contentType
-     */
-    protected function configureView(array $pageTsConfig, $contentType)
+    protected function configureView(array $pageTsConfig, string $contentType)
     {
         $previewConfiguration = $pageTsConfig['mod.']['web_layout.']['tt_content.']['preview.']['starter.'];
 
@@ -115,28 +111,16 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
         $this->view->setTemplate($this->supportedContentTypes[$contentType]);
     }
 
-    /**
-     * @param array $row
-     * @param array $processedRow
-     * @return array
-     */
     protected function getViewVariables(array $row, array $processedRow): array
     {
-        $viewVariables = [
+        return [
             'row' => $row,
             'processedRow' => $processedRow,
             'previewColumns' => $this->getInlineRelationColumns($processedRow['tx_starter_column_element']),
         ];
-
-        return $viewVariables;
     }
 
-    /**
-     * @param array $databaseRow
-     * @param array $processedTcaColumns
-     * @return array
-     */
-    protected function getProcessedData(array $databaseRow, array $processedTcaColumns)
+    protected function getProcessedData(array $databaseRow, array $processedTcaColumns): array
     {
         $processedRow = $databaseRow;
         foreach ($processedTcaColumns as $field => $config) {
@@ -157,6 +141,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
                     ];
                     $child = $formDataCompiler->compile($formDataCompilerInput);
                 }
+
                 $processedRow[$field][] = $this->getProcessedData(
                     $child['databaseRow'],
                     $child['processedTca']['columns']

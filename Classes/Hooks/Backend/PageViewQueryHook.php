@@ -16,18 +16,13 @@ class PageViewQueryHook
      * Prevent inline tt_content elements in EZVK relation elements from
      * showing in the page module.
      *
-     * @param array $parameters
-     * @param string $table
-     * @param int $pageId
-     * @param array $additionalConstraints
      * @param string[] $fieldList
-     * @param QueryBuilder $queryBuilder
      */
     public function modifyQuery(
-        $parameters,
-        $table,
-        $pageId,
-        $additionalConstraints,
+        array $parameters,
+        string $table,
+        int $pageId,
+        array $additionalConstraints,
         $fieldList,
         QueryBuilder $queryBuilder
     ): void {

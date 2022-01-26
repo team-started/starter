@@ -1,7 +1,7 @@
 {
     "name": "starterteam/starter",
     "type": "typo3-cms-extension",
-    "description": "",
+    "description": "Add description...",
     "license": "proprietary",
     "authors": [
         {
@@ -13,13 +13,10 @@
             "email": "c.wolfram@chriwo.de"
         }
     ],
-    "support": {
-        "issues": "https://gitlab.com/starterteam/team/starter/-/issues"
-    },
     "require": {
         "php": "^7.4",
         "typo3/cms-core": "^10.4",
-        "ichhabrecht/content-defender": "^3.0"
+        "ichhabrecht/content-defender": "^3.1.3"
     },
     "autoload": {
         "psr-4": {

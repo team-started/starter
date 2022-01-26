@@ -10,11 +10,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class TcaCTypeItem implements FormDataProviderInterface
 {
-    /**
-     * @param array $result
-     * @return array
-     */
-    public function addData(array $result)
+    public function addData(array $result): array
     {
         if ('tt_content' !== $result['tableName'] || empty($result['databaseRow']['colPos'])) {
             return $result;
@@ -30,9 +26,7 @@ class TcaCTypeItem implements FormDataProviderInterface
 
         $result['processedTca']['columns']['CType']['config']['items'] = array_filter(
             $result['processedTca']['columns']['CType']['config']['items'],
-            function ($item) use ($allowedCTypes) {
-                return in_array($item[1], $allowedCTypes);
-            }
+            fn ($item) => in_array($item[1], $allowedCTypes)
         );
         $result['processedTca']['columns']['CType']['config']['default'] = $inlineContentSettings['default'];
 

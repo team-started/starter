@@ -73,7 +73,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
 
     /**
      * Checks whether updates are required.
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
     public function updateNecessary(): bool
@@ -89,7 +88,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
     public function executeUpdate(): bool
@@ -102,7 +100,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      * Check if new tables are not there OR
      * if they are there but they are still empty
      *
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function oldFieldsPrepared(): bool
@@ -114,7 +111,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      * Check if one of the old fields already exists
      * Turn function off if dontCheckNewTables is set to true
      *
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function areOldFieldsAlreadyExistingInTables(): bool
@@ -126,17 +122,16 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
                 $existingResult = $this->areOldFieldsAlreadyExisting($existingTable);
             }
         }
+
         return $existingResult;
     }
 
     /**
      * Check if one of the old fields already exists in given table
      *
-     * @param string $table
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
-    protected function areOldFieldsAlreadyExisting($table): bool
+    protected function areOldFieldsAlreadyExisting(string $table): bool
     {
         $allFields = $this->getAllFieldsOfTable($table);
         foreach (array_keys($allFields) as $existingFields) {
@@ -144,15 +139,13 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
                 return true;
             }
         }
+
         return false;
     }
 
     /**
      * Check if one of the new fields already exists in given table
      *
-     * @param string $table
-     * @param string $field
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function isFieldAlreadyExisting(string $table, string $field): bool
@@ -161,11 +154,11 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         if (in_array($field, array_keys($allFields))) {
             return true;
         }
+
         return false;
     }
 
     /**
-     * @return bool
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function copyOldFieldValuesToNewFieldValues(): bool
@@ -208,9 +201,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Copy the value from old field to the new field
      *
-     * @param string $table
-     * @param string $oldFieldName
-     * @param string $newFieldName
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function copyFieldData(string $table, string $oldFieldName, string $newFieldName)
@@ -226,8 +216,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Rename the old field to zzz_deleted_FIELDNAME
      *
-     * @param string $table
-     * @param string $oldFieldName
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function alterTable(string $table, string $oldFieldName)
@@ -242,9 +230,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     * @param string $table
-     * @param string $fieldName
-     * @return string
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function getFieldInformation(string $table, string $fieldName): string
@@ -265,8 +250,6 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Returns information about each field in the $table
      *
-     * @param string $table
-     * @return array
      * @throws \Doctrine\DBAL\DBALException
      */
     protected function getAllFieldsOfTable(string $table): array
@@ -277,16 +260,16 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         while ($fieldRow = $statement->fetch()) {
             $allFields[$fieldRow['Field']] = $fieldRow;
         }
+
         return $allFields;
     }
 
     /**
      * Returns the list of tables from the default database.
      *
-     * @return array
      * @throws \Doctrine\DBAL\DBALException
      */
-    protected function getAllTables()
+    protected function getAllTables(): array
     {
         $allTables = [];
         $queryBuilder = ObjectUtility::getConnectionPool()->getConnectionByName('Default');
@@ -294,6 +277,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         while ($theTable = $statement->fetch()) {
             $allTables[$theTable['Name']] = $theTable;
         }
+
         return $allTables;
     }
 }

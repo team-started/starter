@@ -14,6 +14,9 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
  */
 class ImageProcessingService
 {
+    /**
+     * @var array
+     */
     const DEFAULT_FILE_PROCESSOR_CONFIGURATION = [
         'dataProcessing.' => [
             '10' => 'TYPO3\CMS\Frontend\DataProcessing\FilesProcessor',
@@ -30,12 +33,12 @@ class ImageProcessingService
     /**
      * @var ContentObjectRenderer
      */
-    protected $contentObjectRenderer;
+    protected ContentObjectRenderer $contentObjectRenderer;
 
     /**
      * @var TypoScriptFrontendController
      */
-    protected $tsfe;
+    protected TypoScriptFrontendController $tsfe;
 
     /**
      * ImageProcessingService constructor.
@@ -71,12 +74,6 @@ class ImageProcessingService
         return $config;
     }
 
-    /**
-     * @param array $processedData
-     * @param array $processorConfiguration
-     * @param array $processedRecordVariables
-     * @param string $targetVariableName
-     */
     public function process(
         array &$processedData,
         array $processorConfiguration,
@@ -135,11 +132,6 @@ class ImageProcessingService
         return $assetOptions;
     }
 
-    /**
-     * @param \TYPO3\CMS\Core\Resource\FileInterface $image
-     * @param array $configuration
-     * @return string
-     */
     protected function renderRetinaImage(FileInterface $image, array $configuration): string
     {
         $retinaConfiguration = $this->getImageConfigurationForRetina($configuration);
@@ -149,19 +141,12 @@ class ImageProcessingService
 
     /**
      * Prepend the absRefPrefix from typoscript configuration to the image file path
-     *
-     * @param string $uri
-     * @return string
      */
     protected function addAbsRefPrefix(string $uri): string
     {
         return $this->tsfe->absRefPrefix . $uri;
     }
 
-    /**
-     * @param array $asset
-     * @param array $conf
-     */
     protected function clearAssetOptions(array &$asset, array $conf = [])
     {
         if (isset($conf['mediaQuery'])) {
@@ -176,9 +161,6 @@ class ImageProcessingService
      * Translate a TypoScript configuration for an imgResource function.
      * Doubles all values referring to the image dimensions like
      * width, height, …
-     *
-     * @param array $defaultConfig
-     * @return array retina config
      */
     protected function getImageConfigurationForRetina(array $defaultConfig = []): array
     {
@@ -205,14 +187,12 @@ class ImageProcessingService
                 $retinaConfig[$configKey] = $newValue . $cropMode . $newCropOffsetDirection . $newCropOffsetValue;
             }
         }
+
         return $retinaConfig;
     }
 
     /**
      * Return all available media meta data.
-     *
-     * @param FileInterface $file
-     * @return array
      */
     protected function getMetaData(FileInterface $file): array
     {

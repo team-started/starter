@@ -38,13 +38,6 @@ return (function () {
             'useColumnsForDefaultValues' => 'type',
         ],
 
-        'interface' => [
-            'showRecordFieldList' =>
-                'hidden, tt_content_accordion, type, layout, header, subheader, bodytext, assets,
-                assets_medium, assets_large, media_size_small, media_size_medium, media_size_large, imageorient,
-                image_zoom, imagecols',
-        ],
-
         'types' => [
             '0' => [
                 'showitem' => '
@@ -210,7 +203,6 @@ return (function () {
                 ],
             ],
             'l10n_parent' => [
-                'exclude' => true,
                 'displayCond' => 'FIELD:sys_language_uid:>:0',
                 'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
                 'config' => [

@@ -17,7 +17,7 @@ class ConfigurationUtility
      *
      * @var array
      */
-    public static $contentElements = [
+    public static array $contentElements = [
         'starter_carousel' => [
             'typeIconClass' => 'content-carousel',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-carousel.svg',
@@ -70,7 +70,7 @@ class ConfigurationUtility
      *
      * @var array
      */
-    public static $contentElementTables = [
+    public static array $contentElementTables = [
         'tx_starter_carousel_element_image' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-image.svg',
         ],
@@ -91,51 +91,44 @@ class ConfigurationUtility
         ],
     ];
 
-    /**
-     * @param string $table
-     * @param string $cType
-     * @param string $field
-     * @param array $customerSettingOverride
-     * @param array $removeSettings
-     */
     public static function overrideCropSettings(
         string $table,
         string $cType,
         string $field,
         array $customerSettingOverride = [],
-        $removeSettings = []
+        array $removeSettings = []
     ) {
         if (!is_string($table)) {
             throw new \InvalidArgumentException(
                 'Given table is of type "' . gettype($cType) . '" but a string is expected.',
-                1303236963
+                1_303_236_963
             );
         }
 
         if (!is_string($cType)) {
             throw new \InvalidArgumentException(
                 'Given CType is of type "' . gettype($cType) . '" but a string is expected.',
-                1303236963
+                1_303_236_963
             );
         }
 
         if (!is_string($field)) {
             throw new \InvalidArgumentException(
                 'Given field is of type "' . gettype($field) . '" but a string is expected.',
-                1303236964
+                1_303_236_964
             );
         }
 
         if (!isset($GLOBALS['TCA'][$table]['types'][$cType])
             || !is_array($GLOBALS['TCA'][$table]['types'][$cType])
         ) {
-            throw new \RuntimeException('Given CType was not found.', 1303237468);
+            throw new \RuntimeException('Given CType was not found.', 1_303_237_468);
         }
 
         if (!isset($GLOBALS['TCA'][$table]['columns'][$field])
             || !is_array($GLOBALS['TCA'][$table]['columns'][$field])
         ) {
-            throw new \RuntimeException('Given field was not found.', 1303237468);
+            throw new \RuntimeException('Given field was not found.', 1_303_237_468);
         }
 
         $configToOverride = &$GLOBALS['TCA'][$table]['types'][$cType]['columnsOverrides'][$field]['config'];
@@ -146,11 +139,6 @@ class ConfigurationUtility
         );
     }
 
-    /**
-     * @param array $customSettingOverride
-     * @param array $removeSettings
-     * @return array
-     */
     public static function getMediaCropSettings(array $customSettingOverride = [], array $removeSettings = []): array
     {
         $mediaCropSettings = [
@@ -261,15 +249,13 @@ class ConfigurationUtility
 
         ArrayUtility::mergeRecursiveWithOverrule($mediaCropSettings, $customSettingOverride);
 
-        if (!empty($removeSettings)) {
-            foreach ($removeSettings as $option => $value) {
-                if (array_key_exists($option, $mediaCropSettings)) {
-                    $ratiosToRemove = GeneralUtility::trimExplode(',', $value);
+        foreach ($removeSettings as $option => $value) {
+            if (array_key_exists($option, $mediaCropSettings)) {
+                $ratiosToRemove = GeneralUtility::trimExplode(',', $value);
 
-                    foreach ($ratiosToRemove as $removeRatio) {
-                        $pathToRemove = $option . '/allowedAspectRatios/' . $removeRatio;
-                        $mediaCropSettings = ArrayUtility::removeByPath($mediaCropSettings, $pathToRemove);
-                    }
+                foreach ($ratiosToRemove as $removeRatio) {
+                    $pathToRemove = $option . '/allowedAspectRatios/' . $removeRatio;
+                    $mediaCropSettings = ArrayUtility::removeByPath($mediaCropSettings, $pathToRemove);
                 }
             }
         }
@@ -277,14 +263,10 @@ class ConfigurationUtility
         return $mediaCropSettings;
     }
 
-    public static $contentGridElementsColPos = [
+    public static array $contentGridElementsColPos = [
         'tx_starter_column_element' => 1705,
     ];
 
-    /**
-     * @param array $formDataResult
-     * @return array|null
-     */
     public static function getInlineElementSettings(array $formDataResult): ?array
     {
         $currentColPos = is_array($formDataResult['databaseRow']['colPos'])
@@ -293,12 +275,9 @@ class ConfigurationUtility
 
         $inlineContentSettings = array_filter(
             $formDataResult['pageTsConfig']['tx_starter.']['inlineContentElementSettings.'],
-            function ($itemSettings) use ($currentColPos) {
-                return (int)$itemSettings['colPos'] === $currentColPos ? true : false;
-            }
+            fn ($itemSettings) => (int)$itemSettings['colPos'] === $currentColPos
         );
-        $inlineContentSettings = array_shift($inlineContentSettings);
 
-        return $inlineContentSettings;
+        return array_shift($inlineContentSettings);
     }
 }

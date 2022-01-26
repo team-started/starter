@@ -9,13 +9,16 @@ namespace StarterTeam\Starter;
  */
 class Configuration
 {
+    /**
+     * @var string[]
+     */
     const DEFAULT_BACKEND_LAYOUTS = [
         'SimpleWithFooter',
         'SimpleWithoutFooter',
     ];
+
     /**
      * Return the default defined backend layouts
-     * @return array
      */
     public static function getDefaultBackendLayouts(): array
     {

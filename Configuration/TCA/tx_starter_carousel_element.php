@@ -38,10 +38,6 @@ return (function () {
             'useColumnsForDefaultValues' => 'type',
         ],
 
-        'interface' => [
-            'showRecordFieldList' => 'hidden, tt_content_carousel, type, layout, header, subheader, bodytext, assets',
-        ],
-
         'types' => [
             '0' => [
                 'showitem' => '
@@ -201,7 +197,6 @@ return (function () {
                 ],
             ],
             'l10n_parent' => [
-                'exclude' => true,
                 'displayCond' => 'FIELD:sys_language_uid:>:0',
                 'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
                 'config' => [
@@ -288,7 +283,7 @@ return (function () {
                     'rows' => 15,
                     'softref' => 'typolink_tag,images,email[subst],url',
                     'search' => [
-                        'andWhere' => '{#CType}=\'text\' OR {#CType}=\'textpic\' OR {#CType}=\'textmedia\'',
+                        'andWhere' => "{#CType}='text' OR {#CType}='textpic' OR {#CType}='textmedia'",
                     ],
                 ],
             ],
