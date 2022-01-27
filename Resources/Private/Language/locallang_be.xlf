@@ -335,6 +335,19 @@
 				<source>Content elements</source>
 			</trans-unit>
 
+			<trans-unit id="ckeditor.link.internal">
+				<source>Internal link</source>
+			</trans-unit>
+			<trans-unit id="ckeditor.link.external">
+				<source>External link</source>
+			</trans-unit>
+			<trans-unit id="ckeditor.link.download">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="ckeditor.link.email">
+				<source>Email</source>
+			</trans-unit>
+
 		</body>
 	</file>
 </xliff>

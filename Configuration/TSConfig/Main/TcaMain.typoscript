@@ -11,5 +11,12 @@ TCEMAIN {
     }
   }
 
+  permissions {
+    groupid = 1
+    user = show, editcontent, edit, delete, new
+    group = show, editcontent, edit, delete, new
+    everybody =
+  }
+
   translateToMessage >
 }

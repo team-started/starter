@@ -1,0 +1,84 @@
+editor:
+  config:
+    extraAllowedContent: 'a(o-link, o-link--external, o-link--download, o-link--email)'
+
+    stylesSet:
+      ##########################################################################
+      # <a> tag classes
+      - name: "Externer Link"
+        element: "a"
+        attributes:
+          class: 'o-link--external'
+
+      - name: "Download Link"
+        element: "a"
+        attributes:
+          class: 'o-link--download'
+
+      - name: "Email Link"
+        element: "a"
+        attributes:
+          class: 'o-link--email'
+
+#Button config and defaults
+buttons:
+  link:
+    relAttribute:
+      enabled: false
+    properties:
+      class:
+        required: true
+        allowedClasses: 'o-link, o-link--download, o-link--external, o-link--email'
+    page:
+      properties:
+        class:
+          default: 'o-link'
+          allowedClasses: 'o-link'
+    file:
+      properties:
+        class:
+          default: 'o-link--download'
+          allowedClasses: 'o-link--download'
+    url:
+      properties:
+        class:
+          default: 'o-link o-link--external'
+          allowedClasses: 'o-link o-link--external'
+    mail:
+      properties:
+        class:
+          default: 'o-link--email'
+          allowedClasses: 'o-link--email'
+
+#Classes config
+classesAnchor:
+  linkInternal:
+    class: 'o-link'
+    type: 'page'
+  linkInternalBlank:
+    class: 'o-link'
+    type: 'page'
+    target: '_blank'
+  linkDownload:
+    class: 'o-link--download'
+    type: 'file'
+  linkExternal:
+    class: 'o-link--external'
+    type: 'url'
+  linkExternalBlank:
+    class: 'o-link--external'
+    type: 'url'
+    target: '_blank'
+  linkMail:
+    class: 'o-link--email'
+    type: 'mail'
+
+classes:
+  o-link:
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.internal'
+  o-link--download:
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.download'
+  o-link--external:
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.external'
+  o-link--email:
+    name: 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ckeditor.link.email'

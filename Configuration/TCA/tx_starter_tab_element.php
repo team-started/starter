@@ -300,7 +300,6 @@ return (function () {
                 'config' => [
                     'type' => 'text',
                     'enableRichtext' => true,
-                    'richtextConfiguration' => 'default',
                     'cols' => 80,
                     'rows' => 15,
                     'softref' => 'typolink_tag,images,email[subst],url',

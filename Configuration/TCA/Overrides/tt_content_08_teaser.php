@@ -52,6 +52,11 @@ defined('TYPO3_MODE') || die();
                     ],
                 ],
             ],
+            'bodytext' => [
+                'config' => [
+                    'enableRichtext' => true,
+                ],
+            ],
             'tx_starter_celink_text' => [
                 'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tx_starter_teaser.celink_text_formlabel',
             ],

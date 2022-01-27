@@ -1,0 +1,34 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "EXT:starter/Configuration/RTE/EditorBase/GlobalTextBase.yaml" }
+  - { resource: "EXT:starter/Configuration/RTE/EditorBase/GlobalLinkBase.yaml" }
+
+editor:
+  config:
+    format_tags: "p;h2;h3"
+
+    toolbarGroups:
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: insert }
+      - { name: paragraph, groups: [ list, blocks, paragraph ] }
+      - { name: styles, groups: [ styles, format ] }
+      - { name: links, groups: [links] }
+      - { name: clipboard, groups: [ clipboard, undo ] }
+      - { name: tools }
+      - { name: document,  groups: [ mode, cleanup ] }
+
+    extraPlugins:
+      - showblocks
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Strike
+      - Underline
+      - Table
+      - Anchor
+      - HorizontalRule
+      - Spellchecker

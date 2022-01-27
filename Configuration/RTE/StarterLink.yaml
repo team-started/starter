@@ -1,0 +1,44 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "EXT:starter/Configuration/RTE/EditorBase/GlobalLinkBase.yaml" }
+
+editor:
+  config:
+    stylesSet:
+      ##########################################################################
+      # <a> tag classes
+      - name: "Externer Link"
+        element: "a"
+        attributes:
+          class: 'o-link--external'
+
+      - name: "Download Link"
+        element: "a"
+        attributes:
+          class: 'o-link--download'
+
+      - name: "Email Link"
+        element: "a"
+        attributes:
+          class: 'o-link--email'
+
+    format_tags: "p"
+
+    toolbarGroups:
+      - { name: insert }
+      - { name: links, groups: [links] }
+      - { name: clipboard, groups: [ clipboard, undo ] }
+      - { name: tools }
+      - { name: document,  groups: [ mode, cleanup ] }
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Strike
+      - Table
+      - Anchor
+      - HorizontalRule
+      - Spellchecker

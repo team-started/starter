@@ -1,0 +1,25 @@
+RTE {
+  config {
+    tt_content {
+      bodytext {
+        preset = starter-default
+        types {
+          starter_teaser.preset = starter-minimal
+        }
+      }
+      tx_starter_overlay_text.preset = starter-minimal
+    }
+
+    tx_starter_accordion_element {
+      bodytext.preset = starter-default
+    }
+
+    tx_starter_carousel_element {
+      bodytext.preset = starter-default
+    }
+
+    tx_starter_tab_element {
+      bodytext.preset = starter-default
+    }
+  }
+}

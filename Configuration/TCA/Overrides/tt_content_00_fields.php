@@ -181,6 +181,7 @@ defined('TYPO3_MODE') or die();
                 'label' => $translationFile . ':tt_content.tx_starter_overlaytext',
                 'config' => [
                     'type' => 'text',
+                    'enableRichtext' => true,
                     'cols' => '80',
                     'rows' => '15',
                     'softref' => 'typolink_tag,images,email[subst],url',

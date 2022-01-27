@@ -1,0 +1,14 @@
+editor:
+  config:
+
+    stylesSet:
+      ##########################################################################
+      # Block styles
+      - name: "Introtext"
+        element: "p"
+        attributes:
+          class: "intro-text"
+
+processing:
+  allowTags:
+    - s

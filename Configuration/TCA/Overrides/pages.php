@@ -10,6 +10,12 @@ defined('TYPO3_MODE') || die();
             'Backend-Layout ' . $backendLayout
         );
     }
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
+        'starter',
+        'Configuration/TSConfig/CkEditor.typoscript',
+        'CkEditor configuration'
+    );
 })();
 
 (function () {

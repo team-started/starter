@@ -7,6 +7,11 @@ defined('TYPO3_MODE') || die();
         '<INCLUDE_TYPOSCRIPT: source="DIR:EXT:starter/Configuration/TSConfig/Main/">'
     );
 
+    foreach (['default', 'minimal', 'link' ] as $variant) {
+        $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['starter-' . $variant]
+            = 'EXT:starter/Configuration/RTE/Starter' . ucfirst($variant) . '.yaml';
+    }
+
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['starter'] =
         \StarterTeam\Starter\Hooks\PageLayoutView\PageLayoutViewDrawItem::class;
 
