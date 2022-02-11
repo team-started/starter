@@ -8,6 +8,18 @@
 			<trans-unit id="tx_starter_celink.description">
 				<target>Dieser Link wird um das gesamte Elemente gelegt. Verlinkungen z.B. von Textelemente oder Bildern sind somit wirkungslos.</target>
 			</trans-unit>
+			<trans-unit id="imagecols.description">
+				<source>Specify the number of images displayed side by side per row.</source>
+				<target>Legen Sie die Anzahl der Bilder fest, die je Zeile nebeneinander angezeigt werden.</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_imagecols_medium.description">
+				<source>Specify the number of images displayed side by side per row.</source>
+				<target>Legen Sie die Anzahl der Bilder fest, die je Zeile nebeneinander angezeigt werden.</target>
+			</trans-unit>
+			<trans-unit id="tx_starter_imagecols_large.description">
+				<source>Specify the number of images displayed side by side per row.</source>
+				<target>Legen Sie die Anzahl der Bilder fest, die je Zeile nebeneinander angezeigt werden.</target>
+			</trans-unit>
 
 		</body>
 	</file>
