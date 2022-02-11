@@ -100,6 +100,6 @@ Vorhandene Verweise wie TypoScript, Sass, JavaScript auf die Ext:starter **müss
 
 > Weiter führende Themen:
 > * [Konfiguration](./konfiguration.md)
-> * [CSS Framework](./css-framework/index.md)
+> * [CSS Framework](./css-frameworks/index.md)
 > * [JavaScript & Sass](./js-css/index.md)
 > * [Zusätzliche Felder von EXT:starter](./Fields/Tt_content.md)
