@@ -51,7 +51,7 @@ defined('TYPO3_MODE') or die();
                             'options' => [
                                 'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
                                 'blindLinkOptions' => 'folder, spec, telephone',
-                                'blindLinkFields' => 'class, params, target',
+                                'blindLinkFields' => 'class, params',
                             ],
                         ],
                     ],
