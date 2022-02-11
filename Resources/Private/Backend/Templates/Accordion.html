@@ -11,7 +11,7 @@
 			<f:for each="{processedRow.tx_starter_accordion_element}" as="item">
 				<div class="media">
 
-					<f:if condition="{item.assets}">
+                    <f:if condition="{item.type.0} == '0' && {item.assets.0}">
 						<f:for each="{item.assets}" as="itemImage">
 							<f:image src="{itemImage.uid}" treatIdAsReference="1" class="pull-left" width="64c" height="64c"/>
 						</f:for>
