@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 (function () {
     foreach (['carousel_element', 'accordion_element', 'tab_element'] as $table) {
@@ -16,7 +16,7 @@ defined('TYPO3_MODE') || die();
         );
     }
 
-    if (TYPO3_MODE == 'BE') {
+    if (\TYPO3\CMS\Core\Http\ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()) {
         $GLOBALS['TBE_STYLES']['skins']['starter'] = [
             'name' => 'starter',
             'stylesheetDirectories' => [

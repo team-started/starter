@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 (function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
@@ -15,7 +15,7 @@ defined('TYPO3_MODE') || die();
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['starter'] =
         \StarterTeam\Starter\Hooks\PageLayoutView\PageLayoutViewDrawItem::class;
 
-    if (TYPO3_MODE === 'BE') {
+    if (\TYPO3\CMS\Core\Http\ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()) {
         $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
             \TYPO3\CMS\Core\Imaging\IconRegistry::class
         );
