@@ -16,7 +16,9 @@ defined('TYPO3') || die();
         );
     }
 
-    if (\TYPO3\CMS\Core\Http\ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()) {
+    if (($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof \Psr\Http\Message\ServerRequestInterface
+        && \TYPO3\CMS\Core\Http\ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend()
+    ) {
         $GLOBALS['TBE_STYLES']['skins']['starter'] = [
             'name' => 'starter',
             'stylesheetDirectories' => [
