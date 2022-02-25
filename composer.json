@@ -15,8 +15,8 @@
     ],
     "require": {
         "php": "^7.4",
-        "typo3/cms-core": "^11.5",
-        "ichhabrecht/content-defender": "^3.2"
+        "typo3/cms-core": "^10.4",
+        "ichhabrecht/content-defender": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -24,6 +24,9 @@
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-3.x": "3.x-dev"
+        },
         "typo3/cms": {
             "extension-key": "starter"
         }

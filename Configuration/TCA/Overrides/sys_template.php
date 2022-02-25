@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3') or die();
+defined('TYPO3_MODE') or die();
 
 (function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(

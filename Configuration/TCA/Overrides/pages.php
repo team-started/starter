@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3') || die();
+defined('TYPO3_MODE') || die();
 
 (function () {
     foreach (\StarterTeam\Starter\Configuration::getDefaultBackendLayouts() as $backendLayout) {
