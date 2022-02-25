@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 (function () {
     $translateFile = 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:';
