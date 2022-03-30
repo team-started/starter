@@ -34,6 +34,9 @@ Der Grund dieses Konzeptes ist, dass das Design (also, meistens die SchriftgrÃ¶Ã
 **tx_starter_headercolor**\
 Schriftfarbe, kein default im Starter.
 
+**tx_starter_height**
+
+
 **tx_starter_textclass**\
 Zur freien Nutzung, kein default im Starter.
 

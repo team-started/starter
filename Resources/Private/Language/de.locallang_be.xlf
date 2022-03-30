@@ -71,16 +71,6 @@
 				<target>Interaktionslinks (CTA)</target>
 			</trans-unit>
 
-            <trans-unit id="tt_content.label.center">
-                <target>zentiert</target>
-            </trans-unit>
-            <trans-unit id="tt_content.label.left">
-                <target>links</target>
-            </trans-unit>
-            <trans-unit id="tt_content.label.right">
-                <target>rechts</target>
-            </trans-unit>
-
 			<trans-unit id="tt_content.label.none">
 				<target>kein Abstand</target>
 			</trans-unit>
@@ -102,24 +92,6 @@
 				<target>zeige für Ausrichtung</target>
 			</trans-unit>
 
-			<trans-unit id="tt_content.tx_starter_height.I.1">
-				<target>25% Browserfenster</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_height.I.2">
-				<target>33% Browserfenster</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_height.I.3">
-				<target>50% Browserfenster</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_height.I.4">
-				<target>66% Browserfenster</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_height.I.5">
-				<target>75% Browserfenster</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_height.I.6">
-				<target>100% Browserfenster</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_height">
 				<target>Höhe</target>
 			</trans-unit>
@@ -184,27 +156,6 @@
 				<target>Text Layout</target>
 			</trans-unit>
 
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.0">
-				<target>wie Text</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.1">
-				<target>wie Level 1</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.2">
-				<target>wie Level 2</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.3">
-				<target>wie Level 3</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.4">
-				<target>wie Level 4</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.5">
-				<target>wie Level 5</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.6">
-				<target>wie Level 6</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_headerfontsize">
 				<target>Überschrift Schriftgröße</target>
 			</trans-unit>

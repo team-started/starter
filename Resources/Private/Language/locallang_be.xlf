@@ -66,16 +66,6 @@
 				<source>Call-to-Action</source>
 			</trans-unit>
 
-            <trans-unit id="tt_content.label.center">
-                <source>center</source>
-            </trans-unit>
-            <trans-unit id="tt_content.label.left">
-                <source>left</source>
-            </trans-unit>
-            <trans-unit id="tt_content.label.right">
-                <source>right</source>
-            </trans-unit>
-
 			<trans-unit id="tt_content.label.primary">
 				<source>primary</source>
 			</trans-unit>
@@ -83,6 +73,10 @@
 				<source>secondary</source>
 			</trans-unit>
 
+			<trans-unit id="tt_content.tx_starter_height">
+				<source>Height</source>
+				<target>Höhe</target>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_gridcontainer">
 				<source>Options for max. width</source>
 			</trans-unit>
@@ -149,27 +143,6 @@
 				<source>Text class</source>
 			</trans-unit>
 
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.0">
-				<source>text size</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.1">
-				<source>h1 size</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.2">
-				<source>h2 size</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.3">
-				<source>h3 size</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.4">
-				<source>h4 size</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.5">
-				<source>h5 size</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_headerfontsize.I.6">
-				<source>h6 size</source>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_headerfontsize">
 				<source>Header Fontsize</source>
 			</trans-unit>

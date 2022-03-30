@@ -23,14 +23,6 @@ TCEFORM {
 
     tx_starter_celink.disabled = 1
 
-    //---> workaround because of https://forge.typo3.org/issues/80427
-    space_before_class {
-      altLabels.. = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
-    }
-    space_after_class {
-      altLabels.. = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
-    }
-
     imageorient {
       removeItems = 1,2,9,10
     }
@@ -45,27 +37,18 @@ TCEFORM {
       removeItems = default,ruler-before,ruler-after,indent,indent-left,indent-right,none
     }
 
-    //---> refactor TYPO3 defaults
     space_before_class {
+      # workaround because of https://forge.typo3.org/issues/80427
+      altLabels.. = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
+      # remove TYPO3 defaults
       removeItems = extra-small,small,medium,large,extra-large
-      addItems {
-        u-gap-top--none = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.none
-        u-gap-top--small = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.small
-        u-gap-top--medium = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.medium
-        u-gap-top--large = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.large
-        u-gap-top--xlarge = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.xlarge
-      }
     }
-    //---> refactor TYPO3 defaults
+
     space_after_class {
+      # workaround because of https://forge.typo3.org/issues/80427
+      altLabels.. = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:ttc_ge.label.default
+      # remove TYPO3 defaults
       removeItems = extra-small,small,medium,large,extra-large
-      addItems {
-        u-gap-bottom--none = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.none
-        u-gap-bottom--small = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.small
-        u-gap-bottom--medium = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.medium
-        u-gap-bottom--large = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.large
-        u-gap-bottom--xlarge = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.xlarge
-      }
     }
 
     //---> Header fields
@@ -85,14 +68,7 @@ TCEFORM {
         99 = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.header_layout.I.99
       }
     }
-    header_position {
-      removeItems = center,right,left
-      addItems {
-        o-header--align-center = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.center
-        o-header--align-right = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.right
-        o-header--align-left = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.label.left
-      }
-    }
+
     subheader {
       label = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.subheader.label
     }
