@@ -57,7 +57,11 @@ defined('TYPO3') || die();
                     'showitem' => 'tx_starter_ctalink, tx_starter_ctalink_text',
                 ],
                 'starterAppearanceColor' => [
-                    'showitem' => 'tx_starter_backgroundcolor, tx_starter_bordercolor',
+                    'showitem' => 'tx_starter_bordercolor',
+                ],
+                'starterAppearanceBackground' => [
+                    'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:palette.starterAppearanceBackground',
+                    'showitem' => 'tx_starter_backgroundcolor, tx_starter_background_fluid',
                 ],
                 'starterCeTeaserGeneral' => [
                     'showitem' => '

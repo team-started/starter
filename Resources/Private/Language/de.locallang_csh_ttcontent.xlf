@@ -20,6 +20,10 @@
 				<source>Specify the number of images displayed side by side per row.</source>
 				<target>Legen Sie die Anzahl der Bilder fest, die je Zeile nebeneinander angezeigt werden.</target>
 			</trans-unit>
+			<trans-unit id="tx_starter_background_fluid.description">
+				<source>Allows the selected background to appear over the entire width of the screen</source>
+				<target>Ermöglicht den gewählten Hintergrund über die gesamte Bildschirmbreite erscheinen zu lassen</target>
+			</trans-unit>
 
 		</body>
 	</file>

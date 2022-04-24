@@ -17,6 +17,9 @@
 			<trans-unit id="tx_starter_imagecols_large.description">
 				<source>Specify the number of images displayed side by side per row.</source>
 			</trans-unit>
+			<trans-unit id="tx_starter_background_fluid.description">
+				<source>Allows the selected background to appear over the entire width of the screen</source>
+			</trans-unit>
 
 		</body>
 	</file>

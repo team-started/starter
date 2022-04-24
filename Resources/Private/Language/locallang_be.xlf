@@ -62,6 +62,9 @@
 			<trans-unit id="palette.appearanceColor">
 				<source>Coloring</source>
 			</trans-unit>
+			<trans-unit id="palette.starterAppearanceBackground">
+				<source>Background options</source>
+			</trans-unit>
 			<trans-unit id="palette.cta">
 				<source>Call-to-Action</source>
 			</trans-unit>
@@ -96,6 +99,9 @@
 			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_backgroundcolor">
 				<source>Background color</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_background_fluid">
+				<source>Maximum area</source>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_bordercolor">
 				<source>Border color</source>

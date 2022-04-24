@@ -81,6 +81,19 @@ defined('TYPO3') or die();
                 ],
                 'default' => '',
             ],
+            'tx_starter_background_fluid' => [
+                'exclude' => true,
+                'label' => $translationFile . ':tt_content.tx_starter_background_fluid',
+                'config' => [
+                    'type' => 'check',
+                    'renderType' => 'checkboxToggle',
+                    'items' => [
+                        [
+                            0 => '',
+                        ],
+                    ],
+                ],
+            ],
             'tx_starter_bordercolor' => [
                 'exclude' => true,
                 'label' => $translationFile . ':tt_content.tx_starter_bordercolor',
@@ -419,6 +432,13 @@ defined('TYPO3') or die();
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;' . $translationFile . ':palette.appearanceColor;starterAppearanceColor,',
+        '',
+        'after:space_after_class'
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+        'tt_content',
+        '--palette--;;starterAppearanceBackground,',
         '',
         'after:space_after_class'
     );
