@@ -24,6 +24,10 @@
 				<source>Allows the selected background to appear over the entire width of the screen</source>
 				<target>Ermöglicht den gewählten Hintergrund über die gesamte Bildschirmbreite erscheinen zu lassen</target>
 			</trans-unit>
+			<trans-unit id="tx_starter_visibility.description">
+				<source>Controls the visibility of the content on different BreakPoints.</source>
+				<target>Steuert die Sichtbarkeit des Inhalts auf unterschiedlichen BreakPoints.</target>
+			</trans-unit>
 
 		</body>
 	</file>

@@ -11,6 +11,7 @@ CREATE TABLE pages (
 CREATE TABLE tt_content (
     tx_starter_celink_text varchar(255) DEFAULT '' NOT NULL,
     tx_starter_celink varchar(1024) DEFAULT '' NOT NULL,
+		tx_starter_visibility varchar(60) DEFAULT '' NOT NULL,
     tx_starter_backgroundcolor varchar(60) DEFAULT '' NOT NULL,
 		tx_starter_background_fluid tinyint(4) unsigned DEFAULT '0' NOT NULL,
     tx_starter_bordercolor varchar(60) DEFAULT '' NOT NULL,

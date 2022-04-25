@@ -116,7 +116,10 @@
 				<source>Maximum area</source>
 				<target>maximale Fläche</target>
 			</trans-unit>
-
+			<trans-unit id="tt_content.tx_starter_visibility">
+				<source>Visibility on BreakPoints</source>
+				<target>Sichtbarkeit auf BreakPoints</target>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_bordercolor">
 				<target>Rahmen Farbe</target>
 			</trans-unit>

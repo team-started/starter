@@ -107,6 +107,19 @@ defined('TYPO3') or die();
                 ],
                 'default' => '',
             ],
+            'tx_starter_visibility' => [
+                'exclude' => true,
+                'label' => $translationFile . ':tt_content.tx_starter_visibility',
+                'config' => [
+                    'type' => 'select',
+                    'renderType' => 'selectSingle',
+                    'items' => [
+                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                    ],
+                    'maxitems' => 1,
+                ],
+                'default' => '',
+            ],
             'tx_starter_headercolor' => [
                 'exclude' => true,
                 'label' => $translationFile . ':tt_content.tx_starter_headercolor',
@@ -427,6 +440,13 @@ defined('TYPO3') or die();
         'starterCeTeaserGeneral',
         '--linebreak--, tx_starter_celink,',
         'after:colPos'
+    );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+        'tt_content',
+        'frames',
+        '--linebreak--, tx_starter_visibility,',
+        'after:space_after_class'
     );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

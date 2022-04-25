@@ -103,6 +103,9 @@
 			<trans-unit id="tt_content.tx_starter_background_fluid">
 				<source>Maximum area</source>
 			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_visibility">
+				<source>Visibility on BreakPoints</source>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_bordercolor">
 				<source>Border color</source>
 			</trans-unit>

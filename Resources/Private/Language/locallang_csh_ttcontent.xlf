@@ -20,6 +20,9 @@
 			<trans-unit id="tx_starter_background_fluid.description">
 				<source>Allows the selected background to appear over the entire width of the screen</source>
 			</trans-unit>
+			<trans-unit id="tx_starter_visibility.description">
+				<source>Controls the visibility of the content on different BreakPoints.</source>
+			</trans-unit>
 
 		</body>
 	</file>
