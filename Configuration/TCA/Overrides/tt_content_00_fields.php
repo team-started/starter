@@ -296,38 +296,29 @@ defined('TYPO3') or die();
             ],
             'tx_starter_media_size_small' => [
                 'exclude' => true,
-                'label' => $translationFile . ':media_size_small',
+                'label' => $translationFile . ':tt_content.tx_starter_media_size_small',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [$translationFile . ':media_size.default', ''],
-                    ],
-                    'default' => '',
+                    'items' => [],
                 ],
             ],
             'tx_starter_media_size_medium' => [
                 'exclude' => true,
-                'label' => $translationFile . ':media_size_medium',
+                'label' => $translationFile . ':tt_content.tx_starter_media_size_medium',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [$translationFile . ':tt_content.label.inheritfromsmallerdisplay', ''],
-                    ],
-                    'default' => '',
+                    'items' => [],
                 ],
             ],
             'tx_starter_media_size_large' => [
                 'exclude' => true,
-                'label' => $translationFile . ':media_size_large',
+                'label' => $translationFile . ':tt_content.tx_starter_media_size_large',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
-                    'items' => [
-                        [$translationFile . ':tt_content.label.inheritfromsmallerdisplay', ''],
-                    ],
-                    'default' => '',
+                    'items' => [],
                 ],
             ],
             'tx_starter_imagecols_medium' => $GLOBALS['TCA']['tt_content']['columns']['imagecols'],

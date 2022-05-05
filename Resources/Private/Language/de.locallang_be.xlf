@@ -215,8 +215,17 @@
 			<trans-unit id="media_size_large">
 				<target>large</target>
 			</trans-unit>
-			<trans-unit id="media_size.default">
-				<target>Standard: volle Breite</target>
+			<trans-unit id="tt_content.tx_starter_media_size_small">
+				<source>Relationship between text and image (small)</source>
+				<target>Verhältnis zwischen Text und Bild (small)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_media_size_medium">
+				<source>Relationship between text and image (medium)</source>
+				<target>Verhältnis zwischen Text und Bild (medium)</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_starter_media_size_large">
+				<source>Relationship between text and image (large)</source>
+				<target>Verhältnis zwischen Text und Bild (large)</target>
 			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
 				<source>Link</source>
