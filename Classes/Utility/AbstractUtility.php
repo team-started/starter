@@ -15,7 +15,7 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
 abstract class AbstractUtility
 {
     /**
-     * @return object|\TYPO3\CMS\Extbase\Object\ObjectManager
+     * @return object|ObjectManager
      */
     public static function getObjectManager()
     {
@@ -23,7 +23,7 @@ abstract class AbstractUtility
     }
 
     /**
-     * @return object|\TYPO3\CMS\Core\Page\PageRenderer
+     * @return object|PageRenderer
      */
     public static function getPageRenderer()
     {
@@ -31,7 +31,7 @@ abstract class AbstractUtility
     }
 
     /**
-     * @return object|\TYPO3\CMS\Core\Database\ConnectionPool
+     * @return object|ConnectionPool
      */
     public static function getConnectionPool()
     {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Domain\Service\Migration;
 
+use Doctrine\DBAL\DBALException;
 use StarterTeam\Starter\Utility\ObjectUtility;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
@@ -73,7 +74,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
 
     /**
      * Checks whether updates are required.
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     public function updateNecessary(): bool
     {
@@ -88,7 +89,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     public function executeUpdate(): bool
     {
@@ -100,7 +101,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      * Check if new tables are not there OR
      * if they are there but they are still empty
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function oldFieldsPrepared(): bool
     {
@@ -111,7 +112,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      * Check if one of the old fields already exists
      * Turn function off if dontCheckNewTables is set to true
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function areOldFieldsAlreadyExistingInTables(): bool
     {
@@ -129,7 +130,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Check if one of the old fields already exists in given table
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function areOldFieldsAlreadyExisting(string $table): bool
     {
@@ -146,7 +147,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Check if one of the new fields already exists in given table
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function isFieldAlreadyExisting(string $table, string $field): bool
     {
@@ -159,7 +160,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function copyOldFieldValuesToNewFieldValues(): bool
     {
@@ -180,7 +181,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function migrateSysFileReference()
     {
@@ -201,7 +202,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Copy the value from old field to the new field
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function copyFieldData(string $table, string $oldFieldName, string $newFieldName)
     {
@@ -216,7 +217,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Rename the old field to zzz_deleted_FIELDNAME
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function alterTable(string $table, string $oldFieldName)
     {
@@ -230,7 +231,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     }
 
     /**
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function getFieldInformation(string $table, string $fieldName): string
     {
@@ -250,7 +251,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Returns information about each field in the $table
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function getAllFieldsOfTable(string $table): array
     {
@@ -267,7 +268,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * Returns the list of tables from the default database.
      *
-     * @throws \Doctrine\DBAL\DBALException
+     * @throws DBALException
      */
     protected function getAllTables(): array
     {

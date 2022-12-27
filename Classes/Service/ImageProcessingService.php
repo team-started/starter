@@ -17,7 +17,7 @@ class ImageProcessingService
     /**
      * @var array
      */
-    const DEFAULT_FILE_PROCESSOR_CONFIGURATION = [
+    public const DEFAULT_FILE_PROCESSOR_CONFIGURATION = [
         'dataProcessing.' => [
             '10' => 'TYPO3\CMS\Frontend\DataProcessing\FilesProcessor',
             '10.' => [
@@ -89,9 +89,7 @@ class ImageProcessingService
                 $assetOptions = [];
                 $assetOptions['default'] = $this->renderImage(
                     $imageFile,
-                    isset($processorConfiguration['imageConfig.']['default.'])
-                        ? $processorConfiguration['imageConfig.']['default.']
-                        : []
+                    $processorConfiguration['imageConfig.']['default.'] ?? []
                 );
 
                 if (isset($processorConfiguration['imageConfig.']['variants.'])
@@ -172,7 +170,7 @@ class ImageProcessingService
                 // match strings like "100c-300" and transform them to "200c-600"
                 $splitRegexp = '/^([0-9]*)([cm]?)([+-]?)([0-9]*)$/';
                 preg_match($splitRegexp, $defaultValue, $matches);
-                list($_, $value, $cropMode, $cropOffsetDirection, $cropOffsetValue) = $matches;
+                [$_, $value, $cropMode, $cropOffsetDirection, $cropOffsetValue] = $matches;
 
                 $newValue = 2 * ((int)$value);
 

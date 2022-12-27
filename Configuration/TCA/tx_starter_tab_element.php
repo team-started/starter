@@ -4,6 +4,37 @@ defined('TYPO3') || die();
 
 return (function () {
     $translateFile = 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:';
+    $showItemImage = [
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general',
+        '--palette--;;tab_start',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;tab_element_header',
+        'bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
+        '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media',
+        '--palette--;;tab_media',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.mediaAdjustments;starterMediaAdjustments',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.gallerySettings;gallerySettings',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.imagelinks;imagelinks',
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language',
+        '--palette--;;language',
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access',
+        '--palette--;;hidden',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access',
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+    ];
+    $showItemText = [
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general',
+        '--palette--;;tab_start',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;tab_element_header',
+        'bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language',
+        '--palette--;;language',
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access',
+        '--palette--;;hidden',
+        '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access',
+        '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+    ];
 
     return [
         'ctrl' => [
@@ -19,7 +50,7 @@ return (function () {
             'origUid' => 't3_origuid',
             'hideTable' => true,
             'hideAtCopy' => true,
-            'prependAtCopy' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
+            'prependAtCopy' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
             'transOrigPointerField' => 'l10n_parent',
             'transOrigDiffSourceField' => 'l10n_diffsource',
             'languageField' => 'sys_language_uid',
@@ -40,24 +71,7 @@ return (function () {
 
         'types' => [
             '0' => [
-                'showitem' => '
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                    --palette--;;tab_start,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;tab_element_header,
-                    bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
-                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,
-                    --palette--;;tab_media,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.mediaAdjustments;starterMediaAdjustments,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.gallerySettings;gallerySettings,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.imagelinks;imagelinks,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-                    --palette--;;language,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-                    --palette--;;hidden,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-            ',
+                'showitem' => implode(',', $showItemImage),
                 'columnsOverrides' => [
                     'assets' => [
                         'config' => [
@@ -68,19 +82,7 @@ return (function () {
                 ],
             ],
             '1' => [
-                'showitem' => '
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-                    --palette--;;tab_start,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;tab_element_header,
-                    bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-                    --palette--;;language,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-                    --palette--;;hidden,
-                    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-            ',
+                'showitem' => implode(',', $showItemText),
             ],
         ],
 
@@ -134,7 +136,7 @@ return (function () {
         'columns' => [
             'editlock' => [
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:editlock',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:editlock',
                 'config' => [
                     'type' => 'check',
                     'renderType' => 'checkboxToggle',
@@ -148,7 +150,7 @@ return (function () {
             ],
             'hidden' => [
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
                 'config' => [
                     'type' => 'check',
                     'items' => [
@@ -160,7 +162,7 @@ return (function () {
             ],
             'starttime' => [
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
                 'config' => [
                     'type' => 'input',
                     'renderType' => 'inputDateTime',
@@ -172,7 +174,7 @@ return (function () {
             ],
             'endtime' => [
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
                 'config' => [
                     'type' => 'input',
                     'renderType' => 'inputDateTime',
@@ -187,14 +189,14 @@ return (function () {
             ],
             'sys_language_uid' => [
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'special' => 'languages',
                     'items' => [
                         [
-                            'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
+                            'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                             -1,
                             'flags-multiple',
                         ],
@@ -204,7 +206,7 @@ return (function () {
             ],
             'l10n_parent' => [
                 'displayCond' => 'FIELD:sys_language_uid:>:0',
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
@@ -232,7 +234,7 @@ return (function () {
                 ],
             ],
             't3ver_label' => [
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
                 'config' => [
                     'type' => 'input',
                     'size' => 30,
@@ -260,13 +262,13 @@ return (function () {
             ],
             'layout' => [
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.layout',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.layout',
                 'config' => [
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                            'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
                             '',
                         ],
                     ],
@@ -286,7 +288,7 @@ return (function () {
             'subheader' => [
                 'l10n_mode' => 'prefixLangTitle',
                 'exclude' => true,
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.subheader',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.subheader',
                 'config' => [
                     'type' => 'input',
                     'size' => 50,
@@ -296,7 +298,7 @@ return (function () {
             ],
             'bodytext' => [
                 'l10n_mode' => 'prefixLangTitle',
-                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.text',
+                'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.text',
                 'config' => [
                     'type' => 'text',
                     'enableRichtext' => true,
@@ -382,7 +384,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled',
+                            '0' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled',
                         ],
                     ],
                 ],
@@ -426,17 +428,17 @@ return (function () {
                             'types' => [
                                 '0' => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                             ],
@@ -465,17 +467,17 @@ return (function () {
                             'types' => [
                                 '0' => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                             ],
@@ -504,17 +506,17 @@ return (function () {
                             'types' => [
                                 '0' => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                                 \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
                                     'showitem' => '
-                                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
                                 ],
                             ],

@@ -31,7 +31,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
     /**
      * TtContentRecordInformation constructor.
      *
-     * @param \TYPO3\CMS\Fluid\View\StandaloneView|null $view
+     * @param StandaloneView|null $view
      */
     public function __construct(StandaloneView $view = null)
     {

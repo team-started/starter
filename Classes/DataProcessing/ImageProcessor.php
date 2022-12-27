@@ -68,6 +68,7 @@ class ImageProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ) {
+        $processedRecordVariables = [];
         $this->imageProcessingService = GeneralUtility::makeInstance(ImageProcessingService::class, $cObj);
 
         $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration, 'mediaFiles');

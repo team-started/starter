@@ -12,7 +12,7 @@ class Configuration
     /**
      * @var string[]
      */
-    const DEFAULT_BACKEND_LAYOUTS = [
+    public const DEFAULT_BACKEND_LAYOUTS = [
         'SimpleWithFooter',
         'SimpleWithoutFooter',
     ];
