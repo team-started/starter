@@ -18,21 +18,10 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
  */
 class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, SingletonInterface
 {
-    /**
-     * @var array
-     */
     protected array $supportedContentTypes = [];
 
-    /**
-     * @var StandaloneView
-     */
     protected StandaloneView $view;
 
-    /**
-     * TtContentRecordInformation constructor.
-     *
-     * @param StandaloneView|null $view
-     */
     public function __construct(StandaloneView $view = null)
     {
         $this->view = $view ?: GeneralUtility::makeInstance(StandaloneView::class);
@@ -156,7 +145,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
     {
         $columns = 1;
 
-        if ($rows) {
+        if ($rows !== 0) {
             $columns = 12 / $rows;
         }
 

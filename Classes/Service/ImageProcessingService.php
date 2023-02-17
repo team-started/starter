@@ -30,14 +30,8 @@ class ImageProcessingService
         ],
     ];
 
-    /**
-     * @var ContentObjectRenderer
-     */
     protected ContentObjectRenderer $contentObjectRenderer;
 
-    /**
-     * @var TypoScriptFrontendController
-     */
     protected TypoScriptFrontendController $tsfe;
 
     /**
@@ -168,7 +162,7 @@ class ImageProcessingService
                 $defaultValue = $defaultConfig[$configKey];
 
                 // match strings like "100c-300" and transform them to "200c-600"
-                $splitRegexp = '/^([0-9]*)([cm]?)([+-]?)([0-9]*)$/';
+                $splitRegexp = '/^(\d*)([cm]?)([+-]?)(\d*)$/';
                 preg_match($splitRegexp, $defaultValue, $matches);
                 [$_, $value, $cropMode, $cropOffsetDirection, $cropOffsetValue] = $matches;
 

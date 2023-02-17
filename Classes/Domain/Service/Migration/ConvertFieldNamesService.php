@@ -152,11 +152,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     protected function isFieldAlreadyExisting(string $table, string $field): bool
     {
         $allFields = $this->getAllFieldsOfTable($table);
-        if (in_array($field, array_keys($allFields))) {
-            return true;
-        }
-
-        return false;
+        return array_key_exists($field, $allFields);
     }
 
     /**
@@ -237,12 +233,11 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     {
         $allFields = $this->getAllFieldsOfTable($table);
 
-        if (in_array($fieldName, array_keys($allFields))) {
+        if (array_key_exists($fieldName, $allFields)) {
             $return = $allFields[$fieldName]['Type'] . ' ';
             $return .= strtolower($allFields[$fieldName]['Null']) === 'no' ? 'NOT NULL' : 'NULL';
-            $return .= ' default "' . $allFields[$fieldName]['Default'] . '"';
 
-            return $return;
+            return $return . (' default "' . $allFields[$fieldName]['Default'] . '"');
         }
 
         return '';

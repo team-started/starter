@@ -14,8 +14,6 @@ class ConfigurationUtility
 {
     /**
      * Array with all content elements and definition of type icons
-     *
-     * @var array
      */
     public static array $contentElements = [
         'starter_carousel' => [
@@ -67,8 +65,6 @@ class ConfigurationUtility
 
     /**
      * Array with all additional tables and their type icons
-     *
-     * @var array
      */
     public static array $contentElementTables = [
         'tx_starter_carousel_element_image' => [
@@ -97,22 +93,22 @@ class ConfigurationUtility
         string $field,
         array $customerSettingOverride = [],
         array $removeSettings = []
-    ) {
-        if (!is_string($table)) {
+    ): void {
+        if (empty($table)) {
             throw new \InvalidArgumentException(
                 'Given table is of type "' . gettype($cType) . '" but a string is expected.',
                 1_303_236_963
             );
         }
 
-        if (!is_string($cType)) {
+        if (empty($cType)) {
             throw new \InvalidArgumentException(
                 'Given CType is of type "' . gettype($cType) . '" but a string is expected.',
                 1_303_236_963
             );
         }
 
-        if (!is_string($field)) {
+        if (empty($field)) {
             throw new \InvalidArgumentException(
                 'Given field is of type "' . gettype($field) . '" but a string is expected.',
                 1_303_236_964
