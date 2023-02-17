@@ -16,7 +16,7 @@ class StarterConditionFunctionsProvider implements ExpressionFunctionProviderInt
     /**
      * @return ExpressionFunction[] An array of Function instances
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             $this->getExtensionLoadedFunction(),

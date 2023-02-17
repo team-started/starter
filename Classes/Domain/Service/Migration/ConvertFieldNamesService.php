@@ -29,15 +29,9 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         return 'Migrate old fields from EXT:starter without prefix to field with prefix "tx_starter_"';
     }
 
-    /**
-     * @var array
-     */
-    protected $tables = ['tt_content'];
+    protected array $tables = ['tt_content'];
 
-    /**
-     * @var array
-     */
-    protected $oldFieldNames = [
+    protected array $oldFieldNames = [
         'tt_content' => [
             'assets_medium',
             'assets_large',
@@ -49,10 +43,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         ],
     ];
 
-    /**
-     * @var array
-     */
-    protected $newFieldNames = [
+    protected array $newFieldNames = [
         'tt_content' => [
             'tx_starter_assets_medium',
             'tx_starter_assets_large',
@@ -64,10 +55,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
         ],
     ];
 
-    /**
-     * @var array
-     */
-    protected $sysFileReferenceValues = [
+    protected array $sysFileReferenceValues = [
         'assets_medium' => 'tx_starter_assets_medium',
         'assets_large' => 'tx_starter_assets_large',
     ];
@@ -99,7 +87,7 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
 
     /**
      * Check if new tables are not there OR
-     * if they are there but they are still empty
+     * if they are there, but they are still empty
      *
      * @throws DBALException
      */

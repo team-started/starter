@@ -23,7 +23,7 @@ class PageViewQueryHook
         string $table,
         int $pageId,
         array $additionalConstraints,
-        $fieldList,
+        array $fieldList,
         QueryBuilder $queryBuilder
     ): void {
         if ($table === 'tt_content' && $pageId > 0) {

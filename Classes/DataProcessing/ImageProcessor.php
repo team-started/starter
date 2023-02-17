@@ -44,22 +44,13 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class ImageProcessor implements DataProcessorInterface
 {
-    /**
-     * @var ImageProcessingService
-     */
-    protected $imageProcessingService;
+    protected ImageProcessingService $imageProcessingService;
 
-    /**
-     * @var ContentDataProcessor
-     */
-    protected $contentDataProcessor;
+    protected ContentDataProcessor $contentDataProcessor;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
+    public function __construct(ContentDataProcessor $contentDataProcessor)
     {
-        $this->contentDataProcessor = GeneralUtility::makeInstance(ContentDataProcessor::class);
+        $this->contentDataProcessor = $contentDataProcessor;
     }
 
     public function process(
@@ -67,7 +58,7 @@ class ImageProcessor implements DataProcessorInterface
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
+    ): array {
         $processedRecordVariables = [];
         $this->imageProcessingService = GeneralUtility::makeInstance(ImageProcessingService::class, $cObj);
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\DataProcessing;
 
+use Exception;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -13,18 +14,15 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class ColumnGridDataProcessor implements DataProcessorInterface
 {
-    /**
-     * @var ContentObjectRenderer
-     */
-    protected $contentObjectRender;
+    protected ?ContentObjectRenderer $contentObjectRender = null;
 
     public function process(
-        ContentObjectRenderer $contentObjectRenderer,
+        ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
-    ) {
-        $this->contentObjectRender = $contentObjectRenderer;
+    ): array {
+        $this->contentObjectRender = $cObj;
 
         $targetVariableName = $this->contentObjectRender->stdWrapValue(
             'as',
@@ -36,7 +34,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
         foreach ($columnGridItems as $columnGridItem) {
             try {
                 $processedData[$targetVariableName][] = $this->translateColumnGridItem($columnGridItem);
-            } catch (\Exception $exception) {
+            } catch (Exception $exception) {
             }
         }
 
@@ -64,7 +62,6 @@ class ColumnGridDataProcessor implements DataProcessorInterface
 
     protected function renderColumnsGridContent(array $data): string
     {
-        //$itemContent = $this->getColumnGridItems($data, 'uid');
         $this->contentObjectRender->data = $data;
 
         return $this->contentObjectRender->cObjGetSingle(

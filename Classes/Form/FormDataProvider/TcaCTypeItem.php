@@ -12,7 +12,7 @@ class TcaCTypeItem implements FormDataProviderInterface
 {
     public function addData(array $result): array
     {
-        if ('tt_content' !== $result['tableName'] || empty($result['databaseRow']['colPos'])) {
+        if ($result['tableName'] !== 'tt_content' || empty($result['databaseRow']['colPos'])) {
             return $result;
         }
 
