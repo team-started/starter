@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Hooks\PageLayoutView;
 
+use Exception;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Backend\Form\FormDataCompiler;
 use TYPO3\CMS\Backend\Form\FormDataGroup\TcaDatabaseRecord;
@@ -48,7 +49,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
      * @param array $row : The current data row for this item
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row)
+    public function preProcess(PageLayoutView &$parentObject, &$drawItem, &$headerContent, &$itemContent, array &$row): void
     {
         if (!isset($this->supportedContentTypes[$row['CType']])) {
             return;
@@ -90,7 +91,7 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
         $drawItem = false;
     }
 
-    protected function configureView(array $pageTsConfig, string $contentType)
+    protected function configureView(array $pageTsConfig, string $contentType): void
     {
         $previewConfiguration = $pageTsConfig['mod.']['web_layout.']['tt_content.']['preview.']['starter.'];
 
@@ -141,12 +142,12 @@ class PageLayoutViewDrawItem implements PageLayoutViewDrawItemHookInterface, Sin
         return $processedRow;
     }
 
-    protected function getInlineRelationColumns(int $rows)
+    protected function getInlineRelationColumns(int $rows): int
     {
         $columns = 1;
 
         if ($rows !== 0) {
-            $columns = 12 / $rows;
+            $columns = (int)(12 / $rows);
         }
 
         return $columns;

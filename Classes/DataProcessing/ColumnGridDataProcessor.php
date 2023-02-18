@@ -14,26 +14,22 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class ColumnGridDataProcessor implements DataProcessorInterface
 {
-    protected ?ContentObjectRenderer $contentObjectRender = null;
-
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
         array $processorConfiguration,
         array $processedData
     ): array {
-        $this->contentObjectRender = $cObj;
-
-        $targetVariableName = $this->contentObjectRender->stdWrapValue(
+        $targetVariableName = $cObj->stdWrapValue(
             'as',
             $processorConfiguration,
             'columnGridItems'
         );
-        $columnGridItems = $this->getColumnGridItems($processedData['data']);
+        $columnGridItems = $this->getColumnGridItems($processedData['data'], $cObj);
 
         foreach ($columnGridItems as $columnGridItem) {
             try {
-                $processedData[$targetVariableName][] = $this->translateColumnGridItem($columnGridItem);
+                $processedData[$targetVariableName][] = $this->translateColumnGridItem($columnGridItem, $cObj);
             } catch (Exception $exception) {
             }
         }
@@ -41,9 +37,12 @@ class ColumnGridDataProcessor implements DataProcessorInterface
         return $processedData;
     }
 
-    protected function getColumnGridItems(array $processedData, string $tableField = 'tx_starter_column_element'): array
-    {
-        return $this->contentObjectRender->getRecords(
+    protected function getColumnGridItems(
+        array $processedData,
+        ContentObjectRenderer $contentObjectRenderer,
+        string $tableField = 'tx_starter_column_element'
+    ): array {
+        return $contentObjectRenderer->getRecords(
             'tt_content',
             [
                 'where' => sprintf($tableField . ' = %s', $processedData['uid']),
@@ -52,19 +51,19 @@ class ColumnGridDataProcessor implements DataProcessorInterface
         );
     }
 
-    protected function translateColumnGridItem(array $data): array
+    protected function translateColumnGridItem(array $data, ContentObjectRenderer $contentObjectRenderer): array
     {
         return [
             'data' => $data,
-            'renderedHtml' => $this->renderColumnsGridContent($data),
+            'renderedHtml' => $this->renderColumnsGridContent($data, $contentObjectRenderer),
         ];
     }
 
-    protected function renderColumnsGridContent(array $data): string
+    protected function renderColumnsGridContent(array $data, ContentObjectRenderer $contentObjectRenderer): string
     {
-        $this->contentObjectRender->data = $data;
+        $contentObjectRenderer->data = $data;
 
-        return $this->contentObjectRender->cObjGetSingle(
+        return $contentObjectRenderer->cObjGetSingle(
             '< styles.content.get',
             [
                 'select.' => [

@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace StarterTeam\Starter\Domain\Service\Migration;
 
 use Doctrine\DBAL\DBALException;
-use StarterTeam\Starter\Utility\ObjectUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
@@ -167,12 +168,12 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     /**
      * @throws DBALException
      */
-    protected function migrateSysFileReference()
+    protected function migrateSysFileReference(): void
     {
         $table = 'sys_file_reference';
 
         foreach ($this->sysFileReferenceValues as $searchValue => $replaceValue) {
-            $queryBuilder = ObjectUtility::getConnectionPool()->getQueryBuilderForTable($table);
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
             $queryBuilder
                 ->update($table)
                 ->where(
@@ -188,9 +189,9 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      *
      * @throws DBALException
      */
-    protected function copyFieldData(string $table, string $oldFieldName, string $newFieldName)
+    protected function copyFieldData(string $table, string $oldFieldName, string $newFieldName): void
     {
-        $queryBuilder = ObjectUtility::getConnectionPool()->getQueryBuilderForTable($table);
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
         $queryBuilder
             ->update($table)
             ->set($newFieldName, $queryBuilder->quoteIdentifier($oldFieldName), false)
@@ -203,10 +204,10 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
      *
      * @throws DBALException
      */
-    protected function alterTable(string $table, string $oldFieldName)
+    protected function alterTable(string $table, string $oldFieldName): void
     {
         $requiredChangeSetting = $this->getFieldInformation($table, $oldFieldName);
-        $queryBuilder = ObjectUtility::getConnectionPool()->getConnectionByName('Default');
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionByName('Default');
         $queryBuilder
             ->query(
                 'ALTER TABLE ' . $table . ' CHANGE COLUMN
@@ -239,10 +240,12 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     protected function getAllFieldsOfTable(string $table): array
     {
         $allFields = [];
-        $queryBuilder = ObjectUtility::getConnectionPool()->getConnectionByName('Default');
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionByName('Default');
         $statement = $queryBuilder->query('SHOW FULL COLUMNS FROM ' . $table);
         while ($fieldRow = $statement->fetch()) {
-            $allFields[$fieldRow['Field']] = $fieldRow;
+            if (is_array($fieldRow) && array_key_exists('Field', $fieldRow)) {
+                $allFields[$fieldRow['Field']] = $fieldRow;
+            }
         }
 
         return $allFields;
@@ -256,10 +259,12 @@ class ConvertFieldNamesService implements UpgradeWizardInterface
     protected function getAllTables(): array
     {
         $allTables = [];
-        $queryBuilder = ObjectUtility::getConnectionPool()->getConnectionByName('Default');
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionByName('Default');
         $statement = $queryBuilder->query('SHOW TABLE STATUS FROM `' . $queryBuilder->getDatabase() . '`');
         while ($theTable = $statement->fetch()) {
-            $allTables[$theTable['Name']] = $theTable;
+            if (is_array($theTable) && array_key_exists('Name', $theTable)) {
+                $allTables[$theTable['Name']] = $theTable;
+            }
         }
 
         return $allTables;

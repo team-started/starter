@@ -73,7 +73,7 @@ class ImageProcessingService
         array $processorConfiguration,
         array $processedRecordVariables,
         string $targetVariableName
-    ) {
+    ): void {
         foreach ($processedRecordVariables as $referenceField => $imageFiles) {
             if (empty($imageFiles['media'])) {
                 continue;
@@ -107,6 +107,10 @@ class ImageProcessingService
     protected function renderImage(FileReference $file, array $conf = []): array
     {
         $defaultImageResource = $this->contentObjectRenderer->getImgResource($file, $conf);
+        if (is_null($defaultImageResource)) {
+            return [];
+        }
+
         $retinaImageResource = $this->renderRetinaImage($file, $conf);
 
         $assetOptions = [
@@ -124,11 +128,16 @@ class ImageProcessingService
         return $assetOptions;
     }
 
-    protected function renderRetinaImage(FileInterface $image, array $configuration): string
+    protected function renderRetinaImage(FileReference $image, array $configuration): string
     {
         $retinaConfiguration = $this->getImageConfigurationForRetina($configuration);
-        $image = $this->contentObjectRenderer->getImgResource($image, $retinaConfiguration);
-        return $image[3];
+        $imageResource = $this->contentObjectRenderer->getImgResource($image, $retinaConfiguration);
+
+        if (is_null($imageResource)) {
+            return '';
+        }
+
+        return $imageResource[3];
     }
 
     /**
@@ -139,7 +148,7 @@ class ImageProcessingService
         return $this->tsfe->absRefPrefix . $uri;
     }
 
-    protected function clearAssetOptions(array &$asset, array $conf = [])
+    protected function clearAssetOptions(array &$asset, array $conf = []): void
     {
         if (isset($conf['mediaQuery'])) {
             $asset['mq'] = $conf['mediaQuery'];

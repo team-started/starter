@@ -62,8 +62,8 @@ class ImageProcessor implements DataProcessorInterface
         $processedRecordVariables = [];
         $this->imageProcessingService = GeneralUtility::makeInstance(ImageProcessingService::class, $cObj);
 
-        $targetVariableName = $cObj->stdWrapValue('as', $processorConfiguration, 'mediaFiles');
-        $relationTable = $cObj->stdWrapValue('table', $processorConfiguration, 'tt_content');
+        $targetVariableName = (string)$cObj->stdWrapValue('as', $processorConfiguration, 'mediaFiles');
+        $relationTable = (string)$cObj->stdWrapValue('table', $processorConfiguration, 'tt_content');
         $mediaReferenceFields = GeneralUtility::trimExplode(
             ',',
             $processorConfiguration['fieldNames'],

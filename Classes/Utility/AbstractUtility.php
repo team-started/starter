@@ -14,26 +14,17 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
  */
 abstract class AbstractUtility
 {
-    /**
-     * @return object|ObjectManager
-     */
-    public static function getObjectManager()
+    public static function getObjectManager(): ObjectManager
     {
         return GeneralUtility::makeInstance(ObjectManager::class);
     }
 
-    /**
-     * @return object|PageRenderer
-     */
-    public static function getPageRenderer()
+    public static function getPageRenderer(): PageRenderer
     {
         return self::getObjectManager()->get(PageRenderer::class);
     }
 
-    /**
-     * @return object|ConnectionPool
-     */
-    public static function getConnectionPool()
+    public static function getConnectionPool(): ConnectionPool
     {
         return self::getObjectManager()->get(ConnectionPool::class);
     }
