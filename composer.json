@@ -25,7 +25,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "4.x-dev"
+            "dev-main": "4.1-dev"
         },
         "typo3/cms": {
             "extension-key": "starter"
