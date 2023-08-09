@@ -48,6 +48,12 @@
 			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
 				<source>Show</source>
 			</trans-unit>
+			<trans-unit id="sys_file_reference.title">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.description">
+				<source>Copytext</source>
+			</trans-unit>
 
 <!-- tt_content labels -->
 			<trans-unit id="palette.carousel.links">
@@ -224,6 +230,12 @@
 			</trans-unit>
 			<trans-unit id="CType.I.starter_accordion">
 				<source>Accordion</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_download">
+				<source>Download list</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_download.description">
+				<source>Element to offer different downloads</source>
 			</trans-unit>
 			<trans-unit id="CType.I.starter_accordion.description">
 				<source>An image and content accordion with animation support</source>

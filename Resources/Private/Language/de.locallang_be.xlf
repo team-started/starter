@@ -52,6 +52,14 @@
 				<source>Show</source>
 				<target>Anzeigen</target>
 			</trans-unit>
+			<trans-unit id="sys_file_reference.title">
+				<source>Header</source>
+				<target>Überschrift</target>
+			</trans-unit>
+			<trans-unit id="sys_file_reference.description">
+				<source>Copytext</source>
+				<target>Beschreibung</target>
+			</trans-unit>
 
 <!-- label tt_content -->
 			<trans-unit id="palette.carousel.links">
@@ -248,6 +256,14 @@
 			</trans-unit>
 			<trans-unit id="CType.I.starter_accordion.description">
 				<target>Ein Bild- und Inhaltsaccordion mit Animationsunterstützung</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_download_list">
+				<source>Download list</source>
+				<target>Download Liste</target>
+			</trans-unit>
+			<trans-unit id="CType.I.nessa_download_list.description">
+				<source>Element to offer different downloads</source>
+				<target>Element um verschiedene Downloads anzubieten</target>
 			</trans-unit>
 			<trans-unit id="CType.I.starter_tab">
 				<target>Tab</target>

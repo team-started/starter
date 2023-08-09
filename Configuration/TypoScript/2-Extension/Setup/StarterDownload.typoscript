@@ -1,0 +1,12 @@
+tt_content.starter_download =< lib.contentElement
+tt_content.starter_download {
+  templateName = StarterDownload
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+    10 {
+      references.fieldName = media
+      as = downloadFiles
+    }
+  }
+}

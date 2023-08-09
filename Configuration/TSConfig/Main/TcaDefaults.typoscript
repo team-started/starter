@@ -10,6 +10,7 @@ TCAdefaults {
 
     space_before_class = u-gap-top--none
 
+    filelink_size = 1
   }
 
 }

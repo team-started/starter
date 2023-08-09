@@ -81,6 +81,10 @@ defined('TYPO3') || die();
                         tx_starter_headerfontsize
                     ',
                 ],
+                'starterUploads' => [
+                    'showitem' =>
+                        'media;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.ALT.uploads_formlabel',
+                ],
             ],
         ]
     );

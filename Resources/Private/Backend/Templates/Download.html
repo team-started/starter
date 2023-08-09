@@ -1,0 +1,32 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+        data-namespace-typo3-fluid="true">
+
+	<f:layout name="PreviewDefault" />
+
+	<f:section name="CePreview">
+
+		<f:render partial="Header" arguments="{_all}" />
+
+        <f:if condition="{processedRow.bodytext}">
+            <p>{processedRow.bodytext -> f:format.crop(maxCharacters:1500) -> f:format.stripTags()}</p>
+        </f:if>
+
+        <f:if condition="{processedRow.media}">
+            <ul>
+                <f:for each="{processedRow.media}" as="downloadItem">
+                    <li>{downloadItem.uid_local.0.title}</li>
+                </f:for>
+            </ul>
+        </f:if>
+
+        <f:if condition="{processedRow.file_collections}">
+            <ul>
+                <f:for each="{processedRow.file_collections}" as="downloadItem">
+                    <li>{downloadItem.title}</li>
+                </f:for>
+            </ul>
+        </f:if>
+
+	</f:section>
+
+</html>

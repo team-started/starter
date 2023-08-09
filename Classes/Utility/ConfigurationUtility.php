@@ -26,6 +26,11 @@ class ConfigurationUtility
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-accordion.svg',
             'previewTemplate' => 'Accordion',
         ],
+        'starter_download' => [
+            'typeIconClass' => 'starter-ctype-starter_download',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
+            'previewTemplate' => 'Download',
+        ],
         'starter_tab' => [
             'typeIconClass' => 'content-tab',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-tab.svg',
