@@ -57,11 +57,11 @@ class ImageProcessingService
     ): array {
         $config = self::DEFAULT_FILE_PROCESSOR_CONFIGURATION;
 
-        if (!empty($fieldName)) {
+        if ($fieldName !== '') {
             $config['dataProcessing.']['10.']['references.']['fieldName'] = $fieldName;
         }
 
-        if (!empty($table)) {
+        if ($table !== '') {
             $config['dataProcessing.']['10.']['references.']['table'] = $table;
         }
 

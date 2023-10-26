@@ -18,7 +18,7 @@ class TcaCTypeItem implements FormDataProviderInterface
 
         $inlineContentSettings = ConfigurationUtility::getInlineElementSettings($result);
 
-        if (empty($inlineContentSettings)) {
+        if ($inlineContentSettings === null || $inlineContentSettings === []) {
             return $result;
         }
 
