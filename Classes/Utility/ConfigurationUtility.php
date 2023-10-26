@@ -18,12 +18,12 @@ class ConfigurationUtility
     public static array $contentElements = [
         'starter_carousel' => [
             'typeIconClass' => 'content-carousel',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-carousel.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-carousel.svg',
             'previewTemplate' => 'Carousel',
         ],
         'starter_accordion' => [
             'typeIconClass' => 'content-accordion',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-accordion.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-accordion.svg',
             'previewTemplate' => 'Accordion',
         ],
         'starter_distribution_navigation' => [
@@ -38,37 +38,37 @@ class ConfigurationUtility
         ],
         'starter_tab' => [
             'typeIconClass' => 'content-tab',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-tab.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-tab.svg',
             'previewTemplate' => 'Tab',
         ],
         'starter_textmedia' => [
             'typeIconClass' => 'mimetypes-x-content-text-media',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/mimetypes/mimetypes-x-content-text-media.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-x-content-text-media.svg',
             'previewTemplate' => 'TextMedia',
         ],
         'starter_media' => [
             'typeIconClass' => 'mimetypes-media-video',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/mimetypes/mimetypes-media-video.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-media-video.svg',
             'previewTemplate' => 'Media',
         ],
         'starter_gallery' => [
             'typeIconClass' => 'content-image',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-image.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-image.svg',
             'previewTemplate' => 'Gallery',
         ],
         'starter_stop' => [
             'typeIconClass' => 'starter-ctype-starter_stop',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/apps/apps-pagetree-drag-place-denied.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/apps/apps-pagetree-drag-place-denied.svg',
             'previewTemplate' => 'Stop',
         ],
         'starter_teaser' => [
             'typeIconClass' => 'starter-ctype-starter_teaser',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text-teaser.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-teaser.svg',
             'previewTemplate' => 'Teaser',
         ],
         'starter_column_grid' => [
             'typeIconClass' => 'starter-ctype-starter_column_grid',
-            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/content/content-text-columns.svg',
+            'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-columns.svg',
             'previewTemplate' => 'ColumnGrid',
         ],
     ];
