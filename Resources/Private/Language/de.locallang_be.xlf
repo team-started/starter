@@ -265,6 +265,14 @@
 				<source>Element to offer different downloads</source>
 				<target>Element um verschiedene Downloads anzubieten</target>
 			</trans-unit>
+			<trans-unit id="CType.I.starter_distribution_navigation">
+				<source>Distribution navigation</source>
+				<target>Unterseitennavigation</target>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_distribution_navigation.description">
+				<source>Creates a menu from the subpages of the current page</source>
+				<target>Erstellt ein Menü aus den Unterseiten der aktuellen Seite</target>
+			</trans-unit>
 			<trans-unit id="CType.I.starter_tab">
 				<target>Tab</target>
 			</trans-unit>

@@ -237,6 +237,12 @@
 			<trans-unit id="CType.I.starter_download.description">
 				<source>Element to offer different downloads</source>
 			</trans-unit>
+			<trans-unit id="CType.I.starter_distribution_navigation">
+				<source>Distribution navigation</source>
+			</trans-unit>
+			<trans-unit id="CType.I.starter_distribution_navigation.description">
+				<source>Creates a menu from the subpages of the current page</source>
+			</trans-unit>
 			<trans-unit id="CType.I.starter_accordion.description">
 				<source>An image and content accordion with animation support</source>
 			</trans-unit>

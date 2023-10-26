@@ -100,6 +100,15 @@ mod.wizards.newContentElement.wizardItems {
   special {
     elements {
 
+      starter_distribution_navigation {
+        iconIdentifier = starter-ctype-starter_distribution_navigation
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_distribution_navigation
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_distribution_navigation.description
+        tt_content_defValues {
+          CType = starter_distribution_navigation
+        }
+      }
+
       starter_stop {
         iconIdentifier = starter-ctype-starter_stop
         title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_stop
@@ -114,6 +123,7 @@ mod.wizards.newContentElement.wizardItems {
       html < mod.wizards.newContentElement.wizardItems.special.elements.html
     }
 
+    show := addToList(starter_distribution_navigation)
     show := addToList(starter_stop)
     show := addToList(shortcut)
     show := addToList(bullets)

@@ -1,0 +1,4 @@
+tt_content.starter_distribution_navigation =< lib.contentElement
+tt_content.starter_distribution_navigation {
+  templateName = StarterDistributionNavigation
+}
