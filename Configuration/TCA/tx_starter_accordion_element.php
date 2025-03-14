@@ -1,5 +1,8 @@
 <?php
 
+use StarterTeam\Starter\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Resource\File;
+
 defined('TYPO3') || die();
 
 return (function () {
@@ -42,7 +45,6 @@ return (function () {
             'sortby' => 'sorting',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
-            'cruser_id' => 'cruser_id',
             'editlock' => 'editlock',
             'title' => $translateFile . 'accordion_element_formlabel',
             'delete' => 'deleted',
@@ -67,6 +69,9 @@ return (function () {
                 '1' => 'tx_starter_accordion_element_text',
             ],
             'useColumnsForDefaultValues' => 'type',
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
 
         'types' => [
@@ -143,12 +148,6 @@ return (function () {
                 'config' => [
                     'type' => 'check',
                     'renderType' => 'checkboxToggle',
-                    'items' => [
-                        [
-                            0 => '',
-                            1 => '',
-                        ],
-                    ],
                 ],
             ],
             'hidden' => [
@@ -158,7 +157,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
                         ],
                     ],
                 ],
@@ -167,9 +166,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                 ],
                 'l10n_mode' => 'exclude',
@@ -179,9 +176,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                     'range' => [
                         'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -203,8 +198,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            '',
-                            0,
+                            'label' => '',
+                            'value' => 0,
                         ],
                     ],
                     'foreign_table' => 'tx_starter_accordion_element',
@@ -239,8 +234,8 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translateFile . 'tx_starter_accordion.type.I.0', 0, 'tx_starter_accordion_element_image'],
-                        [$translateFile . 'tx_starter_accordion.type.I.1', 1, 'tx_starter_accordion_element_text'],
+                        ['label' => $translateFile . 'tx_starter_accordion.type.I.0', 'value' => 0, 'icon' => 'tx_starter_accordion_element_image'],
+                        ['label' => $translateFile . 'tx_starter_accordion.type.I.1', 'value' => 1, 'icon' => 'tx_starter_accordion_element_text'],
                     ],
                     'fieldWizard' => [
                         'selectIcons' => [
@@ -259,8 +254,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            '',
+                            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                            'value' => '',
                         ],
                     ],
                     'default' => '',
@@ -307,58 +302,58 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
-                            0,
-                            'content-beside-text-img-above-center',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.0',
+                            'value' => 0,
+                            'icon' => 'content-beside-text-img-above-center',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.1',
-                            1,
-                            'content-beside-text-img-above-right',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.1',
+                            'value' => 1,
+                            'icon' => 'content-beside-text-img-above-right',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.2',
-                            2,
-                            'content-beside-text-img-above-left',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.2',
+                            'value' => 2,
+                            'icon' => 'content-beside-text-img-above-left',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
-                            8,
-                            'content-beside-text-img-below-center',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.3',
+                            'value' => 8,
+                            'icon' => 'content-beside-text-img-below-center',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.4',
-                            9,
-                            'content-beside-text-img-below-right',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.4',
+                            'value' => 9,
+                            'icon' => 'content-beside-text-img-below-right',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.5',
-                            10,
-                            'content-beside-text-img-below-left',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.5',
+                            'value' => 10,
+                            'icon' => 'content-beside-text-img-below-left',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.6',
-                            17,
-                            'content-inside-text-img-right',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.6',
+                            'value' => 17,
+                            'icon' => 'content-inside-text-img-right',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.7',
-                            18,
-                            'content-inside-text-img-left',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.7',
+                            'value' => 18,
+                            'icon' => 'content-inside-text-img-left',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.8',
-                            '--div--',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.8',
+                            'value' => '--div--',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
-                            25,
-                            'content-beside-text-img-right',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.9',
+                            'value' => 25,
+                            'icon' => 'content-beside-text-img-right',
                         ],
                         [
-                            'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
-                            26,
-                            'content-beside-text-img-left',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient.I.10',
+                            'value' => 26,
+                            'icon' => 'content-beside-text-img-left',
                         ],
                     ],
                     'default' => 26,
@@ -376,7 +371,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled',
+                            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled',
                         ],
                     ],
                 ],
@@ -388,14 +383,14 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['1', 1],
-                        ['2', 2],
-                        ['3', 3],
-                        ['4', 4],
-                        ['5', 5],
-                        ['6', 6],
-                        ['7', 7],
-                        ['8', 8],
+                        ['label' => '1', 'value' => 1],
+                        ['label' => '2', 'value' => 2],
+                        ['label' => '3', 'value' => 3],
+                        ['label' => '4', 'value' => 4],
+                        ['label' => '5', 'value' => 5],
+                        ['label' => '6', 'value' => 6],
+                        ['label' => '7', 'value' => 7],
+                        ['label' => '8', 'value' => 8],
                     ],
                     'default' => 1,
                 ],
@@ -407,14 +402,14 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['1', 1],
-                        ['2', 2],
-                        ['3', 3],
-                        ['4', 4],
-                        ['5', 5],
-                        ['6', 6],
-                        ['7', 7],
-                        ['8', 8],
+                        ['label' => '1', 'value' => 1],
+                        ['label' => '2', 'value' => 2],
+                        ['label' => '3', 'value' => 3],
+                        ['label' => '4', 'value' => 4],
+                        ['label' => '5', 'value' => 5],
+                        ['label' => '6', 'value' => 6],
+                        ['label' => '7', 'value' => 7],
+                        ['label' => '8', 'value' => 8],
                     ],
                     'default' => 1,
                 ],
@@ -426,134 +421,131 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['1', 1],
-                        ['2', 2],
-                        ['3', 3],
-                        ['4', 4],
-                        ['5', 5],
-                        ['6', 6],
-                        ['7', 7],
-                        ['8', 8],
+                        ['label' => '1', 'value' => 1],
+                        ['label' => '2', 'value' => 2],
+                        ['label' => '3', 'value' => 3],
+                        ['label' => '4', 'value' => 4],
+                        ['label' => '5', 'value' => 5],
+                        ['label' => '6', 'value' => 6],
+                        ['label' => '7', 'value' => 7],
+                        ['label' => '8', 'value' => 8],
                     ],
                     'default' => 1,
                 ],
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'maxitems' => 9,
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
-                                    ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'maxitems' => 9,
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'assets_medium' => [
                 'label' => $translateFile . 'starter.asset_medium_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets_medium',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'maxitems' => 9,
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
-                                    ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'maxitems' => 9,
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'assets_large' => [
                 'label' => $translateFile . 'starter.asset_large_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets_large',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'maxitems' => 9,
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
-                                    ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'maxitems' => 9,
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'media_size_small' => [
                 'exclude' => true,
@@ -562,20 +554,20 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translateFile . 'ttc_ge.label.nothing', ''],
-                        [$translateFile . 'media_size.6', 'small-6'],
-                        [$translateFile . 'media_size.3', 'small-3'],
-                        [$translateFile . 'media_size.4', 'small-4'],
-                        [$translateFile . 'media_size.8', 'small-8'],
-                        [$translateFile . 'media_size.9', 'small-9'],
-                        [$translateFile . 'media_size.12', 'small-12'],
-                        [$translateFile . 'media_size.0', 'hide-for-small'],
-                        [$translateFile . 'media_size.1', 'small-1'],
-                        [$translateFile . 'media_size.2', 'small-2'],
-                        [$translateFile . 'media_size.5', 'small-5'],
-                        [$translateFile . 'media_size.7', 'small-7'],
-                        [$translateFile . 'media_size.10', 'small-10'],
-                        [$translateFile . 'media_size.11', 'small-11'],
+                        ['label' => $translateFile . 'ttc_ge.label.nothing', 'value' => ''],
+                        ['label' => $translateFile . 'media_size.6', 'value' => 'small-6'],
+                        ['label' => $translateFile . 'media_size.3', 'value' => 'small-3'],
+                        ['label' => $translateFile . 'media_size.4', 'value' => 'small-4'],
+                        ['label' => $translateFile . 'media_size.8', 'value' => 'small-8'],
+                        ['label' => $translateFile . 'media_size.9', 'value' => 'small-9'],
+                        ['label' => $translateFile . 'media_size.12', 'value' => 'small-12'],
+                        ['label' => $translateFile . 'media_size.0', 'value' => 'hide-for-small'],
+                        ['label' => $translateFile . 'media_size.1', 'value' => 'small-1'],
+                        ['label' => $translateFile . 'media_size.2', 'value' => 'small-2'],
+                        ['label' => $translateFile . 'media_size.5', 'value' => 'small-5'],
+                        ['label' => $translateFile . 'media_size.7', 'value' => 'small-7'],
+                        ['label' => $translateFile . 'media_size.10', 'value' => 'small-10'],
+                        ['label' => $translateFile . 'media_size.11', 'value' => 'small-11'],
                     ],
                     'default' => '',
                 ],
@@ -587,20 +579,20 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translateFile . 'tt_content.label.inheritfromsmallerdisplay', ''],
-                        [$translateFile . 'media_size.6', 'medium-6'],
-                        [$translateFile . 'media_size.3', 'medium-3'],
-                        [$translateFile . 'media_size.4', 'medium-4'],
-                        [$translateFile . 'media_size.8', 'medium-8'],
-                        [$translateFile . 'media_size.9', 'medium-9'],
-                        [$translateFile . 'media_size.12', 'medium-12'],
-                        [$translateFile . 'media_size.0', 'hide-for-medium'],
-                        [$translateFile . 'media_size.1', 'medium-1'],
-                        [$translateFile . 'media_size.2', 'medium-2'],
-                        [$translateFile . 'media_size.5', 'medium-5'],
-                        [$translateFile . 'media_size.7', 'medium-7'],
-                        [$translateFile . 'media_size.10', 'medium-10'],
-                        [$translateFile . 'media_size.11', 'medium-11'],
+                        ['label' => $translateFile . 'tt_content.label.inheritfromsmallerdisplay', 'value' => ''],
+                        ['label' => $translateFile . 'media_size.6', 'value' => 'medium-6'],
+                        ['label' => $translateFile . 'media_size.3', 'value' => 'medium-3'],
+                        ['label' => $translateFile . 'media_size.4', 'value' => 'medium-4'],
+                        ['label' => $translateFile . 'media_size.8', 'value' => 'medium-8'],
+                        ['label' => $translateFile . 'media_size.9', 'value' => 'medium-9'],
+                        ['label' => $translateFile . 'media_size.12', 'value' => 'medium-12'],
+                        ['label' => $translateFile . 'media_size.0', 'value' => 'hide-for-medium'],
+                        ['label' => $translateFile . 'media_size.1', 'value' => 'medium-1'],
+                        ['label' => $translateFile . 'media_size.2', 'value' => 'medium-2'],
+                        ['label' => $translateFile . 'media_size.5', 'value' => 'medium-5'],
+                        ['label' => $translateFile . 'media_size.7', 'value' => 'medium-7'],
+                        ['label' => $translateFile . 'media_size.10', 'value' => 'medium-10'],
+                        ['label' => $translateFile . 'media_size.11', 'value' => 'medium-11'],
                     ],
                     'default' => '',
                 ],
@@ -612,20 +604,20 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translateFile . 'tt_content.label.inheritfromsmallerdisplay', ''],
-                        [$translateFile . 'media_size.6', 'large-6'],
-                        [$translateFile . 'media_size.3', 'large-3'],
-                        [$translateFile . 'media_size.4', 'large-4'],
-                        [$translateFile . 'media_size.8', 'large-8'],
-                        [$translateFile . 'media_size.9', 'large-9'],
-                        [$translateFile . 'media_size.12', 'large-12'],
-                        [$translateFile . 'media_size.0', 'hide-for-large'],
-                        [$translateFile . 'media_size.1', 'large-1'],
-                        [$translateFile . 'media_size.2', 'large-2'],
-                        [$translateFile . 'media_size.5', 'large-5'],
-                        [$translateFile . 'media_size.7', 'large-7'],
-                        [$translateFile . 'media_size.10', 'large-10'],
-                        [$translateFile . 'media_size.11', 'large-11'],
+                        ['label' => $translateFile . 'tt_content.label.inheritfromsmallerdisplay', 'value' => ''],
+                        ['label' => $translateFile . 'media_size.6', 'value' => 'large-6'],
+                        ['label' => $translateFile . 'media_size.3', 'value' => 'large-3'],
+                        ['label' => $translateFile . 'media_size.4', 'value' => 'large-4'],
+                        ['label' => $translateFile . 'media_size.8', 'value' => 'large-8'],
+                        ['label' => $translateFile . 'media_size.9', 'value' => 'large-9'],
+                        ['label' => $translateFile . 'media_size.12', 'value' => 'large-12'],
+                        ['label' => $translateFile . 'media_size.0', 'value' => 'hide-for-large'],
+                        ['label' => $translateFile . 'media_size.1', 'value' => 'large-1'],
+                        ['label' => $translateFile . 'media_size.2', 'value' => 'large-2'],
+                        ['label' => $translateFile . 'media_size.5', 'value' => 'large-5'],
+                        ['label' => $translateFile . 'media_size.7', 'value' => 'large-7'],
+                        ['label' => $translateFile . 'media_size.10', 'value' => 'large-10'],
+                        ['label' => $translateFile . 'media_size.11', 'value' => 'large-11'],
                     ],
                     'default' => '',
                 ],

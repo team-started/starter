@@ -74,12 +74,12 @@ mod.wizards.newContentElement.wizardItems {
         }
       }
 
-      starter_download {
-        iconIdentifier = starter-ctype-starter_download
-        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_download
-        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_download.description
+      starter_m27_download {
+        iconIdentifier = starter-ctype-starter_m27_download
+        title = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_m27_download
+        description = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_m27_download.description
         tt_content_defValues {
-          CType = starter_download
+          CType = starter_m27_download
         }
       }
     }
@@ -88,7 +88,7 @@ mod.wizards.newContentElement.wizardItems {
     show := addToList(text)
     show := addToList(starter_teaser)
     show := addToList(starter_textmedia)
-    show := addToList(starter_download)
+    show := addToList(starter_m27_download)
     show := addToList(starter_carousel)
     show := addToList(starter_accordion)
     show := addToList(starter_tab)

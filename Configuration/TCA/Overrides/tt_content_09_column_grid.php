@@ -1,9 +1,12 @@
 <?php
 
+use StarterTeam\Starter\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'tx_starter_column_element' => [
@@ -25,7 +28,6 @@ defined('TYPO3') || die();
                         'levelLinksPosition' => 'bottom',
                         'useSortable' => true,
                         'showPossibleLocalizationRecords' => true,
-                        'showRemovedLocalizationRecords' => true,
                         'showAllLocalizationLink' => true,
                         'showSynchronizationLink' => true,
                         'enabledControls' => [
@@ -41,7 +43,7 @@ defined('TYPO3') || die();
                             ],
                             'colPos' => [
                                 'config' => [
-                                    'default' => \StarterTeam\Starter\Utility\ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
+                                    'default' => ConfigurationUtility::getColPosForStarterColumnElement(),
                                 ],
                             ],
                         ],
@@ -75,7 +77,7 @@ defined('TYPO3') || die();
         'showitem' => implode(',', $showItem),
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_column_grid',
             'starter_column_grid',

@@ -1,12 +1,15 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ArrayUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
     $translateFile = 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:';
 
     // define new palettes
-    \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+    ArrayUtility::mergeRecursiveWithOverrule(
         $GLOBALS['TCA']['sys_file_reference'],
         [
             'palettes' => [
@@ -23,7 +26,7 @@ defined('TYPO3') || die();
         ]
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'sys_file_reference',
         [
             'tx_starter_class' => [
@@ -32,7 +35,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['', ''],
+                        [
+                            'label' => '',
+                            'value' => '',
+                        ],
                     ],
                 ],
             ],
@@ -43,8 +49,7 @@ defined('TYPO3') || die();
                     'renderType' => 'checkboxToggle',
                     'items' => [
                         [
-                            0 => '',
-                            1 => '',
+                            'label' => '',
                             'invertStateDisplay' => true,
                         ],
                     ],
@@ -57,8 +62,7 @@ defined('TYPO3') || die();
                     'renderType' => 'checkboxToggle',
                     'items' => [
                         [
-                            0 => '',
-                            1 => '',
+                            'label' => '',
                             'invertStateDisplay' => true,
                         ],
                     ],
@@ -71,8 +75,7 @@ defined('TYPO3') || die();
                     'renderType' => 'checkboxToggle',
                     'items' => [
                         [
-                            0 => '',
-                            1 => '',
+                            'label' => '',
                             'invertStateDisplay' => true,
                         ],
                     ],
@@ -81,14 +84,14 @@ defined('TYPO3') || die();
         ]
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'imageoverlayPalette',
         '--linebreak--, tx_starter_class',
         'after:description'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'sys_file_reference',
         'imageoverlayWithoutLinkPalette',
         'tx_starter_class',

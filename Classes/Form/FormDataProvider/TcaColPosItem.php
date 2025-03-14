@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Form\FormDataProvider;
 
+use Override;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Backend\Form\FormDataProviderInterface;
 
 class TcaColPosItem implements FormDataProviderInterface
 {
+    #[Override]
     public function addData(array $result): array
     {
         if ($result['tableName'] !== 'tt_content' || empty($result['databaseRow']['colPos'])) {
@@ -23,8 +25,8 @@ class TcaColPosItem implements FormDataProviderInterface
 
         $result['processedTca']['columns']['colPos']['config']['items'] = [
             [
-                'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.colPos.nestedContentColPos',
-                $result['databaseRow']['colPos'],
+                'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.colPos.nestedContentColPos',
+                'value' => $result['databaseRow']['colPos'],
             ],
         ];
         unset($result['processedTca']['columns']['colPos']['config']['itemsProcFunc']);

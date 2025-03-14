@@ -1,5 +1,8 @@
 <?php
 
+use StarterTeam\Starter\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Resource\File;
+
 defined('TYPO3') || die();
 
 return (function () {
@@ -41,7 +44,6 @@ return (function () {
             'sortby' => 'sorting',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
-            'cruser_id' => 'cruser_id',
             'editlock' => 'editlock',
             'title' => $translateFile . 'carousel_element_formlabel',
             'delete' => 'deleted',
@@ -66,6 +68,9 @@ return (function () {
                 '1' => 'tx_starter_carousel_element_text',
             ],
             'useColumnsForDefaultValues' => 'type',
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
 
         'types' => [
@@ -134,12 +139,6 @@ return (function () {
                 'config' => [
                     'type' => 'check',
                     'renderType' => 'checkboxToggle',
-                    'items' => [
-                        [
-                            0 => '',
-                            1 => '',
-                        ],
-                    ],
                 ],
             ],
             'hidden' => [
@@ -149,7 +148,7 @@ return (function () {
                     'type' => 'check',
                     'items' => [
                         '1' => [
-                            '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
                         ],
                     ],
                 ],
@@ -158,9 +157,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                 ],
                 'l10n_mode' => 'exclude',
@@ -170,9 +167,7 @@ return (function () {
                 'exclude' => true,
                 'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputDateTime',
-                    'eval' => 'datetime',
+                    'type' => 'datetime',
                     'default' => 0,
                     'range' => [
                         'upper' => mktime(0, 0, 0, 1, 1, 2038),
@@ -194,8 +189,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            '',
-                            0,
+                            'label' => '',
+                            'value' => 0,
                         ],
                     ],
                     'foreign_table' => 'tx_starter_carousel_element',
@@ -216,8 +211,8 @@ return (function () {
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translateFile . 'tx_starter_carousel.type.I.0', 0, 'tx_starter_carousel_element_image'],
-                        [$translateFile . 'tx_starter_carousel.type.I.1', 1, 'tx_starter_carousel_element_text'],
+                        ['label' => $translateFile . 'tx_starter_carousel.type.I.0', 'value' => 0, 'icon' => 'tx_starter_carousel_element_image'],
+                        ['label' => $translateFile . 'tx_starter_carousel.type.I.1', 'value' => 1, 'icon' => 'tx_starter_carousel_element_text'],
                     ],
                     'fieldWizard' => [
                         'selectIcons' => [
@@ -236,8 +231,8 @@ return (function () {
                     'renderType' => 'selectSingle',
                     'items' => [
                         [
-                            'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
-                            '',
+                            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value',
+                            'value' => '',
                         ],
                     ],
                     'default' => '',
@@ -277,120 +272,117 @@ return (function () {
             ],
             'assets' => [
                 'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'maxitems' => 1,
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
-                                    ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'maxitems' => 1,
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'assets_medium' => [
                 'label' => $translateFile . 'starter.asset_medium_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets_medium',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'maxitems' => 1,
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
-                                    ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'maxitems' => 1,
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'assets_large' => [
                 'label' => $translateFile . 'starter.asset_large_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'assets_large',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'maxitems' => 1,
-                        'overrideChildTca' => [
-                            'columns' => [
-                                'crop' => [
-                                    'config' => [
-                                        'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
-                                    ],
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'maxitems' => 1,
+                    'overrideChildTca' => [
+                        'columns' => [
+                            'crop' => [
+                                'config' => [
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                        ],
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                         --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                         --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'link_text' => [
                 'l10n_mode' => 'prefixLangTitle',
@@ -406,19 +398,8 @@ return (function () {
                 'exclude' => true,
                 'label' => $translateFile . 'tx_starter_carousel.link_formlabel',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
+                    'type' => 'link',
                     'size' => 50,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => $translateFile . 'tx_starter_carousel.link_formlabel',
-                            ],
-                        ],
-                    ],
-                    'softref' => 'typolink',
                 ],
             ],
             'l10n_diffsource' => [

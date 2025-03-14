@@ -79,13 +79,13 @@ TCEFORM {
 
     target {
       types {
-        starter_download.disabled = 1
+        starter_m27_download.disabled = 1
       }
     }
 
     filelink_sorting {
       types {
-        starter_download {
+        starter_m27_download {
           removeItems = creation_date,modification_date,title,extension
         }
       }

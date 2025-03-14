@@ -1,9 +1,11 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'tx_starter_tab_element' => [
@@ -26,7 +28,6 @@ defined('TYPO3') || die();
                         'levelLinksPosition' => 'bottom',
                         'useSortable' => true,
                         'showPossibleLocalizationRecords' => true,
-                        'showRemovedLocalizationRecords' => true,
                         'showAllLocalizationLink' => true,
                         'showSynchronizationLink' => true,
                         'enabledControls' => [
@@ -57,7 +58,7 @@ defined('TYPO3') || die();
         'showitem' => implode(',', $showItem),
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_tab',
             'starter_tab',

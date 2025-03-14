@@ -1,5 +1,9 @@
 <?php
 
+use StarterTeam\Starter\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
@@ -35,7 +39,7 @@ defined('TYPO3') || die();
                         'columns' => [
                             'crop' => [
                                 'config' => [
-                                    'cropVariants' => \StarterTeam\Starter\Utility\ConfigurationUtility::getMediaCropSettings(),
+                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
                                 ],
                             ],
                         ],
@@ -45,7 +49,7 @@ defined('TYPO3') || die();
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
                             ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            File::FILETYPE_IMAGE => [
                                 'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
@@ -68,7 +72,7 @@ defined('TYPO3') || die();
         ],
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_teaser',
             'starter_teaser',

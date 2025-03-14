@@ -1,30 +1,25 @@
 <?php
 
+use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
     $translationFile = 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf';
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tt_content',
         [
             'tx_starter_celink' => [
                 'exclude' => true,
                 'label' => $translationFile . ':tt_content.tx_starter_celink',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
+                    'type' => 'link',
                     'size' => 80,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
-                            ],
-                        ],
+                    'appearance' => [
+                        'browserTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
                     ],
-                    'softref' => 'typolink',
                 ],
             ],
             'tx_starter_celink_text' => [
@@ -41,21 +36,13 @@ defined('TYPO3') || die();
                 'exclude' => true,
                 'label' => $translationFile . ':tt_content.tx_starter_ctalink_formlabel',
                 'config' => [
-                    'type' => 'input',
-                    'renderType' => 'inputLink',
+                    'type' => 'link',
                     'size' => 80,
-                    'max' => 1024,
-                    'eval' => 'trim',
-                    'fieldControl' => [
-                        'linkPopup' => [
-                            'options' => [
-                                'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
-                                'blindLinkOptions' => 'folder, spec, telephone',
-                                'blindLinkFields' => 'class, params',
-                            ],
-                        ],
+                    'allowedTypes' => ['page', 'file', 'url', 'email', 'record'],
+                    'appearance' => [
+                        'browserTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
+                        'allowedOptions' => ['target', 'title', 'rel'],
                     ],
-                    'softref' => 'typolink',
                 ],
             ],
             'tx_starter_ctalink_text' => [
@@ -75,7 +62,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -87,11 +77,6 @@ defined('TYPO3') || die();
                 'config' => [
                     'type' => 'check',
                     'renderType' => 'checkboxToggle',
-                    'items' => [
-                        [
-                            0 => '',
-                        ],
-                    ],
                 ],
             ],
             'tx_starter_bordercolor' => [
@@ -101,7 +86,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -114,7 +102,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -127,7 +118,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -140,7 +134,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -153,7 +150,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -166,7 +166,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -179,7 +182,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -213,7 +219,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        ['', ''],
+                        [
+                            'label' => '',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -226,7 +235,10 @@ defined('TYPO3') || die();
                     'type' => 'select',
                     'renderType' => 'selectSingle',
                     'items' => [
-                        [$translationFile . ':ttc_ge.label.nothing', ''],
+                        [
+                            'label' => $translationFile . ':ttc_ge.label.nothing',
+                            'value' => '',
+                        ],
                     ],
                     'maxitems' => 1,
                 ],
@@ -234,65 +246,63 @@ defined('TYPO3') || die();
             ],
             'tx_starter_assets_medium' => [
                 'label' => $translationFile . ':starter.asset_medium_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'tx_starter_assets_medium',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'overrideChildTca' => [
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                     --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                     --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                     --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                     --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                     --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                     --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'tx_starter_assets_large' => [
                 'label' => $translationFile . ':starter.asset_large_references',
-                'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                    'tx_starter_assets_large',
-                    [
-                        'appearance' => [
-                            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                        ],
-                        'overrideChildTca' => [
-                            'types' => [
-                                '0' => [
-                                    'showitem' => '
+                'config' => [
+                    //## !!! Watch out for fieldName different from columnName
+                    'type' => 'file',
+                    'allowed' => 'jpg,jpeg,png,svg',
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            '0' => [
+                                'showitem' => '
                                     --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                     --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_IMAGE => [
+                                'showitem' => '
                                     --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                     --palette--;;filePalette',
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
+                            ],
+                            File::FILETYPE_VIDEO => [
+                                'showitem' => '
                                     --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
                                     --palette--;;filePalette',
-                                ],
                             ],
                         ],
                     ],
-                    'jpg,jpeg,png,svg'
-                ),
+                ],
             ],
             'tx_starter_media_size_small' => [
                 'exclude' => true,
@@ -343,7 +353,6 @@ defined('TYPO3') || die();
                         'levelLinksPosition' => 'bottom',
                         'useSortable' => true,
                         'showPossibleLocalizationRecords' => true,
-                        'showRemovedLocalizationRecords' => true,
                         'showAllLocalizationLink' => true,
                         'showSynchronizationLink' => true,
                         'enabledControls' => [
@@ -372,7 +381,6 @@ defined('TYPO3') || die();
                         'levelLinksPosition' => 'bottom',
                         'useSortable' => true,
                         'showPossibleLocalizationRecords' => true,
-                        'showRemovedLocalizationRecords' => true,
                         'showAllLocalizationLink' => true,
                         'showSynchronizationLink' => true,
                         'enabledControls' => [
@@ -384,84 +392,84 @@ defined('TYPO3') || die();
         ]
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'headers',
         'tx_starter_overline, --linebreak--,',
         'before:header'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'header',
         'tx_starter_overline, --linebreak--,',
         'before:header'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'headers',
         'tx_starter_headerclass, tx_starter_headercolor, tx_starter_headerfontsize, --linebreak--,',
         'before:header_link'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'header',
         'tx_starter_headerclass, tx_starter_headercolor, tx_starter_headerfontsize, --linebreak--,',
         'before:header_link'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'general',
         '--linebreak--, tx_starter_celink,',
         'after:colPos'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'frames',
         'tx_starter_width',
         'before:layout'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'starterCeTeaserGeneral',
         '--linebreak--, tx_starter_celink,',
         'after:colPos'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
+    ExtensionManagementUtility::addFieldsToPalette(
         'tt_content',
         'frames',
         '--linebreak--, tx_starter_visibility,',
         'after:space_after_class'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;' . $translationFile . ':palette.appearanceColor;starterAppearanceColor,',
         '',
         'after:space_after_class'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;;starterAppearanceBackground,',
         '',
         'after:space_after_class'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;' . $translationFile . ':palette.cta;starterCta,',
         '',
         'before:bodytext'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         '--palette--;' . $translationFile . ':palette.textoptions;starterTextOptionPalette,',
         '',

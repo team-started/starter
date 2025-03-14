@@ -244,6 +244,11 @@
 				<target>Linktext</target>
 			</trans-unit>
 
+			<trans-unit id="tabs.download">
+				<source>Download files</source>
+				<target>Download Dateien</target>
+			</trans-unit>
+
 <!-- New CTypes -->
 			<trans-unit id="CType.I.starter_carousel">
 				<target>Carousel</target>
@@ -257,13 +262,13 @@
 			<trans-unit id="CType.I.starter_accordion.description">
 				<target>Ein Bild- und Inhaltsaccordion mit Animationsunterstützung</target>
 			</trans-unit>
-			<trans-unit id="CType.I.nessa_download_list">
+			<trans-unit id="CType.I.starter_m27_download">
 				<source>Download list</source>
 				<target>Download Liste</target>
 			</trans-unit>
-			<trans-unit id="CType.I.nessa_download_list.description">
-				<source>Element to offer different downloads</source>
-				<target>Element um verschiedene Downloads anzubieten</target>
+			<trans-unit id="CType.I.starter_m27_download.description">
+				<source>M27 - Element to offer different downloads</source>
+				<target>M27 - Element zum anbieten von Datei-Downloads</target>
 			</trans-unit>
 			<trans-unit id="CType.I.starter_distribution_navigation">
 				<source>Distribution navigation</source>

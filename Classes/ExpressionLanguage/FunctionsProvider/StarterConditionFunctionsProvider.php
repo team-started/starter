@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\ExpressionLanguage\FunctionsProvider;
 
+use Override;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -16,6 +17,7 @@ class StarterConditionFunctionsProvider implements ExpressionFunctionProviderInt
     /**
      * @return ExpressionFunction[] An array of Function instances
      */
+    #[Override]
     public function getFunctions(): array
     {
         return [

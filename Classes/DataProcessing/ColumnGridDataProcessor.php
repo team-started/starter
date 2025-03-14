@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace StarterTeam\Starter\DataProcessing;
 
 use Exception;
+use Override;
 use StarterTeam\Starter\Utility\ConfigurationUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
@@ -14,6 +15,7 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
  */
 class ColumnGridDataProcessor implements DataProcessorInterface
 {
+    #[Override]
     public function process(
         ContentObjectRenderer $cObj,
         array $contentObjectConfiguration,
@@ -30,7 +32,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
         foreach ($columnGridItems as $columnGridItem) {
             try {
                 $processedData[$targetVariableName][] = $this->translateColumnGridItem($columnGridItem, $cObj);
-            } catch (Exception $exception) {
+            } catch (Exception) {
             }
         }
 
@@ -69,7 +71,7 @@ class ColumnGridDataProcessor implements DataProcessorInterface
                 'select.' => [
                     'uidInList' => $data['uid'],
                     'where' =>
-                        '{#colPos}=' . ConfigurationUtility::$contentGridElementsColPos['tx_starter_column_element'],
+                        '{#colPos}=' . ConfigurationUtility::getColPosForStarterColumnElement(),
                 ],
             ]
         );

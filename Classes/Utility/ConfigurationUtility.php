@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace StarterTeam\Starter\Utility;
 
+use InvalidArgumentException;
+use RuntimeException;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -17,59 +19,38 @@ class ConfigurationUtility
      */
     public static array $contentElements = [
         'starter_carousel' => [
-            'typeIconClass' => 'content-carousel',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-carousel.svg',
-            'previewTemplate' => 'Carousel',
         ],
         'starter_accordion' => [
-            'typeIconClass' => 'content-accordion',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-accordion.svg',
-            'previewTemplate' => 'Accordion',
         ],
         'starter_distribution_navigation' => [
-            'typeIconClass' => 'starter-ctype-starter_distribution_navigation',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-special-menu.svg',
-            'previewTemplate' => 'DistributionNavigation',
         ],
-        'starter_download' => [
-            'typeIconClass' => 'starter-ctype-starter_download',
+        'starter_m27_download' => [
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-database-export.svg',
-            'previewTemplate' => 'Download',
+            'allowedFileExtensions' => 'doc,docx,jpg,jpeg,pdf,potx,ppt,pptx,xls,xlsx,zip,msg,oft,rtf',
         ],
         'starter_tab' => [
-            'typeIconClass' => 'content-tab',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-tab.svg',
-            'previewTemplate' => 'Tab',
         ],
         'starter_textmedia' => [
-            'typeIconClass' => 'mimetypes-x-content-text-media',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-x-content-text-media.svg',
-            'previewTemplate' => 'TextMedia',
         ],
         'starter_media' => [
-            'typeIconClass' => 'mimetypes-media-video',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/mimetypes/mimetypes-media-video.svg',
-            'previewTemplate' => 'Media',
         ],
         'starter_gallery' => [
-            'typeIconClass' => 'content-image',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-image.svg',
-            'previewTemplate' => 'Gallery',
         ],
         'starter_stop' => [
-            'typeIconClass' => 'starter-ctype-starter_stop',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/apps/apps-pagetree-drag-place-denied.svg',
-            'previewTemplate' => 'Stop',
         ],
         'starter_teaser' => [
-            'typeIconClass' => 'starter-ctype-starter_teaser',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-teaser.svg',
-            'previewTemplate' => 'Teaser',
         ],
         'starter_column_grid' => [
-            'typeIconClass' => 'starter-ctype-starter_column_grid',
             'typeIconPath' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/content/content-text-columns.svg',
-            'previewTemplate' => 'ColumnGrid',
         ],
     ];
 
@@ -105,21 +86,21 @@ class ConfigurationUtility
         array $removeSettings = []
     ): void {
         if ($table === '') {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Given table is of type "' . gettype($cType) . '" but a string is expected.',
                 1_303_236_963
             );
         }
 
         if ($cType === '') {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Given CType is of type "' . gettype($cType) . '" but a string is expected.',
                 1_303_236_963
             );
         }
 
         if ($field === '') {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Given field is of type "' . gettype($field) . '" but a string is expected.',
                 1_303_236_964
             );
@@ -128,13 +109,13 @@ class ConfigurationUtility
         if (!isset($GLOBALS['TCA'][$table]['types'][$cType])
             || !is_array($GLOBALS['TCA'][$table]['types'][$cType])
         ) {
-            throw new \RuntimeException('Given CType was not found.', 1_303_237_468);
+            throw new RuntimeException('Given CType was not found.', 1_303_237_468);
         }
 
         if (!isset($GLOBALS['TCA'][$table]['columns'][$field])
             || !is_array($GLOBALS['TCA'][$table]['columns'][$field])
         ) {
-            throw new \RuntimeException('Given field was not found.', 1_303_237_468);
+            throw new RuntimeException('Given field was not found.', 1_303_237_468);
         }
 
         $configToOverride = &$GLOBALS['TCA'][$table]['types'][$cType]['columnsOverrides'][$field]['config'];
@@ -281,9 +262,23 @@ class ConfigurationUtility
 
         $inlineContentSettings = array_filter(
             $formDataResult['pageTsConfig']['tx_starter.']['inlineContentElementSettings.'],
-            fn ($itemSettings) => (int)$itemSettings['colPos'] === $currentColPos
+            fn($itemSettings) => (int)$itemSettings['colPos'] === $currentColPos
         );
 
         return array_shift($inlineContentSettings);
+    }
+
+    public static function getColPosForStarterColumnElement(): int
+    {
+        return static::$contentGridElementsColPos['tx_starter_column_element'];
+    }
+
+    public static function getAllowedFileExtensions(string $CType): string
+    {
+        if (self::$contentElements[$CType]['allowedFileExtensions']) {
+            return self::$contentElements[$CType]['allowedFileExtensions'];
+        }
+
+        return '';
     }
 }

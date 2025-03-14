@@ -1,5 +1,7 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3') || die();
 
 (function () {
@@ -20,7 +22,7 @@ defined('TYPO3') || die();
         'showitem' => implode(',', $showItem),
     ];
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ExtensionManagementUtility::addPlugin(
         [
             'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:CType.I.starter_stop',
             'starter_stop',

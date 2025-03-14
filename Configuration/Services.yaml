@@ -7,3 +7,23 @@ services:
 
   StarterTeam\Starter\:
     resource: '../Classes/*'
+
+  StarterTeam\Starter\Events\Listener\ModifyDatabaseQueryForContentEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-starter/modify-database-query-for-content'
+        method: 'modify'
+        event: TYPO3\CMS\Backend\View\Event\ModifyDatabaseQueryForContentEvent
+
+  StarterTeam\Starter\Events\Listener\ModifyDatabaseQueryForRecordListingEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-starter/modify-database-query-for-list'
+        method: 'modify'
+        event: TYPO3\CMS\Backend\View\Event\ModifyDatabaseQueryForRecordListingEvent
+
+  StarterTeam\Starter\Events\Listener\IsContentUsedOnPageLayoutEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'ext-starter/is-content-used-on-page-layout'
+        event: TYPO3\CMS\Backend\View\Event\IsContentUsedOnPageLayoutEvent

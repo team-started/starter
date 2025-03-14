@@ -1,28 +1,14 @@
 <?php
 
-defined('TYPO3') || die();
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 
-// add content element type icons
-(function () {
-    foreach (\StarterTeam\Starter\Utility\ConfigurationUtility::$contentElements as $ceId => $properties) {
-        \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
-            $GLOBALS['TCA']['tt_content'],
-            [
-                'ctrl' => [
-                    'typeicon_classes' => [
-                        $ceId => $properties['typeIconClass'],
-                    ],
-                ],
-            ]
-        );
-    }
-})();
+defined('TYPO3') || die();
 
 // @codingStandardsIgnoreStart
 
 (function () {
     // define new palettes for content elements
-    \TYPO3\CMS\Core\Utility\ArrayUtility::mergeRecursiveWithOverrule(
+    ArrayUtility::mergeRecursiveWithOverrule(
         $GLOBALS['TCA']['tt_content'],
         [
             'palettes' => [
