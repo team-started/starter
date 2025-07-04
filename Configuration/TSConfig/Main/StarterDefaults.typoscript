@@ -1,9 +1,0 @@
-tx_starter {
-  inlineContentElementSettings {
-    starter_column_grid {
-      allowed = text
-      default = text
-      colPos = 1705
-    }
-  }
-}

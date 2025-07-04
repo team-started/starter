@@ -227,23 +227,11 @@
 			<trans-unit id="CType.I.starter_gallery.description">
 				<source>A picture gallery with any number of pictures.</source>
 			</trans-unit>
-			<trans-unit id="CType.I.starter_stop">
-				<source>Stop recursive inheritance</source>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_stop.description">
-				<source>Stop inheriting from previous content.</source>
-			</trans-unit>
 			<trans-unit id="CType.I.starter_teaser">
 				<source>Teaser</source>
 			</trans-unit>
 			<trans-unit id="CType.I.starter_teaser.description">
 				<source>Teaser element</source>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_column_grid">
-				<source>Grid column</source>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_column_grid.description">
-				<source>Element to split content into multiple columns</source>
 			</trans-unit>
 
 <!-- CE carousel -->
@@ -294,10 +282,6 @@
 			</trans-unit>
 
 <!-- CE content column -->
-			<trans-unit id="starter_column_grid.tx_starter_column_element">
-				<source>Content elements</source>
-			</trans-unit>
-
 			<trans-unit id="ckeditor.link.internal">
 				<source>Internal link</source>
 			</trans-unit>

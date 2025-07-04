@@ -249,23 +249,11 @@
 			<trans-unit id="CType.I.starter_gallery.description">
 				<target>Eine Bildergalerie mit beliebiger Anzahl an Bildern.</target>
 			</trans-unit>
-			<trans-unit id="CType.I.starter_stop">
-				<target>Stoppe rekursive Vererbung</target>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_stop.description">
-				<target>Beenden der Vererbung von vorherigen Inhalten.</target>
-			</trans-unit>
 			<trans-unit id="CType.I.starter_teaser">
 				<target>Teaser</target>
 			</trans-unit>
 			<trans-unit id="CType.I.starter_teaser.description">
 				<target>Teaser element</target>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_column_grid">
-				<target>Grid column</target>
-			</trans-unit>
-			<trans-unit id="CType.I.starter_column_grid.description">
-				<target>Ein Inhaltselement mit welchen Inhalte in mehrere Spalten aufgeteilt werden</target>
 			</trans-unit>
 
 <!-- CE carousel -->
@@ -316,10 +304,6 @@
 			</trans-unit>
 
 <!-- CE content column -->
-			<trans-unit id="starter_column_grid.tx_starter_column_element">
-				<target>Inhaltselement</target>
-			</trans-unit>
-
 			<trans-unit id="ckeditor.link.internal">
 				<source>Internal link</source>
 				<target>Interner Link</target>

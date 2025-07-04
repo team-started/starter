@@ -132,7 +132,6 @@ TCEFORM {
         starter_carousel.disabled = 1
         starter_media.disabled = 1
         starter_gallery.disabled = 1
-        starter_stop.disabled = 1
       }
     }
 
@@ -141,7 +140,6 @@ TCEFORM {
       types {
         starter_accordion.disabled = 1
         starter_carousel.disabled = 1
-        starter_stop.disabled = 1
       }
     }
 
@@ -151,7 +149,6 @@ TCEFORM {
         starter_accordion.disabled = 1
         starter_carousel.disabled = 1
         starter_media.disabled = 1
-        starter_stop.disabled = 1
       }
     }
 
@@ -162,7 +159,6 @@ TCEFORM {
         starter_carousel.disabled = 1
         starter_media.disabled = 1
         starter_gallery.disabled = 1
-        starter_stop.disabled = 1
       }
     }
   }

@@ -20,7 +20,6 @@ CREATE TABLE tt_content (
     tx_starter_carousel_element int(11) DEFAULT '0' NOT NULL,
     tx_starter_accordion_element int(11) DEFAULT '0' NOT NULL,
     tx_starter_tab_element int(11) DEFAULT '0' NOT NULL,
-    tx_starter_column_element int(11) unsigned DEFAULT '0' NOT NULL,
     tx_starter_ctalink varchar(1024) DEFAULT '' NOT NULL,
     tx_starter_ctalink_text varchar(255) DEFAULT '' NOT NULL
 );

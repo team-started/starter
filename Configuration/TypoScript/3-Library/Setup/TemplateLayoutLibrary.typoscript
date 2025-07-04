@@ -28,7 +28,6 @@ lib.starterTemplateLayout {
   }
 
   layoutRootPaths {
-    5 = EXT:starter/Resources/Private/Frontend/Layouts/
     10 = {$starter.paths.pathToPrivate}Frontend/Layouts/
   }
 
