@@ -9,6 +9,24 @@ TCEFORM {
       disableNoMatchingValueElement = 1
       removeItems = -1
     }
+
+    og_image {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
+      }
+    }
+
+    twitter_image {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
+      }
+    }
   }
 
   tt_content {
@@ -73,8 +91,24 @@ TCEFORM {
       label = LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.subheader.label
     }
 
-    tx_starter_assets_medium.disabled = 1
-    tx_starter_assets_large.disabled = 1
+    assets {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
+      }
+    }
+
+    media {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
+      }
+    }
+
     uploads_type.disabled = 1
 
     target {
@@ -133,18 +167,14 @@ TCEFORM {
     }
   }
 
-  tx_starter_carousel_element {
-    assets_medium.disabled = 1
-    assets_large.disabled = 1
-  }
-
-  tx_starter_accordion_element {
-    assets_medium.disabled = 1
-    assets_large.disabled = 1
-  }
-
-  tx_starter_tab_element {
-    assets_medium.disabled = 1
-    assets_large.disabled = 1
+  sys_file_collection {
+    files {
+      config {
+        appearance {
+          fileUploadAllowed = 0
+          fileByUrlAllowed = 0
+        }
+      }
+    }
   }
 }

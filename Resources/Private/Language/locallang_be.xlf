@@ -28,22 +28,9 @@
 				<source>Page footer (inherited)</source>
 			</trans-unit>
 
-			<trans-unit id="pages.tx_starter_nav_media">
-				<source>Navigation image</source>
-			</trans-unit>
-
 <!-- label sys_file_reference -->
 			<trans-unit id="sys_file_reference.tx_starter_class">
 				<source>Class</source>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_small">
-				<source>Show on small</source>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_medium">
-				<source>Show on medium</source>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_large">
-				<source>Show on large</source>
 			</trans-unit>
 			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
 				<source>Show</source>
@@ -180,40 +167,6 @@
 				<source>Nested Element</source>
 			</trans-unit>
 
-			<trans-unit id="starter.asset_medium_references">
-				<source>Media element Breakpoint Medium</source>
-			</trans-unit>
-			<trans-unit id="starter.asset_large_references">
-				<source>Media element Breakpoint Large</source>
-			</trans-unit>
-
-			<trans-unit id="tt_content.imagecols">
-				<source>Image side by side (Small)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecols_medium">
-				<source>Image side by side (Medium)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecols_large">
-				<source>Image side by side (Large)</source>
-			</trans-unit>
-			<trans-unit id="media_size_small">
-				<source>small</source>
-			</trans-unit>
-			<trans-unit id="media_size_medium">
-				<source>medium</source>
-			</trans-unit>
-			<trans-unit id="media_size_large">
-				<source>large</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_small">
-				<source>Relationship between text and image (small)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_medium">
-				<source>Relationship between text and image (medium)</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_large">
-				<source>Relationship between text and image (large)</source>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
 				<source>Link</source>
 			</trans-unit>

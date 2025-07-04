@@ -8,7 +8,7 @@ tt_content.starter_textmedia {
     10 {
       as = mediaFiles
 
-      fieldNames = assets,media_medium,media_large
+      fieldNames = assets
       table = tt_content
 
       imageConfig {

@@ -19,9 +19,6 @@ defined('TYPO3') || die();
                 'imageoverlayWithoutLinkPalette' => [
                     'showitem' => 'title, alternative, --linebreak--, description, --linebreak--, crop',
                 ],
-                'starterShowAssetPalette' => [
-                    'showitem' => 'tx_starter_show_small, tx_starter_show_medium, tx_starter_show_large',
-                ],
             ],
         ]
     );
@@ -38,45 +35,6 @@ defined('TYPO3') || die();
                         [
                             'label' => '',
                             'value' => '',
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_show_small' => [
-                'label' => $translateFile . 'sys_file_reference.tx_starter_show_small',
-                'config' => [
-                    'type' => 'check',
-                    'renderType' => 'checkboxToggle',
-                    'items' => [
-                        [
-                            'label' => '',
-                            'invertStateDisplay' => true,
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_show_medium' => [
-                'label' => $translateFile . 'sys_file_reference.tx_starter_show_medium',
-                'config' => [
-                    'type' => 'check',
-                    'renderType' => 'checkboxToggle',
-                    'items' => [
-                        [
-                            'label' => '',
-                            'invertStateDisplay' => true,
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_show_large' => [
-                'label' => $translateFile . 'sys_file_reference.tx_starter_show_large',
-                'config' => [
-                    'type' => 'check',
-                    'renderType' => 'checkboxToggle',
-                    'items' => [
-                        [
-                            'label' => '',
-                            'invertStateDisplay' => true,
                         ],
                     ],
                 ],

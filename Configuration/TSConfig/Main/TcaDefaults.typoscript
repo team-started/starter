@@ -5,8 +5,6 @@ TCAdefaults {
     header_layout = 2
 
     imagecols = 1
-    tx_starter_imagecols_medium = 1
-    tx_starter_imagecols_large = 1
 
     space_before_class = u-gap-top--none
 

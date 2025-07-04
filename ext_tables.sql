@@ -1,11 +1,4 @@
 #
-# Extend table structure for table 'pages'
-#
-CREATE TABLE pages (
-	tx_starter_nav_media int(11) unsigned DEFAULT '0' NOT NULL
-);
-
-#
 # Extend table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
@@ -27,13 +20,6 @@ CREATE TABLE tt_content (
     tx_starter_carousel_element int(11) DEFAULT '0' NOT NULL,
     tx_starter_accordion_element int(11) DEFAULT '0' NOT NULL,
     tx_starter_tab_element int(11) DEFAULT '0' NOT NULL,
-    tx_starter_assets_medium int(11) unsigned DEFAULT '0' NOT NULL,
-    tx_starter_assets_large int(11) unsigned DEFAULT '0' NOT NULL,
-    tx_starter_media_size_small varchar(20) DEFAULT '' NOT NULL,
-    tx_starter_media_size_medium varchar(20) DEFAULT '' NOT NULL,
-    tx_starter_media_size_large varchar(20) DEFAULT '' NOT NULL,
-    tx_starter_imagecols_medium tinyint(4) unsigned DEFAULT '0' NOT NULL,
-    tx_starter_imagecols_large tinyint(4) unsigned DEFAULT '0' NOT NULL,
     tx_starter_column_element int(11) unsigned DEFAULT '0' NOT NULL,
     tx_starter_ctalink varchar(1024) DEFAULT '' NOT NULL,
     tx_starter_ctalink_text varchar(255) DEFAULT '' NOT NULL
@@ -43,10 +29,7 @@ CREATE TABLE tt_content (
 # Extend table structure for table 'sys_file_reference'
 #
 CREATE TABLE sys_file_reference (
-	tx_starter_class varchar(60) DEFAULT '' NOT NULL,
-	tx_starter_show_small smallint(5) unsigned DEFAULT '0' NOT NULL,
-	tx_starter_show_medium smallint(5) unsigned DEFAULT '0' NOT NULL,
-	tx_starter_show_large smallint(5) unsigned DEFAULT '0' NOT NULL
+	tx_starter_class varchar(60) DEFAULT '' NOT NULL
 );
 
 #
@@ -61,8 +44,6 @@ CREATE TABLE tx_starter_carousel_element (
 	rowDescription text,
 	bodytext mediumtext,
 	assets int(11) unsigned DEFAULT '0' NOT NULL,
-	assets_medium int(11) unsigned DEFAULT '0' NOT NULL,
-	assets_large int(11) unsigned DEFAULT '0' NOT NULL,
 	link varchar(1024) DEFAULT '' NOT NULL,
 	link_text varchar(255) DEFAULT '' NOT NULL,
 
@@ -82,16 +63,9 @@ CREATE TABLE tx_starter_accordion_element (
 	rowDescription text,
 	bodytext mediumtext,
 	assets int(11) unsigned DEFAULT '0' NOT NULL,
-	assets_medium int(11) unsigned DEFAULT '0' NOT NULL,
-	assets_large int(11) unsigned DEFAULT '0' NOT NULL,
 	imageorient tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	imagecols tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	imagecols_medium tinyint(4) unsigned DEFAULT '0' NOT NULL,
-	imagecols_large tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	image_zoom tinyint(3) unsigned DEFAULT '0' NOT NULL,
-	media_size_small varchar(20) DEFAULT '' NOT NULL,
-	media_size_medium varchar(20) DEFAULT '' NOT NULL,
-	media_size_large varchar(20) DEFAULT '' NOT NULL,
 
 	KEY parent (pid,sorting),
 	KEY language (l10n_parent,sys_language_uid)
@@ -109,14 +83,9 @@ CREATE TABLE tx_starter_tab_element (
 	rowDescription text,
 	bodytext mediumtext,
 	assets int(11) unsigned DEFAULT '0' NOT NULL,
-	assets_medium int(11) unsigned DEFAULT '0' NOT NULL,
-	assets_large int(11) unsigned DEFAULT '0' NOT NULL,
 	imageorient tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	imagecols tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	image_zoom tinyint(3) unsigned DEFAULT '0' NOT NULL,
-	media_size_small varchar(20) DEFAULT '' NOT NULL,
-	media_size_medium varchar(20) DEFAULT '' NOT NULL,
-	media_size_large varchar(20) DEFAULT '' NOT NULL,
 
 	KEY parent (pid,sorting),
 	KEY language (l10n_parent,sys_language_uid)

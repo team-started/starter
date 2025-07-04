@@ -14,7 +14,6 @@ defined('TYPO3') || die();
         '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media',
         '--palette--;;starterMedia',
         '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.imagelinks;imagelinks',
-        '--palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.mediaAdjustments;starterMediaAdjustments',
         '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance',
         '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames',
         '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks',
@@ -60,32 +59,6 @@ defined('TYPO3') || die();
                                 'showitem' => '
                                         --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
                                         --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_assets_medium' => [
-                'config' => [
-                    'overrideChildTca' => [
-                        'columns' => [
-                            'crop' => [
-                                'config' => [
-                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_assets_large' => [
-                'config' => [
-                    'overrideChildTca' => [
-                        'columns' => [
-                            'crop' => [
-                                'config' => [
-                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
-                                ],
                             ],
                         ],
                     ],

@@ -13,18 +13,7 @@ defined('TYPO3') || die();
         [
             'palettes' => [
                 'starterMedia' => [
-                    'showitem' => '
-                        assets, --linebreak--, tx_starter_assets_medium, --linebreak--, tx_starter_assets_large
-                    ',
-                ],
-                'starterMediaAdjustments' => [
-                    'showitem' => '
-                        tx_starter_media_size_small, tx_starter_media_size_medium, tx_starter_media_size_large,
-                        --linebreak--,
-                        imagecols;LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.imagecols,
-                        tx_starter_imagecols_medium;LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.imagecols_medium,
-                        tx_starter_imagecols_large;LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:tt_content.imagecols_large
-                    ',
+                    'showitem' => 'assets',
                 ],
                 'starterMediaGallerySettings' => [
                     'showitem' => '

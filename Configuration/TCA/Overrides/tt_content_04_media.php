@@ -13,7 +13,6 @@ defined('TYPO3') || die();
         '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers',
         '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media',
         '--palette--;;starterMedia',
-        '--palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.mediaAdjustments;starterMediaAdjustments',
         '--palette--;LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.palette.gallerySettings;starterMediaGallerySettings',
         '--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.imagelinks;imagelinks',
         '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance',
@@ -48,66 +47,6 @@ defined('TYPO3') || die();
                 'config' => [
                     'eval' => 'required',
                     'minitems' => 1,
-                    'overrideChildTca' => [
-                        'columns' => [
-                            'crop' => [
-                                'config' => [
-                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
-                                ],
-                            ],
-                        ],
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
-                                        --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
-                                        --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                        --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_assets_medium' => [
-                'config' => [
-                    'overrideChildTca' => [
-                        'columns' => [
-                            'crop' => [
-                                'config' => [
-                                    'cropVariants' => ConfigurationUtility::getMediaCropSettings(),
-                                ],
-                            ],
-                        ],
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
-                                        --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayWithoutLinkPalette,
-                                        --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                        --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                        --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_assets_large' => [
-                'config' => [
                     'overrideChildTca' => [
                         'columns' => [
                             'crop' => [

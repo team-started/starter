@@ -8,20 +8,6 @@ lib.menuLibrary {
     expandAll = 1
   }
 
-  // Mobile Navi (Drilldown)
-  menuDrilldown = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
-  menuDrilldown {
-    as = menuDrilldown
-    levels = 3
-    expandAll = 1
-    dataProcessing {
-      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
-      10 {
-        references.fieldName = media
-      }
-    }
-  }
-
   menuLanguage = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
   menuLanguage {
     languages = auto

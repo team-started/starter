@@ -1,6 +1,5 @@
 <?php
 
-use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
@@ -244,95 +243,6 @@ defined('TYPO3') || die();
                 ],
                 'default' => '',
             ],
-            'tx_starter_assets_medium' => [
-                'label' => $translationFile . ':starter.asset_medium_references',
-                'config' => [
-                    //## !!! Watch out for fieldName different from columnName
-                    'type' => 'file',
-                    'allowed' => 'jpg,jpeg,png,svg',
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                    --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_assets_large' => [
-                'label' => $translationFile . ':starter.asset_large_references',
-                'config' => [
-                    //## !!! Watch out for fieldName different from columnName
-                    'type' => 'file',
-                    'allowed' => 'jpg,jpeg,png,svg',
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference',
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                    --palette--;;filePalette',
-                            ],
-                            File::FILETYPE_VIDEO => [
-                                'showitem' => '
-                                    --palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
-                                    --palette--;;filePalette',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            'tx_starter_media_size_small' => [
-                'exclude' => true,
-                'label' => $translationFile . ':tt_content.tx_starter_media_size_small',
-                'config' => [
-                    'type' => 'select',
-                    'renderType' => 'selectSingle',
-                    'items' => [],
-                ],
-            ],
-            'tx_starter_media_size_medium' => [
-                'exclude' => true,
-                'label' => $translationFile . ':tt_content.tx_starter_media_size_medium',
-                'config' => [
-                    'type' => 'select',
-                    'renderType' => 'selectSingle',
-                    'items' => [],
-                ],
-            ],
-            'tx_starter_media_size_large' => [
-                'exclude' => true,
-                'label' => $translationFile . ':tt_content.tx_starter_media_size_large',
-                'config' => [
-                    'type' => 'select',
-                    'renderType' => 'selectSingle',
-                    'items' => [],
-                ],
-            ],
-            'tx_starter_imagecols_medium' => $GLOBALS['TCA']['tt_content']['columns']['imagecols'],
-            'tx_starter_imagecols_large' => $GLOBALS['TCA']['tt_content']['columns']['imagecols'],
             'tx_starter_carousel_element' => [
                 'exclude' => 1,
                 'label' => 'LLL:EXT:starter/Resources/Private/Language/locallang_be.xlf:carousel_element_formlabel',

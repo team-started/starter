@@ -28,25 +28,9 @@
 				<target>Seitenabschluss - Footer (vererbt)</target>
 			</trans-unit>
 
-			<trans-unit id="pages.tx_starter_nav_media">
-				<target>Bild für Navigation</target>
-			</trans-unit>
-
 <!-- label sys_file_reference -->
 			<trans-unit id="sys_file_reference.tx_starter_class">
 				<target>Klasse</target>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_small">
-				<source>Show on small</source>
-				<target>Zeige auf Smartphone</target>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_medium">
-				<source>Show on medium</source>
-				<target>Zeige auf Tablet</target>
-			</trans-unit>
-			<trans-unit id="sys_file_reference.tx_starter_show_large">
-				<source>Show on large</source>
-				<target>Zeige auf Desktop</target>
 			</trans-unit>
 			<trans-unit id="sys_file_reference.tx_starter_show.I.0">
 				<source>Show</source>
@@ -198,43 +182,6 @@
 				<target>Verschachteltes Element</target>
 			</trans-unit>
 
-			<trans-unit id="starter.asset_medium_references">
-				<target>alternative Medien für medium</target>
-			</trans-unit>
-			<trans-unit id="starter.asset_large_references">
-				<target>alternative Medien für large</target>
-			</trans-unit>
-
-			<trans-unit id="tt_content.imagecols">
-				<target>Bilder nebeneinander (Small)</target>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecols_medium">
-				<target>Bilder nebeneinander (Medium)</target>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecols_large">
-				<target>Bilder nebeneinander (Large)</target>
-			</trans-unit>
-			<trans-unit id="media_size_small">
-				<target>small</target>
-			</trans-unit>
-			<trans-unit id="media_size_medium">
-				<target>medium</target>
-			</trans-unit>
-			<trans-unit id="media_size_large">
-				<target>large</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_small">
-				<source>Relationship between text and image (small)</source>
-				<target>Verhältnis zwischen Text und Bild (small)</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_medium">
-				<source>Relationship between text and image (medium)</source>
-				<target>Verhältnis zwischen Text und Bild (medium)</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_starter_media_size_large">
-				<source>Relationship between text and image (large)</source>
-				<target>Verhältnis zwischen Text und Bild (large)</target>
-			</trans-unit>
 			<trans-unit id="tt_content.tx_starter_ctalink_formlabel">
 				<source>Link</source>
 				<target>Link</target>
